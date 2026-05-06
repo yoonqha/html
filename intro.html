@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)비에이텍 - 기업소개</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00AEEF;
+            --secondary-color: #007bb5;
+        }
+        body { font-family: 'Noto Sans KR', sans-serif; color: #333; }
+        .navbar { background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar-brand { font-weight: 700; color: var(--primary-color) !important; font-size: 1.5rem; }
+        .nav-link { font-weight: 500; color: #333 !important; transition: color 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-color) !important; }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 174, 239, 0.7), rgba(0, 123, 181, 0.7)), url('https://images.unsplash.com/photo-1508261301902-ba7216dc8ce1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            color: white; padding: 120px 0; text-align: center; margin-top: 56px;
+        }
+        .hero h1 { font-weight: 700; margin-bottom: 10px; }
+        .section-title { position: relative; display: inline-block; margin-bottom: 40px; font-weight: 700; color: var(--primary-color); }
+        .section-title::after { content: ''; position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); width: 50px; height: 3px; background-color: var(--primary-color); }
+        
+        .ceo-greeting { background-color: #f8f9fa; padding: 60px 0; border-radius: 15px; }
+        .ceo-signature { font-family: 'Brush Script MT', cursive; font-size: 1.5rem; color: #555; }
+        
+        .cert-card { border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; padding: 30px; border-radius: 10px; height: 100%; transition: transform 0.3s; }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-bottom: 3px solid var(--primary-color); }
+        .cert-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 15px; }
+        
+        .footer { background-color: #222; color: #ddd; padding: 40px 0 20px; margin-top: 60px; }
+        .footer a { color: #ddd; text-decoration: none; }
+        .footer a:hover { color: var(--primary-color); }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-droplet-fill"></i> (주)비에이텍
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="intro.html">기업소개</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">주요제품</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sales_history.html">업력 및 실적</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>기업소개</h1>
+            <p class="lead">깨끗하고 맑은 물, (주)비에이텍이 만들어가는 미래입니다.</p>
+        </div>
+    </section>
+
+    <!-- CEO Greeting -->
+    <section class="container my-5">
+        <div class="ceo-greeting px-4 px-md-5">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <i class="bi bi-quote" style="font-size: 4rem; color: var(--primary-color); opacity: 0.5;"></i>
+                </div>
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-4">인사말</h3>
+                    <p class="lh-lg">
+                        안녕하십니까, (주)비에이텍을 찾아주신 고객 여러분께 진심으로 감사드립니다.<br>
+                        물은 우리 삶의 가장 기본적이고 필수적인 자원입니다. 저희 (주)비에이텍은 설립 이래 '깨끗하고 맑은 물의 안정적인 공급'이라는 사명감 아래, 워터펌프 제작 및 설치, 수리 분야에서 끊임없이 기술 혁신과 품질 향상에 매진해 왔습니다.<br>
+                        앞으로도 고객 여러분의 신뢰에 보답하기 위해 최고의 품질과 서비스를 제공하며, 강원도 나아가 대한민국의 상하수도 설비 발전에 기여하는 기업이 되겠습니다.
+                    </p>
+                    <div class="text-end mt-4">
+                        <p class="mb-0 text-muted">대표이사</p>
+                        <p class="ceo-signature fw-bold fs-4 m-0">조 세 연</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="container my-5 py-4">
+        <div class="text-center mb-5">
+            <h2 class="section-title">기업개요</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <table class="table table-bordered align-middle">
+                    <colgroup>
+                        <col style="width: 20%; background-color: #f8f9fa;">
+                        <col style="width: 30%;">
+                        <col style="width: 20%; background-color: #f8f9fa;">
+                        <col style="width: 30%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="text-center py-3">회사명</th>
+                            <td class="px-3">(주)비에이텍</td>
+                            <th class="text-center py-3">대표이사</th>
+                            <td class="px-3">조세연</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center py-3">설립일</th>
+                            <td class="px-3">2010년 11월 1일 (당시 강원유체)</td>
+                            <th class="text-center py-3">사업분야</th>
+                            <td class="px-3">워터펌프 제작, 설치, 수리 전문</td>
+                        </tr>
+                        <tr>
+                            <th class="text-center py-3">상호변경</th>
+                            <td colspan="3" class="px-3">2013년 비에이텍(주)으로 상호 변경</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="container my-5 pb-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title">인증현황</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+                <div class="cert-card">
+                    <i class="bi bi-award cert-icon"></i>
+                    <h4 class="fw-bold mb-3">ISO 9001:2015</h4>
+                    <p class="text-muted mb-0">국제 표준 품질경영시스템 인증 획득으로 체계적이고 신뢰할 수 있는 품질 보증 체계를 구축하였습니다.</p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="cert-card">
+                    <i class="bi bi-patch-check cert-icon"></i>
+                    <h4 class="fw-bold mb-3">Main-Biz</h4>
+                    <p class="text-muted mb-0">경영혁신형 중소기업 확인서 보유. 마케팅 및 조직혁신 등 비기술 분야의 경영혁신을 이룬 기업임을 인증받았습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                    <h5 class="text-white mb-3"><i class="bi bi-droplet-fill text-primary"></i> (주)비에이텍</h5>
+                    <p class="mb-1">대표이사 : 조세연</p>
+                    <p class="mb-1">업종 : 워터펌프 제작, 설치, 수리 전문기업</p>
+                    <p class="mb-0">인증 : ISO 9001:2015, 경영혁신형 중소기업(Main-Biz)</p>
+                </div>
+                <div class="col-md-6 mb-3 text-md-end">
+                    <h5 class="text-white mb-3">메뉴</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="intro.html">기업소개</a></li>
+                        <li><a href="product.html">주요제품</a></li>
+                        <li><a href="sales_history.html">업력 및 실적</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center pt-3 border-top border-secondary">
+                <small>Copyright &copy; BA-Tech Co., Ltd. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

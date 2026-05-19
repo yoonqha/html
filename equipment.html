@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="(주)비에이텍 장비 - 최첨단 펌프 제작 및 진단 설비">
+    <title>장비 | (주)비에이텍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sub-hero {
+            position: relative;
+            padding: 180px 2rem 100px;
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.3), rgba(5, 11, 20, 1)), url('assets/hero.png') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            text-align: center;
+        }
+
+        .sub-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .equipment-section {
+            padding: 5rem 0;
+        }
+
+        .eq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .eq-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        .eq-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .eq-item:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .eq-img-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .eq-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .eq-item:hover .eq-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .eq-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .eq-info p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 992px) {
+            .eq-item {
+                grid-template-columns: 1fr;
+                direction: ltr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                <span class="logo-text">B·A·Tech</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="intro.html" class="nav-link">기업소개</a></li>
+                    <li><a href="product.html" class="nav-link">주요제품</a></li>
+                    <li><a href="equipment.html" class="nav-link" style="color:#fff;">장비</a></li>
+                    <li><a href="sales.html" class="nav-link">업력</a></li>
+                    <li><a href="campaign.html" class="nav-link">캠페인</a></li>
+                    <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
+                    <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="sub-hero">
+            <h1 class="sub-hero-title">보유 <span class="highlight">장비</span></h1>
+            <p class="sub-hero-desc" style="max-width:600px; margin:0 auto; color:var(--text-muted);">
+                완벽한 펌프 제작 및 진단을 위해 세계 최고 수준의 첨단 설비를 운용하고 있습니다.
+            </p>
+        </section>
+
+        <section class="equipment-section">
+            <div class="container">
+                <div class="eq-list">
+                    <div class="eq-item">
+                        <div class="eq-img-wrapper">
+                            <img src="https://via.placeholder.com/600x400/0a1932/00e5ff?text=초정밀+CNC+가공기" alt="초정밀 CNC 가공기">
+                        </div>
+                        <div class="eq-info">
+                            <h3>초정밀 CNC 가공기</h3>
+                            <p>오차율 0.001mm 미만의 초정밀 가공을 통해 임펠러와 케이싱을 완벽하게 생산합니다. 펌프의 효율을 결정짓는 핵심 부품을 자체 제작할 수 있는 기반입니다.</p>
+                        </div>
+                    </div>
+                    <div class="eq-item">
+                        <div class="eq-img-wrapper">
+                            <img src="https://via.placeholder.com/600x400/0a1932/00e5ff?text=유체+시뮬레이션+진단장비" alt="유체 시뮬레이션 진단장비">
+                        </div>
+                        <div class="eq-info">
+                            <h3>3D 유체 시뮬레이션 진단장비</h3>
+                            <p>설계된 펌프 내부의 물 흐름을 3D 시뮬레이션으로 분석하여 캐비테이션을 방지하고 유체 저항을 최소화하는 최적의 형상을 도출해냅니다.</p>
+                        </div>
+                    </div>
+                    <div class="eq-item">
+                        <div class="eq-img-wrapper">
+                            <img src="https://via.placeholder.com/600x400/0a1932/00e5ff?text=레이저+축+정렬기" alt="레이저 축 정렬기">
+                        </div>
+                        <div class="eq-info">
+                            <h3>레이저 축 정렬 시스템</h3>
+                            <p>펌프 설치 및 수리 시 모터와 펌프의 축을 레이저로 정밀하게 정렬하여 진동과 소음을 줄이고, 베어링과 씰의 수명을 획기적으로 연장합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">💧 B·A·Tech</div>
+                <p class="footer-desc">깨끗한 물의 가치를 소중히 여기는 기업, (주)비에이텍입니다.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

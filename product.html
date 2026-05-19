@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="(주)비에이텍 주요제품 - 산업용, 농업용, 가정용 고효율 워터펌프 라인업">
+    <title>주요제품 | (주)비에이텍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sub-hero {
+            position: relative;
+            padding: 180px 2rem 100px;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(5, 11, 20, 1)), url('assets/hero.png') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            text-align: center;
+        }
+
+        .sub-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .product-section {
+            padding: 5rem 0;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.2);
+        }
+
+        .product-img-box {
+            height: 250px;
+            background: #0a1932;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img-box img {
+            max-width: 80%;
+            max-height: 80%;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img-box img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            background: rgba(10, 25, 50, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .product-category {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .product-name {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .product-specs {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-specs li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-specs li::before {
+            content: '•';
+            color: var(--primary-light);
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                <span class="logo-text">B·A·Tech</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="intro.html" class="nav-link">기업소개</a></li>
+                    <li><a href="product.html" class="nav-link" style="color:#fff;">주요제품</a></li>
+                    <li><a href="equipment.html" class="nav-link">장비</a></li>
+                    <li><a href="sales.html" class="nav-link">업력</a></li>
+                    <li><a href="campaign.html" class="nav-link">캠페인</a></li>
+                    <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
+                    <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="sub-hero">
+            <h1 class="sub-hero-title"><span class="highlight">주요</span>제품</h1>
+            <p class="sub-hero-desc" style="max-width:600px; margin:0 auto; color:var(--text-muted);">
+                압도적인 퍼포먼스와 내구성을 자랑하는 비에이텍의 고성능 워터펌프 라인업입니다.
+            </p>
+        </section>
+
+        <section class="product-section">
+            <div class="container">
+                <div class="product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://via.placeholder.com/300x200/0a1932/0077ff?text=산업용+다단+펌프" alt="산업용 다단 펌프">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Industrial</span>
+                            <h3 class="product-name">BA-PRO 5000 다단 펌프</h3>
+                            <ul class="product-specs">
+                                <li>고양정 대유량 압송</li>
+                                <li>스테인리스 스틸 임펠러 적용</li>
+                                <li>에너지 고효율 인버터 제어</li>
+                            </ul>
+                            <a href="inquiry.html" class="btn-secondary" style="width:100%; text-align:center;">제품 문의</a>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://via.placeholder.com/300x200/0a1932/0077ff?text=농업용+엔진+펌프" alt="농업용 엔진 펌프">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Agricultural</span>
+                            <h3 class="product-name">BA-AGRI 300 엔진 펌프</h3>
+                            <ul class="product-specs">
+                                <li>전기 없는 야외 환경 최적화</li>
+                                <li>강력한 흡입력 및 내구성</li>
+                                <li>경량화 설계로 이동성 확보</li>
+                            </ul>
+                            <a href="inquiry.html" class="btn-secondary" style="width:100%; text-align:center;">제품 문의</a>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-img-box">
+                            <img src="https://via.placeholder.com/300x200/0a1932/0077ff?text=가정용+가압+펌프" alt="가정용 가압 펌프">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">Residential</span>
+                            <h3 class="product-name">BA-HOME 150 저소음 펌프</h3>
+                            <ul class="product-specs">
+                                <li>실내 설치 가능한 초저소음</li>
+                                <li>스마트 수압 감지 센서 탑재</li>
+                                <li>녹 발생 없는 친환경 소재</li>
+                            </ul>
+                            <a href="inquiry.html" class="btn-secondary" style="width:100%; text-align:center;">제품 문의</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">💧 B·A·Tech</div>
+                <p class="footer-desc">깨끗한 물의 가치를 소중히 여기는 기업, (주)비에이텍입니다.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

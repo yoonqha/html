@@ -282,7 +282,7 @@
 
         .cert-modal-body {
             flex-grow: 1;
-            overflow-y: auto;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -295,6 +295,15 @@
             position: relative;
         }
 
+        .pdf-canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         .pdf-canvas {
             max-width: 100%;
             max-height: 60vh;
@@ -302,6 +311,70 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             display: none;
+            transition: opacity 0.2s ease-in-out;
+        }
+
+        /* 슬라이더 화살표 버튼 스타일 */
+        .pdf-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(10, 25, 50, 0.8);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            font-size: 2.5rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none; /* 기본 비활성화 */
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            line-height: 1;
+            padding-bottom: 5px;
+        }
+
+        .pdf-nav-btn:hover {
+            background: var(--primary-color);
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        }
+
+        .pdf-nav-btn:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .pdf-nav-btn.prev-btn {
+            left: 1.5rem;
+        }
+
+        .pdf-nav-btn.next-btn {
+            right: 1.5rem;
+        }
+
+        /* 페이지 번호 표시기 */
+        .pdf-page-num {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(5, 11, 20, 0.85);
+            border: 1px solid var(--glass-border);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 10;
+            display: none; /* 기본 비활성화 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .pdf-spinner {
@@ -494,11 +567,22 @@
             <div class="cert-modal-content">
                 <span class="cert-modal-close" id="closeModalBtn">&times;</span>
                 <div class="cert-modal-body">
+                    <!-- 좌우 화살표 내비게이션 버튼 -->
+                    <button id="pdfPrevBtn" class="pdf-nav-btn prev-btn">&lsaquo;</button>
+                    
                     <div id="pdfSpinner" class="pdf-spinner">
                         <div class="spinner-ring"></div>
                         <p>인증서 이미지를 렌더링하고 있습니다...</p>
                     </div>
-                    <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
+                    
+                    <div class="pdf-canvas-container">
+                        <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
+                    </div>
+                    
+                    <button id="pdfNextBtn" class="pdf-nav-btn next-btn">&rsaquo;</button>
+                    
+                    <!-- 페이지 번호 지시자 -->
+                    <div id="pdfPageNum" class="pdf-page-num">1 / 1</div>
                 </div>
                 <div class="cert-modal-footer">
                     <span id="modalCertTitle" class="cert-modal-title">인증서 보기</span>
@@ -570,7 +654,7 @@
             nav.classList.toggle('active');
         });
 
-        // 인증서 모달 팝업 및 실시간 PDF-to-Canvas 렌더링 로직
+        // 인증서 모달 팝업 및 실시간 PDF-to-Canvas 렌더링 + 슬라이더 캐러셀 로직
         const certModal = document.getElementById('certModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
         const pdfCanvas = document.getElementById('pdfCanvas');
@@ -578,91 +662,160 @@
         const modalCertTitle = document.getElementById('modalCertTitle');
         const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
         const pdfOpenNewTabBtn = document.getElementById('pdfOpenNewTabBtn');
+        
+        // 캐러셀 슬라이더용 신규 엘리먼트
+        const pdfPrevBtn = document.getElementById('pdfPrevBtn');
+        const pdfNextBtn = document.getElementById('pdfNextBtn');
+        const pdfPageNum = document.getElementById('pdfPageNum');
+        
+        let pdfDoc = null;
+        let pageNum = 1;
+        let pageRendering = false;
         let currentRenderTask = null;
 
-        // 모달 열기 및 PDF 렌더링
+        // 특정 페이지 렌더링 공통 함수
+        async function renderPage(num) {
+            pageRendering = true;
+            pdfCanvas.style.opacity = '0.3'; // 부드러운 전환 효과를 위해 반투명화
+
+            try {
+                const page = await pdfDoc.getPage(num);
+                const ctx = pdfCanvas.getContext('2d');
+                
+                // 모달 가로폭 등에 맞추어 2.0 고배율 스케일 렌더링
+                const viewport = page.getViewport({ scale: 2.0 });
+
+                pdfCanvas.width = viewport.width;
+                pdfCanvas.height = viewport.height;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                // 진행 중인 렌더링 작업이 있다면 안전하게 취소
+                if (currentRenderTask) {
+                    currentRenderTask.cancel();
+                }
+
+                currentRenderTask = page.render(renderContext);
+                await currentRenderTask.promise;
+
+                // 렌더링 완료 후 UI 및 스타일 스위칭
+                pdfSpinner.style.display = 'none';
+                pdfCanvas.style.display = 'block';
+                pdfCanvas.style.opacity = '1';
+                
+                // 페이지 지시자 인덱스 업데이트
+                pdfPageNum.textContent = `${num} / ${pdfDoc.numPages}`;
+                pageRendering = false;
+            } catch (error) {
+                if (error.name !== 'RenderingCancelledException') {
+                    console.error('PDF Page Render Error:', error);
+                    pdfSpinner.innerHTML = `
+                        <p style="color: #ff4d4d; font-size: 1.1rem; margin-bottom: 0.5rem;">페이지 로드 실패</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">이미지를 안전하게 표시하지 못했습니다.</p>
+                    `;
+                    pageRendering = false;
+                }
+            }
+        }
+
+        // 이전 페이지 슬라이딩
+        function onPrevPage() {
+            if (pageNum <= 1 || pageRendering) return;
+            pageNum--;
+            renderPage(pageNum);
+        }
+
+        // 다음 페이지 슬라이딩
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages || pageRendering) return;
+            pageNum++;
+            renderPage(pageNum);
+        }
+
+        // 좌우 슬라이드 화살표 클릭 이벤트 바인딩
+        pdfPrevBtn.addEventListener('click', onPrevPage);
+        pdfNextBtn.addEventListener('click', onNextPage);
+
+        // 모달 열기 및 PDF 문서 해석 로직
         document.querySelectorAll('.open-cert-btn').forEach(btn => {
             btn.addEventListener('click', async () => {
                 const pdfUrl = btn.getAttribute('data-pdf');
                 const pdfTitle = btn.getAttribute('data-title');
 
-                // 모달 텍스트 및 링크 바인딩
+                // 모달 텍스트 및 기본 링크 주입
                 modalCertTitle.textContent = pdfTitle;
                 pdfDownloadBtn.setAttribute('href', pdfUrl);
                 pdfOpenNewTabBtn.setAttribute('href', pdfUrl);
 
-                // 모달 열기 애니메이션 활성화
+                // 모달 보이기
                 certModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // 백그라운드 스크롤 방지
+                document.body.style.overflow = 'hidden'; // 부모 페이지 스크롤 차단
 
-                // 캔버스 초기화 및 스피너 로드
+                // 매번 모달이 열릴 때마다 제어 UI 초기화
                 pdfCanvas.style.display = 'none';
                 pdfSpinner.style.display = 'block';
+                pdfPrevBtn.style.display = 'none';
+                pdfNextBtn.style.display = 'none';
+                pdfPageNum.style.display = 'none';
 
-                // 이전 렌더링 태스크가 진행 중이면 캔슬
-                if (currentRenderTask) {
-                    currentRenderTask.cancel();
-                }
+                pageNum = 1;
+                pdfDoc = null;
 
                 try {
-                    // PDF.js 비동기 로딩
+                    // PDF.js를 사용한 로딩 타스크 생성
                     const loadingTask = pdfjsLib.getDocument(pdfUrl);
-                    const pdf = await loadingTask.promise;
-                    const page = await pdf.getPage(1); // 인증서는 1페이지만 존재하므로 1페이지 로드
+                    pdfDoc = await loadingTask.promise;
 
-                    const ctx = pdfCanvas.getContext('2d');
-                    
-                    // 디바이스 픽셀비 보정 및 고품질 scale 설정
-                    const pixelRatio = window.devicePixelRatio || 1;
-                    const viewport = page.getViewport({ scale: 2.0 }); // 2배 고해상도로 렌더링
-
-                    pdfCanvas.width = viewport.width;
-                    pdfCanvas.height = viewport.height;
-
-                    const renderContext = {
-                        canvasContext: ctx,
-                        viewport: viewport
-                    };
-
-                    currentRenderTask = page.render(renderContext);
-                    await currentRenderTask.promise;
-
-                    // 렌더링 성공 후 UI 스위칭
-                    pdfSpinner.style.display = 'none';
-                    pdfCanvas.style.display = 'block';
-                } catch (error) {
-                    if (error.name !== 'RenderingCancelledException') {
-                        console.error('PDF Render Error:', error);
-                        pdfSpinner.innerHTML = `
-                            <p style="color: #ff4d4d; font-size: 1.1rem; margin-bottom: 0.5rem;">인증서 로드 실패</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem;">브라우저 환경에 따라 이미지를 열지 못했습니다.<br>하단의 다운로드 버튼을 이용해주세요.</p>
-                        `;
+                    // 페이지가 2장 이상인 경우에만 이전/다음 화살표 및 페이지 카운트 UI 활성화
+                    if (pdfDoc.numPages > 1) {
+                        pdfPrevBtn.style.display = 'flex';
+                        pdfNextBtn.style.display = 'flex';
+                        pdfPageNum.style.display = 'block';
+                    } else {
+                        pdfPrevBtn.style.display = 'none';
+                        pdfNextBtn.style.display = 'none';
+                        pdfPageNum.style.display = 'none';
                     }
+
+                    // 1페이지 렌더링 개시
+                    await renderPage(pageNum);
+                } catch (error) {
+                    console.error('PDF Load Error:', error);
+                    pdfSpinner.innerHTML = `
+                        <p style="color: #ff4d4d; font-size: 1.1rem; margin-bottom: 0.5rem;">인증서 로드 실패</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">브라우저 환경에 따라 이미지를 열지 못했습니다.<br>하단의 다운로드 버튼을 이용해주세요.</p>
+                    `;
                 }
             });
         });
 
-        // 모달 닫기 공통 함수
+        // 모달 닫기 및 초기화 함수
         function closeCertModal() {
             certModal.classList.remove('active');
             document.body.style.overflow = '';
+            
             if (currentRenderTask) {
                 currentRenderTask.cancel();
                 currentRenderTask = null;
             }
+            
+            pdfDoc = null;
+            pageNum = 1;
+            pageRendering = false;
         }
 
-        // 닫기 이벤트 핸들러
+        // 닫기 트리거 등록
         closeModalBtn.addEventListener('click', closeCertModal);
         
-        // 모달 백그라운드 클릭 시 닫기
         certModal.addEventListener('click', (e) => {
             if (e.target === certModal) {
                 closeCertModal();
             }
         });
 
-        // ESC 키 입력 시 닫기
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && certModal.classList.contains('active')) {
                 closeCertModal();

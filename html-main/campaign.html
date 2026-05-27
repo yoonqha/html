@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="(주)비에이텍 캠페인 - 깨끗한 물을 지키기 위한 우리의 노력">
+    <title>캠페인 | (주)비에이텍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sub-hero {
+            position: relative;
+            padding: 180px 2rem 100px;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(5, 11, 20, 1)), url('assets/hero.png') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            text-align: center;
+        }
+
+        .sub-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .campaign-section {
+            padding: 5rem 0;
+        }
+
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .campaign-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .campaign-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 229, 255, 0.5);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.1);
+        }
+
+        .campaign-img {
+            height: 220px;
+            background: #0a1932;
+            overflow: hidden;
+        }
+
+        .campaign-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .campaign-card:hover .campaign-img img {
+            transform: scale(1.05);
+        }
+
+        .campaign-content {
+            padding: 2rem;
+        }
+
+        .campaign-date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .campaign-title {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .campaign-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                <span class="logo-text">B·A·Tech</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="intro.html" class="nav-link">기업소개</a></li>
+                    <li><a href="product.html" class="nav-link">주요제품</a></li>
+                    <li><a href="equipment.html" class="nav-link">장비</a></li>
+                    <li><a href="sales.html" class="nav-link">업력</a></li>
+                    <li><a href="campaign.html" class="nav-link" style="color:#fff;">캠페인</a></li>
+                    <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
+                    <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="sub-hero">
+            <h1 class="sub-hero-title"><span class="highlight">사회공헌</span> 캠페인</h1>
+            <p class="sub-hero-desc" style="max-width:600px; margin:0 auto; color:var(--text-muted);">
+                비에이텍은 환경을 생각하는 기술로 더 맑고 깨끗한 미래를 만들어갑니다.
+            </p>
+        </section>
+
+        <section class="campaign-section">
+            <div class="container">
+                <!-- 카드뉴스 강조 영역 -->
+                <div class="featured-campaign" style="margin-bottom: 4rem; text-align: center; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 20px; padding: 3rem; box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
+                    <h2 style="font-size: 2rem; color: #fff; margin-bottom: 1rem;">(주)비에이텍과 함께하는 물 활용 캠페인</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">소중한 자원인 물을 아끼고 스마트하게 활용하는 방법, 카드뉴스로 확인해보세요.</p>
+                    <div style="border-radius: 15px; overflow: hidden; border: 1px solid rgba(0, 229, 255, 0.2); display: inline-block;">
+                        <img src="카드뉴스.png" alt="물 활용 캠페인 카드뉴스" style="max-width: 100%; height: auto; display: block;">
+                    </div>
+                </div>
+
+                <div class="campaign-grid">
+                    <!-- Campaign 1 -->
+                    <div class="campaign-card">
+                        <div class="campaign-img">
+                            <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Clean+River+Project" alt="클린 리버 프로젝트">
+                        </div>
+                        <div class="campaign-content">
+                            <span class="campaign-date">2026. 04. 20</span>
+                            <h3 class="campaign-title">'클린 리버 프로젝트' 지역 하천 정화 활동 진행</h3>
+                            <p class="campaign-desc">
+                                (주)비에이텍 임직원들은 수자원 보호의 중요성을 알리기 위해 본사 인근 하천에서 쓰레기 수거 및 수질 정화 캠페인을 성공적으로 마쳤습니다.
+                            </p>
+                            <a href="#" class="btn-secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">자세히 보기</a>
+                        </div>
+                    </div>
+                    <!-- Campaign 2 -->
+                    <div class="campaign-card">
+                        <div class="campaign-img">
+                            <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Eco+Water+Pump" alt="친환경 펌프 기증">
+                        </div>
+                        <div class="campaign-content">
+                            <span class="campaign-date">2025. 11. 15</span>
+                            <h3 class="campaign-title">수도권 소외계층 대상 고효율 워터펌프 무상 교체</h3>
+                            <p class="campaign-desc">
+                                노후된 수로 설비로 불편을 겪는 지역 사회를 돕고자, 자사의 최신 고효율 인버터 펌프 50대를 무상으로 설치 및 점검해드렸습니다.
+                            </p>
+                            <a href="#" class="btn-secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">자세히 보기</a>
+                        </div>
+                    </div>
+                    <!-- Campaign 3 -->
+                    <div class="campaign-card">
+                        <div class="campaign-img">
+                            <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Water+Day+Seminar" alt="세계 물의 날 세미나">
+                        </div>
+                        <div class="campaign-content">
+                            <span class="campaign-date">2025. 03. 22</span>
+                            <h3 class="campaign-title">세계 물의 날 기념 '수자원 절약 세미나' 개최</h3>
+                            <p class="campaign-desc">
+                                에너지 절감형 펌프 기술의 동향과 지속 가능한 물 관리 솔루션에 대해 논의하는 자리를 마련하여 업계 관계자들의 큰 호응을 얻었습니다.
+                            </p>
+                            <a href="#" class="btn-secondary" style="font-size:0.9rem; padding:0.5rem 1rem;">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">💧 B·A·Tech</div>
+                <p class="footer-desc">깨끗한 물의 가치를 소중히 여기는 기업, (주)비에이텍입니다.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* 사내망 페이지 전용 스타일 */
         .sub-hero {
             position: relative;
             padding: 180px 2rem 100px;
@@ -23,17 +22,9 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
         }
 
-        .sub-hero-desc {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
-        }
-
+        /* 사내망 메인 섹션 */
         .intranet-section {
             padding: 5rem 0 8rem;
             background-color: var(--bg-dark);
@@ -41,7 +32,174 @@
             overflow: hidden;
         }
 
-        /* 조직도 트리 레이아웃 (데스크톱) */
+        /* 로그인 가드 스타일 */
+        .login-guard-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 6rem 2rem;
+            min-height: 60vh;
+        }
+
+        .login-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 480px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .login-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+            display: inline-block;
+        }
+
+        .login-title {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .login-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(5, 11, 20, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .error-msg {
+            color: #ff4d4d;
+            font-size: 0.88rem;
+            margin-top: 0.5rem;
+            text-align: left;
+            display: none;
+        }
+
+        /* 웰컴바 & 사내 제어 영역 */
+        .welcome-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 25, 50, 0.4);
+            border: 1px solid var(--glass-border);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+            backdrop-filter: blur(5px);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .welcome-text {
+            font-size: 1.05rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .welcome-text span {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .logout-btn {
+            background: transparent;
+            border: 1px solid rgba(255,77,77,0.3);
+            color: #ff4d4d;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
+
+        .logout-btn:hover {
+            background: rgba(255,77,77,0.1);
+            border-color: #ff4d4d;
+            box-shadow: 0 0 10px rgba(255,77,77,0.2);
+        }
+
+        /* 실시간 검색창 스타일 */
+        .search-wrapper {
+            max-width: 500px;
+            margin: 0 auto 4rem;
+            position: relative;
+        }
+
+        .search-wrapper input {
+            width: 100%;
+            background: rgba(5, 11, 20, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 1rem 1.5rem 1rem 3.2rem;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-wrapper input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+        }
+
+        .search-wrapper .search-icon {
+            position: absolute;
+            left: 1.3rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        /* 조직도 트리 레이아웃 */
         .organogram-wrapper {
             width: 100%;
             overflow-x: auto;
@@ -57,7 +215,6 @@
             min-width: 1000px;
         }
 
-        /* 트리 계층 간 수직 연결선 */
         .tree-line-v {
             width: 2px;
             height: 40px;
@@ -65,7 +222,6 @@
             position: relative;
         }
 
-        /* 트리 수평 연결선 컨테이너 */
         .tree-line-h-container {
             display: flex;
             width: 72%;
@@ -94,7 +250,6 @@
             position: relative;
         }
 
-        /* 각 부서 하위 수직선 */
         .branch-column::before {
             content: '';
             width: 2px;
@@ -127,7 +282,6 @@
             box-shadow: 0 15px 35px rgba(0, 229, 255, 0.25), inset 0 0 15px rgba(0, 119, 255, 0.1);
         }
 
-        /* 대표이사 특별 테두리 */
         .org-card.ceo-node {
             border: 1px solid rgba(0, 229, 255, 0.4);
             box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
@@ -139,11 +293,10 @@
             box-shadow: 0 0 35px rgba(0, 229, 255, 0.35), inset 0 0 20px rgba(0, 229, 255, 0.15);
         }
 
-        /* 부서 헤더 카드 */
         .org-card.dept-node {
             background: rgba(0, 85, 204, 0.25);
             border-color: rgba(0, 119, 255, 0.3);
-            margin-top: 30px; /* branch-column::before 공간 확보 */
+            margin-top: 30px;
             margin-bottom: 2rem;
             cursor: default;
         }
@@ -154,7 +307,6 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        /* 부서원 카드 세로 목록 */
         .member-list {
             display: flex;
             flex-direction: column;
@@ -168,7 +320,6 @@
             width: 210px;
         }
 
-        /* 카드 내부 텍스트 디자인 */
         .card-dept-tag {
             font-size: 0.75rem;
             font-weight: 600;
@@ -210,12 +361,25 @@
             font-weight: 500;
         }
 
-        /* 부서 정보 */
         .dept-purpose {
             font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.5;
             margin-top: 0.4rem;
+        }
+
+        /* 검색 하이라이팅 및 디밍 효과 */
+        .org-card.dimmed {
+            opacity: 0.15;
+            filter: grayscale(1) blur(1px);
+            pointer-events: none;
+        }
+
+        .org-card.highlighted {
+            border-color: var(--secondary-color) !important;
+            box-shadow: 0 0 25px var(--secondary-color) !important;
+            transform: scale(1.05);
+            z-index: 10;
         }
 
         /* 레이어 팝업 모달 스타일 */
@@ -275,7 +439,6 @@
             transform: rotate(90deg);
         }
 
-        /* 모달 내부 콘텐츠 상세 */
         .modal-emp-header {
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             padding-bottom: 1.2rem;
@@ -383,7 +546,19 @@
             gap: 1rem;
         }
 
-        /* 모바일 반응형 조직도 조율 */
+        .modal-tel-link {
+            color: var(--secondary-color);
+            text-decoration: underline;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .modal-tel-link:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0,229,255,0.4);
+        }
+
+        /* 모바일 반응형 조율 */
         @media (max-width: 1024px) {
             .organogram-wrapper {
                 justify-content: flex-start;
@@ -412,7 +587,6 @@
                 padding-top: 3rem;
                 position: relative;
             }
-            /* 모바일 수직 연결 흐름선 */
             .tree-branches::before {
                 content: '';
                 position: absolute;
@@ -435,7 +609,6 @@
     </style>
 </head>
 <body>
-    <!-- Header 시작 -->
     <header class="header" id="header">
         <div class="header-container">
             <a href="index.html" class="logo">
@@ -450,37 +623,65 @@
                     <li><a href="sales.html" class="nav-link">업력</a></li>
                     <li><a href="campaign.html" class="nav-link">캠페인</a></li>
                     <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
-                    <li><a href="intranet.html" class="nav-link" style="color: #fff;">사내망</a></li>
+                    <li><a href="intranet.html" class="nav-link" style="color: #fff;">사내망 🔒</a></li>
                     <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
-    <!-- Header 끝 -->
 
     <main>
-        <!-- 서브페이지 Hero 배너 -->
         <section class="sub-hero">
             <h1 class="sub-hero-title"><span class="highlight">사내망</span> (Intranet)</h1>
             <p class="sub-hero-desc">
-                (주)비에이텍 임직원 간의 업무 시너지 극대화를 위한 정보 공유망입니다.
+                (주)비에이텍 임직원 업무 협업 및 조직도 시스템입니다.
             </p>
         </section>
 
-        <!-- 조직도 섹션 -->
-        <section class="intranet-section">
+        <!-- 1. 로그인 가드 영역 (비로그인 시 노출) -->
+        <div id="loginGuardArea" class="login-guard-section">
+            <div class="login-card">
+                <div class="login-icon">🔒</div>
+                <h2 class="login-title">임직원 전용 인증</h2>
+                <p class="login-desc">비에이텍 사내 인증 정보로 로그인해 주십시오.<br>(테스트 계정 - ID: batech / PW: 1234)</p>
+                <form id="loginForm" onsubmit="tryLogin(event)">
+                    <div class="form-group">
+                        <label for="empId" class="form-label">사원 ID</label>
+                        <input type="text" id="empId" class="form-control" placeholder="아이디를 입력하세요..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="empPw" class="form-label">비밀번호</label>
+                        <input type="password" id="empPw" class="form-control" placeholder="비밀번호를 입력하세요..." required>
+                        <div class="error-msg" id="loginErrorMsg">아이디 또는 비밀번호가 일치하지 않습니다.</div>
+                    </div>
+                    <button type="submit" class="btn-primary login-btn">사내망 로그인</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. 인트라넷 본문 영역 (로그인 성공 시 활성화) -->
+        <section class="intranet-section" id="intranetContentArea" style="display: none;">
             <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 5rem;">
+                <!-- 웰컴 제어 바 -->
+                <div class="welcome-bar">
+                    <div class="welcome-text">
+                        안녕하세요, <span>(주)비에이텍 임직원</span> 님. 사내망 세션이 활성화되었습니다.
+                    </div>
+                    <button class="logout-btn" onclick="doLogout()">사내망 로그아웃</button>
+                </div>
+
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
                     <span class="hero-badge">인사 행정 정보</span>
-                    <h2 class="section-title" style="font-size: 2.5rem; margin-top: 0.5rem;">(주)비에이텍 <span class="highlight">조직도</span></h2>
-                    <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0; font-size: 1.05rem;">
-                        원활한 협업과 소통을 위한 직급별 업무분장도입니다. 직원의 카드를 클릭하여 상세 담당 업무와 긴급 연락용 내선번호를 확인할 수 있습니다.
-                    </p>
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-top: 0.5rem;">(주)비에이텍 <span class="highlight">조직도 및 업무분장</span></h2>
+                </div>
+
+                <!-- 실시간 검색 컨트롤러 -->
+                <div class="search-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="empSearchInput" placeholder="부서, 직급, 성명 또는 담당업무 검색..." oninput="filterEmployees()">
                 </div>
 
                 <!-- 시각적 트리 조직도 시작 -->
@@ -493,20 +694,19 @@
                              data-name="조세연"
                              data-position="대표이사"
                              data-tasks="경영 전반에 대한 최종 총괄 지휘 및 의사결정;(주)비에이텍의 기술 비전 및 중장기 전략 로드맵 수립;국내외 공인 기관 주요 기술 협정 및 파트너십 최종 체결"
-                             data-phone="033-264-9243 (내선 101)"
+                             data-phone="033-264-9243"
+                             data-ext="101"
                              data-area="본사 집무실 및 전 지점 총괄"
                              data-avatar="👑">
-                            <div class="card-dept-tag" style="color: var(--secondary-color);">Management</div>
+                            <div class="card-dept-tag">Management</div>
                             <div class="card-name">조세연</div>
                             <div class="card-position">대표이사</div>
                             <div class="card-task-preview">경영 전반 총괄 및 최종 의사결정</div>
                             <span class="btn-view-details">업무분장 확인</span>
                         </div>
 
-                        <!-- 대표이사 밑 수직 연결선 -->
                         <div class="tree-line-v"></div>
 
-                        <!-- 수평 가로 연결선 -->
                         <div class="tree-line-h-container">
                             <div class="tree-line-h"></div>
                         </div>
@@ -523,14 +723,14 @@
                                 </div>
                                 
                                 <div class="member-list">
-                                    
                                     <!-- 정충구 부장 -->
                                     <div class="org-card member-node"
                                          data-dept="생산부"
                                          data-name="정충구"
                                          data-position="부장"
                                          data-tasks="부스터 펌프 시스템 및 벌류트 펌프 전반 제작 공정 지휘;원자재 구매 예산 기획 및 거래처 발주 승인;안전 보건 교육 이수 감독 및 생산설비 유지관리 총괄"
-                                         data-phone="내선 201"
+                                         data-phone="033-264-9243"
+                                         data-ext="201"
                                          data-area="제1공장 생산라인 A동"
                                          data-avatar="⚙️">
                                         <div class="card-name">정충구</div>
@@ -545,7 +745,8 @@
                                          data-name="조태연"
                                          data-position="부장"
                                          data-tasks="특수 펌프(정량/수중/오수/슬러지/심정용) 생산 기획;조립 공정 일정 스케줄 조율 및 생산 실적 데이터 분석;생산 라인 안전 준수 여부 일일 점검 및 안전 가이드 수립"
-                                         data-phone="내선 202"
+                                         data-phone="033-264-9243"
+                                         data-ext="202"
                                          data-area="제2공장 생산라인 B동"
                                          data-avatar="🔧">
                                         <div class="card-name">조태연</div>
@@ -560,7 +761,8 @@
                                          data-name="김진수"
                                          data-position="과장"
                                          data-tasks="펌프 하우징 정밀 가공 및 주요 부품 조립 실무;생산 완료 반제품 성능 및 불량 1차 육안 판정 검사;원자재 및 소모품 사내 창고 실시간 재고 대장 전산화"
-                                         data-phone="내선 205"
+                                         data-phone="033-264-9243"
+                                         data-ext="205"
                                          data-area="제1공장 조립 현장"
                                          data-avatar="🛠️">
                                         <div class="card-name">김진수</div>
@@ -568,27 +770,26 @@
                                         <div class="card-task-preview">가공/조립 실무 및 재고 전산화</div>
                                         <span class="btn-view-details">업무분장 확인</span>
                                     </div>
-
                                 </div>
                             </div>
 
                             <!-- 부서 B: 관리부 -->
                             <div class="branch-column">
                                 <div class="org-card dept-node">
-                                    <div class="card-dept-tag" style="color: #4da6ff;">Management Support</div>
+                                    <div class="card-dept-tag">Management Support</div>
                                     <div class="card-name" style="font-size: 1.3rem;">관리부</div>
                                     <div class="dept-purpose">계약, 조달 행정 및 공정관리</div>
                                 </div>
                                 
                                 <div class="member-list">
-                                    
                                     <!-- 이원석 이사 -->
                                     <div class="org-card member-node"
                                          data-dept="관리부"
                                          data-name="이원석"
                                          data-position="이사"
                                          data-tasks="관공서 조달청 우수제품 입찰 및 계약 체결 행정 총괄;장기 납품 계약 리스크 평가 및 손익 조율;회계 감사 수검 및 세무 세입 지출 최종 승인"
-                                         data-phone="내선 301"
+                                         data-phone="033-264-9243"
+                                         data-ext="301"
                                          data-area="본사 본관 2층 관리본부"
                                          data-avatar="💼">
                                         <div class="card-name">이원석</div>
@@ -603,7 +804,8 @@
                                          data-name="김홍인"
                                          data-position="실장"
                                          data-tasks="생산 납기 일정 모니터링 및 납품 완료 확인증 관리;외주 용역 및 협력업체 정산, 기술 제휴 대장 보관;사내 복리후생 프로그램 기획 및 일반 행정 업무 실무"
-                                         data-phone="내선 302"
+                                         data-phone="033-264-9243"
+                                         data-ext="302"
                                          data-area="본사 2층 관리본부 행정실"
                                          data-avatar="📝">
                                         <div class="card-name">김홍인</div>
@@ -611,27 +813,26 @@
                                         <div class="card-task-preview">공정 납기 관리 및 총무/행정 실무</div>
                                         <span class="btn-view-details">업무분장 확인</span>
                                     </div>
-
                                 </div>
                             </div>
 
                             <!-- 부서 C: 품질보증부 -->
                             <div class="branch-column">
                                 <div class="org-card dept-node">
-                                    <div class="card-dept-tag" style="color: #00e5ff;">Quality Assurance</div>
+                                    <div class="card-dept-tag">Quality Assurance</div>
                                     <div class="card-name" style="font-size: 1.3rem;">품질보증부</div>
                                     <div class="dept-purpose">품질 규격 관리 및 출하 전 성능 검증</div>
                                 </div>
                                 
                                 <div class="member-list">
-                                    
                                     <!-- 정영호 사원 -->
                                     <div class="org-card member-node"
                                          data-dept="품질보증부"
                                          data-name="정영호"
                                          data-position="사원"
                                          data-tasks="부스터 펌프 모터 전류값, 수압 및 누전 검사 장비 계측 수행;KC 위생안전기준 및 ISO 9001 기술 표준 검증 지원;출하 전 최종 품질 검사 성적서 발행 및 사후 A/S 관리 대장 기록"
-                                         data-phone="내선 401"
+                                         data-phone="033-264-9243"
+                                         data-ext="401"
                                          data-area="제3공장 성능시험소"
                                          data-avatar="🔬">
                                         <div class="card-name">정영호</div>
@@ -639,12 +840,10 @@
                                         <div class="card-task-preview">제품 성능 계측 및 품질인증 지원</div>
                                         <span class="btn-view-details">업무분장 확인</span>
                                     </div>
-
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
                 </div>
                 <!-- 시각적 트리 조직도 끝 -->
@@ -665,7 +864,6 @@
                 </div>
             </div>
 
-            <!-- 상세 정보 행 1: 상세 업무분장 -->
             <div class="modal-info-row">
                 <div class="modal-info-label">
                     <span class="icon">📋</span>상세 업무분장
@@ -677,19 +875,18 @@
                 </div>
             </div>
 
-            <!-- 상세 정보 행 2 & 3: 내선번호 및 담당 구역 -->
             <div class="modal-info-grid-2">
                 <div class="modal-info-row">
                     <div class="modal-info-label">
-                        <span class="icon">📞</span>내선번호
+                        <span class="icon">📞</span>회사 내선연결
                     </div>
-                    <div class="modal-info-val-box" id="modalEmpPhone" style="font-weight: 600; color: #fff;">
-                        내선 000
+                    <div class="modal-info-val-box" style="font-weight: 600;">
+                        <a id="modalEmpPhoneLink" href="tel:033-264-9243" class="modal-tel-link">033-264-9243 (내선 000)</a>
                     </div>
                 </div>
                 <div class="modal-info-row">
                     <div class="modal-info-label">
-                        <span class="icon">📍</span>담당 구역
+                        <span class="icon">📍</span>근무 구역
                     </div>
                     <div class="modal-info-val-box" id="modalEmpArea">
                         구역명
@@ -699,37 +896,17 @@
         </div>
     </div>
 
-    <!-- Footer 시작 -->
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-info">
                 <div class="footer-logo">💧 B·A·Tech</div>
                 <p class="footer-desc">깨끗한 물의 가치를 소중히 여기는 기업, (주)비에이텍입니다.</p>
             </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>회사 정보</h4>
-                    <ul>
-                        <li><a href="intro.html">기업소개</a></li>
-                        <li><a href="sales.html">업력</a></li>
-                        <li><a href="map.html">오시는 길</a></li>
-                    </ul>
-                </div>
-                <div class="link-group">
-                    <h4>사업 분야</h4>
-                    <ul>
-                        <li><a href="product.html">주요제품</a></li>
-                        <li><a href="equipment.html">장비</a></li>
-                        <li><a href="campaign.html">캠페인</a></li>
-                    </ul>
-                </div>
-            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
         </div>
     </footer>
-    <!-- Footer 끝 -->
 
     <script>
         // Header scroll effect
@@ -751,15 +928,87 @@
             nav.classList.toggle('active');
         });
 
-        // 레이어 팝업(Modal) 구동 자바스크립트
+        // ==========================================
+        // 사내망 보안 로그인 제어 스크립트
+        // ==========================================
+        function checkLoginState() {
+            const isLoggedIn = sessionStorage.getItem('batech_is_logged_in');
+            const guard = document.getElementById('loginGuardArea');
+            const content = document.getElementById('intranetContentArea');
+
+            if (isLoggedIn === 'true') {
+                guard.style.display = 'none';
+                content.style.display = 'block';
+            } else {
+                guard.style.display = 'flex';
+                content.style.display = 'none';
+            }
+        }
+
+        function tryLogin(e) {
+            e.preventDefault();
+            const id = document.getElementById('empId').value.trim();
+            const pw = document.getElementById('empPw').value.trim();
+            const errorMsg = document.getElementById('loginErrorMsg');
+
+            if (id === 'batech' && pw === '1234') {
+                errorMsg.style.display = 'none';
+                sessionStorage.setItem('batech_is_logged_in', 'true');
+                checkLoginState();
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        function doLogout() {
+            sessionStorage.removeItem('batech_is_logged_in');
+            checkLoginState();
+        }
+
+        // ==========================================
+        // 실시간 임직원 검색 필터 (Highlight & Dim)
+        // ==========================================
+        function filterEmployees() {
+            const query = document.getElementById('empSearchInput').value.trim().toLowerCase();
+            const cards = document.querySelectorAll('.org-card.ceo-node, .org-card.member-node');
+            
+            if (query === '') {
+                // 검색어가 없으면 모든 카드 상태 원복
+                cards.forEach(card => {
+                    card.classList.remove('dimmed');
+                    card.classList.remove('highlighted');
+                });
+                return;
+            }
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                const dept = card.getAttribute('data-dept').toLowerCase();
+                const position = card.getAttribute('data-position').toLowerCase();
+                const tasks = card.getAttribute('data-tasks').toLowerCase();
+
+                const isMatch = name.includes(query) || dept.includes(query) || position.includes(query) || tasks.includes(query);
+
+                if (isMatch) {
+                    card.classList.add('highlighted');
+                    card.classList.remove('dimmed');
+                } else {
+                    card.classList.add('dimmed');
+                    card.classList.remove('highlighted');
+                }
+            });
+        }
+
+        // ==========================================
+        // 상세 업무분장 모달 제어 스크립트
+        // ==========================================
         const detailModal = document.getElementById('detailModal');
         const closeDetailBtn = document.getElementById('closeDetailBtn');
         const modalEmpAvatar = document.getElementById('modalEmpAvatar');
         const modalEmpDept = document.getElementById('modalEmpDept');
         const modalEmpName = document.getElementById('modalEmpName');
-        const modalEmpPos = document.getElementById('modalEmpPos');
         const modalEmpTasks = document.getElementById('modalEmpTasks');
-        const modalEmpPhone = document.getElementById('modalEmpPhone');
+        const modalEmpPhoneLink = document.getElementById('modalEmpPhoneLink');
         const modalEmpArea = document.getElementById('modalEmpArea');
 
         // 카드 클릭 시 팝업 띄우기
@@ -770,6 +1019,7 @@
                 const position = card.getAttribute('data-position');
                 const tasksRaw = card.getAttribute('data-tasks');
                 const phone = card.getAttribute('data-phone');
+                const ext = card.getAttribute('data-ext');
                 const area = card.getAttribute('data-area');
                 const avatar = card.getAttribute('data-avatar');
 
@@ -777,7 +1027,11 @@
                 modalEmpAvatar.textContent = avatar;
                 modalEmpDept.textContent = dept;
                 modalEmpName.innerHTML = `${name} <span id="modalEmpPos">${position}</span>`;
-                modalEmpPhone.textContent = phone;
+                
+                // 내선번호 링크 및 텍스트 셋업 (스마트 다이얼링: tel:번호,내선)
+                modalEmpPhoneLink.setAttribute('href', `tel:${phone},${ext}`);
+                modalEmpPhoneLink.textContent = `${phone} (내선 ${ext})`;
+                
                 modalEmpArea.textContent = area;
 
                 // 업무분장 ';' 구분자로 잘라서 리스트 생성
@@ -791,17 +1045,15 @@
 
                 // 모달 팝업 열기
                 detailModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // 부모 페이지 스크롤 차단
+                document.body.style.overflow = 'hidden'; 
             });
         });
 
-        // 팝업 닫기 함수
         function closeDetailModal() {
             detailModal.classList.remove('active');
             document.body.style.overflow = '';
         }
 
-        // 닫기 클릭 바인딩
         closeDetailBtn.addEventListener('click', closeDetailModal);
         
         detailModal.addEventListener('click', (e) => {
@@ -815,6 +1067,9 @@
                 closeDetailModal();
             }
         });
+
+        // 초기 기동 시 로그인 상태 확인
+        window.addEventListener('DOMContentLoaded', checkLoginState);
     </script>
 </body>
 </html>

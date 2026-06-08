@@ -411,6 +411,272 @@
             font-weight: 600;
             color: #fff;
         }
+
+        /* 회사개요 전용 스타일 */
+        .overview-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, var(--bg-dark), rgba(10, 25, 50, 0.4));
+            position: relative;
+            border-top: 1px solid var(--glass-border);
+        }
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .overview-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .overview-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
+        }
+        .overview-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .overview-card-icon {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0, 229, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
+        .overview-card-title {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .overview-card-value {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        /* 캐러셀 슬라이더 스타일 */
+        .carousel-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 3.5rem;
+        }
+        .carousel-track-wrapper {
+            overflow: hidden;
+            width: 100%;
+            border-radius: 20px;
+            padding: 1rem 0;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            gap: 2rem;
+            width: 100%;
+        }
+        .carousel-slide {
+            flex: 0 0 calc(33.333% - 1.333rem); /* Default: 3 slides visible */
+            min-width: calc(33.333% - 1.333rem);
+            transition: transform 0.3s ease;
+        }
+        @media (max-width: 992px) {
+            .carousel-slide {
+                flex: 0 0 calc(50% - 1rem);
+                min-width: calc(50% - 1rem);
+            }
+        }
+        @media (max-width: 600px) {
+            .carousel-slide {
+                flex: 0 0 100%;
+                min-width: 100%;
+            }
+            .carousel-container {
+                padding: 0 1rem;
+            }
+            .carousel-btn {
+                display: none !important;
+            }
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(10, 25, 50, 0.8);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+            user-select: none;
+            backdrop-filter: blur(5px);
+        }
+        .carousel-btn:hover {
+            background: var(--primary-color);
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        }
+        .carousel-btn.prev {
+            left: 0;
+        }
+        .carousel-btn.next {
+            right: 0;
+        }
+        .carousel-btn.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .carousel-dot.active {
+            background: var(--secondary-color);
+            width: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        }
+
+        /* 가상 인증서(HTML Mockup) 스타일 */
+        .virtual-cert-container {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            background: #fff;
+            color: #222;
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            font-family: 'Noto Sans KR', sans-serif;
+            border: 10px double #0a253c;
+            overflow-y: auto;
+        }
+        .virtual-cert-header {
+            text-align: center;
+            border-bottom: 2px solid #0a253c;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .virtual-cert-org {
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .virtual-cert-main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0a253c;
+            letter-spacing: 4px;
+        }
+        .virtual-cert-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .virtual-cert-row {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 0;
+        }
+        .virtual-cert-label {
+            width: 140px;
+            font-weight: 700;
+            color: #333;
+            flex-shrink: 0;
+        }
+        .virtual-cert-value {
+            color: #555;
+        }
+        .virtual-cert-text {
+            text-align: justify;
+            margin-top: 1.5rem;
+            text-indent: 1rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        .virtual-cert-footer {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .virtual-cert-date {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+        .virtual-cert-issuer {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0a253c;
+            letter-spacing: 2px;
+        }
+        .virtual-cert-stamp {
+            position: absolute;
+            right: 20%;
+            bottom: -10px;
+            width: 65px;
+            height: 65px;
+            border: 3px solid rgba(220, 50, 50, 0.8);
+            border-radius: 50%;
+            color: rgba(220, 50, 50, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 800;
+            transform: rotate(-15deg);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            pointer-events: none;
+            letter-spacing: 1px;
+            text-align: center;
+            line-height: 1.2;
+            padding: 2px;
+        }
     </style>
 </head>
 <body>
@@ -429,7 +695,7 @@
                     <li><a href="sales.html" class="nav-link">업력</a></li>
                     <li><a href="campaign.html" class="nav-link">캠페인</a></li>
                     <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
-                    <li><a href="intranet.html" class="nav-link">사내망</a></li>
+                    <li><a href="intranet.html" class="nav-link">사내망 🔒</a></li>
                     <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
                 </ul>
             </nav>
@@ -496,146 +762,255 @@
             </div>
         </section>
 
-        <!-- 인증서 및 기술력 섹션 (신설) -->
+        <!-- 회사개요 섹션 -->
+        <section class="overview-section">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+                    <span class="hero-badge">Company Profile</span>
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-top: 0.5rem;">(주)비에이텍 <span class="highlight">회사 개요</span></h2>
+                    <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0; font-size: 1.05rem;">
+                        비에이텍의 핵심 기업 정보를 투명하게 공유합니다.
+                    </p>
+                </div>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">🏢</div>
+                            <div class="overview-card-title">회사명</div>
+                        </div>
+                        <div class="overview-card-value">비에이텍 주식회사</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">👤</div>
+                            <div class="overview-card-title">대표이사</div>
+                        </div>
+                        <div class="overview-card-value">조세연</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">📅</div>
+                            <div class="overview-card-title">설립일</div>
+                        </div>
+                        <div class="overview-card-value">2010년 11월 01일</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">⚙️</div>
+                            <div class="overview-card-title">업종</div>
+                        </div>
+                        <div class="overview-card-value">제조, 도매</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">📝</div>
+                            <div class="overview-card-title">사업자등록번호</div>
+                        </div>
+                        <div class="overview-card-value">221-81-42625</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">💧</div>
+                            <div class="overview-card-title">주요 생산 제품</div>
+                        </div>
+                        <div class="overview-card-value">모터펌프 (부스터/벌류트/수중 등)</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">📞</div>
+                            <div class="overview-card-title">대표 전화</div>
+                        </div>
+                        <div class="overview-card-value">
+                            <a href="tel:033-264-9243" style="color: inherit; text-decoration: underline;">033-264-9243</a>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">📠</div>
+                            <div class="overview-card-title">팩스 번호 (FAX)</div>
+                        </div>
+                        <div class="overview-card-value">033-251-5747</div>
+                    </div>
+                    <div class="overview-card" style="grid-column: span 2;">
+                        <div class="overview-card-header">
+                            <div class="overview-card-icon">📍</div>
+                            <div class="overview-card-title">소재지 (본사 및 공장)</div>
+                        </div>
+                        <div class="overview-card-value" style="font-size: 1.05rem;">강원특별자치도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 등록 및 인증 현황 캐러셀 섹션 -->
         <section class="cert-section" style="padding: 6rem 0; background: linear-gradient(180deg, var(--bg-dark), rgba(10, 25, 50, 0.3)); position: relative; overflow: hidden;">
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(0, 119, 255, 0.05) 0%, rgba(5, 11, 20, 0) 70%); pointer-events: none; z-index: 0;"></div>
             
             <div class="container" style="position: relative; z-index: 1;">
                 <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
                     <span class="hero-badge">품질과 신뢰의 증명</span>
-                    <h2 class="section-title" style="font-size: 2.5rem; margin-top: 0.5rem;">(주)비에이텍 <span class="highlight">인증 현황</span></h2>
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-top: 0.5rem;">(주)비에이텍 <span class="highlight">인증 및 등록 현황</span></h2>
                     <p style="color: var(--text-muted); max-width: 600px; margin: 1rem auto 0; font-size: 1.05rem;">
-                        엄격한 국제 기준과 공인 기관의 검증을 거친 기술력으로 한 차원 높은 품질의 펌프 서비스를 제공합니다.
+                        비에이텍의 특허 및 공인 기관 인증서입니다. 좌우 화살표를 눌러 8개의 인증 현황을 모두 확인하실 수 있습니다.
                     </p>
                 </div>
 
-                <div class="cert-grid">
-                    
-                    <!-- ISO 9001 인증서 -->
-                    <div class="cert-card">
-                        <div class="cert-badge-icon">✓</div>
-                        <h3 class="cert-title">ISO 9001:2015</h3>
-                        <h4 class="cert-sub">품질경영시스템 인증서</h4>
-                        <p class="cert-desc">
-                            부스터펌프시스템, 벌류트, 정량, 수중, 오수, 슬러지, 심정용 및 전진공동 펌프의 제조 분야에 대한 품질경영시스템 규격 인증을 성공적으로 획득하여 설계부터 제조까지 일관된 품질을 보장합니다.
-                        </p>
-                        <div class="cert-meta">
-                            <span><strong>인증번호:</strong> QI291124</span>
-                            <span><strong>인증범위:</strong> 부스터펌프시스템, 벌류트 등 펌프 제조</span>
-                            <span><strong>유효기간:</strong> 2024. 08. 23 ~ 2027. 08. 22</span>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" id="certCarouselPrev">&lsaquo;</button>
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="certCarouselTrack">
+                            
+                            <!-- 1. 사업자등록증 -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">사업자등록증</h3>
+                                    <h4 class="cert-sub">법인사업자 등록증명</h4>
+                                    <p class="cert-desc">
+                                        부스터 펌프 시스템 및 벌류트 펌프류 제조에 대한 대한민국 정식 법인 사업자등록을 마치고 투명한 경영활동을 하고 있습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>등록번호:</strong> 221-81-42625</span>
+                                        <span><strong>대표자:</strong> 조세연</span>
+                                        <span><strong>개업연월일:</strong> 2013년 02월 15일</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="1" data-title="사업자등록증 (법인사업자)">내용 확인하기</button>
+                                </div>
+                            </div>
+
+                            <!-- 2. 공장등록증명서 -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">공장등록증명서</h3>
+                                    <h4 class="cert-sub">자체 제조시설 공인 증명</h4>
+                                    <p class="cert-desc">
+                                        강원도 춘천에 액체 펌프 제조업을 영위하기 위한 부지 1,970.3㎡ 규모의 자체 제조공장을 허가 및 등록하여 생산라인을 가동하고 있습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>소재지:</strong> 퇴계제2농공단지내</span>
+                                        <span><strong>업종(분류):</strong> 액체 펌프 제조업 외 4종</span>
+                                        <span><strong>공장등록일:</strong> 2023.06.08</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="2" data-title="공장등록증명서">내용 확인하기</button>
+                                </div>
+                            </div>
+
+                            <!-- 3. 산업단지 입주 계약 확인서 -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">산업단지 입주계약</h3>
+                                    <h4 class="cert-sub">퇴계제2농공단지 입주 확인</h4>
+                                    <p class="cert-desc">
+                                        한국산업단지공단과의 정식 계약을 통하여 모터펌프 전문 제조공장으로 선정되어 공업단지 내 적법하고 안전한 가동 인프라를 확보했습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>단지명:</strong> 퇴계제2농공단지</span>
+                                        <span><strong>생산품:</strong> 모터펌프</span>
+                                        <span><strong>등록일자:</strong> 2023.06.26 (변경)</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="3" data-title="산업단지 입주 계약 확인서">내용 확인하기</button>
+                                </div>
+                            </div>
+
+                            <!-- 4. 직접생산확인증명서 -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">직접생산확인증명</h3>
+                                    <h4 class="cert-sub">중소벤처기업유통원 확인서</h4>
+                                    <p class="cert-desc">
+                                        다단/단단/양흡입/편흡입 벌류트 및 수중, 부스터펌프 등 11개 세부품명에 대하여 직접 핵심 부품을 생산 및 제조함을 국가기관을 통해 인증받았습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>증명서번호:</strong> 제 2023-0616-00085호</span>
+                                        <span><strong>인증제품:</strong> 배관유체조절시스템(펌프류)</span>
+                                        <span><strong>유효기간:</strong> 2023.07.19 ~ 2025.07.18</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="4" data-title="직접생산확인증명서">내용 확인하기</button>
+                                </div>
+                            </div>
+
+                            <!-- 5. 품질경영시스템 인증서 (ISO 9001) -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">ISO 9001:2015</h3>
+                                    <h4 class="cert-sub">품질경영시스템 국제인증</h4>
+                                    <p class="cert-desc">
+                                        부스터펌프시스템, 벌류트, 정량, 수중, 오수, 슬러지, 심정용 및 전진공동 펌프의 제조 전반에 대한 국제 표준 품질 시스템 규격을 획득하였습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>인증번호:</strong> QI291124</span>
+                                        <span><strong>인증기관:</strong> ICR</span>
+                                        <span><strong>유효기간:</strong> 2024.08.23 ~ 2027.08.22</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-pdf="ISO9001인증서.pdf" data-title="ISO 9001:2015 품질경영시스템 인증서">인증서 확인하기</button>
+                                </div>
+                            </div>
+
+                            <!-- 6. 경영혁신형 중소기업(MAIN-BIZ) 확인서 -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">MAIN-BIZ</h3>
+                                    <h4 class="cert-sub">경영혁신형 중소기업 확인</h4>
+                                    <p class="cert-desc">
+                                        중소벤처기업부로부터 마케팅, 조직관리, 프로세스 경영 전반의 비즈니스 모델 혁신 성과를 평가받아 미래성장 가치와 신뢰를 보장받았습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>확인번호:</strong> 제 R180801-01794 호</span>
+                                        <span><strong>발급기관:</strong> 중소벤처기업부 장관</span>
+                                        <span><strong>유효기간:</strong> 2024.09.14 ~ 2027.09.13</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-pdf="메인비즈 확인서(기한27.09.13.).pdf" data-title="MAIN-BIZ 경영혁신형 중소기업 확인서">확인서 확인하기</button>
+                                </div>
+                            </div>
+
+                            <!-- 7. 한국펌프공업협동조합 조합원증 -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">한국펌프조합원증</h3>
+                                    <h4 class="cert-sub">한국펌프공업협동조합원</h4>
+                                    <p class="cert-desc">
+                                        펌프 제조 부문의 전문 협동조합 정회원으로서 조합 규정과 품질 의무를 준수하며, 국내 조달 및 유통 시장 발전에 공헌하고 있습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>증서번호:</strong> 제 151 호</span>
+                                        <span><strong>발급일자:</strong> 2015년 01월 07일</span>
+                                        <span><strong>발급기관:</strong> 한국펌프공업협동조합 이사장</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="7" data-title="한국펌프공업협동조합 조합원증">내용 확인하기</button>
+                                </div>
+                            </div>
+
+                            <!-- 8. 표창장 -->
+                            <div class="carousel-slide">
+                                <div class="cert-card">
+                                    <div class="cert-badge-icon">✓</div>
+                                    <h3 class="cert-title">도지사 표창장</h3>
+                                    <h4 class="cert-sub">강원도지사 표창 수상</h4>
+                                    <p class="cert-desc">
+                                        도정과 지역발전에 헌신하고, 특히 도민의 안전한 물 보급을 위한 상수도 관리 및 유지보수 활동에 이바지한 공로를 인정받아 표창을 수여받았습니다.
+                                    </p>
+                                    <div class="cert-meta">
+                                        <span><strong>상장번호:</strong> 제 4334 호</span>
+                                        <span><strong>수여일자:</strong> 2017년 12월 29일</span>
+                                        <span><strong>수여자:</strong> 강원도지사 최문순</span>
+                                    </div>
+                                    <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="8" data-title="강원도지사 표창장">내용 확인하기</button>
+                                </div>
+                            </div>
+
                         </div>
-                        <button class="btn-primary open-cert-btn" data-pdf="ISO9001인증서.pdf" data-title="ISO 9001:2015 품질경영시스템 인증서">인증서 확인하기</button>
                     </div>
-
-                    <!-- KC 위생안전기준 인증서 -->
-                    <div class="cert-card">
-                        <div class="cert-badge-icon">✓</div>
-                        <h3 class="cert-title">KC 위생안전기준</h3>
-                        <h4 class="cert-sub">위생안전기준 인증서</h4>
-                        <p class="cert-desc">
-                            수도법 제14조제1항에 따라 먹는 물의 안전성과 직결된 부스터 펌프 시스템 장비의 수도용 자재 및 제품 위생안전기준을 엄격히 준수하여 신뢰를 높였습니다.
-                        </p>
-                        <div class="cert-meta">
-                            <span><strong>인증번호:</strong> KCW-2025-0163</span>
-                            <span><strong>인증제품:</strong> 부스터 펌프 시스템</span>
-                            <span><strong>유효기간:</strong> 2025. 09. 19 ~ 2027. 09. 18</span>
-                        </div>
-                        <button class="btn-primary open-cert-btn" data-pdf="KC인증서.pdf" data-title="KC 위생안전기준 인증서">인증서 확인하기</button>
-                    </div>
-
-                    <!-- 메인비즈 확인서 -->
-                    <div class="cert-card">
-                        <div class="cert-badge-icon">✓</div>
-                        <h3 class="cert-title">MAIN-BIZ</h3>
-                        <h4 class="cert-sub">경영혁신형 중소기업 확인서</h4>
-                        <p class="cert-desc">
-                            중소벤처기업부의 엄격한 혁신 역량 평가를 거쳐 마케팅, 조직관리, 경영시스템 등 비즈니스 프로세스 혁신을 이룬 기술 신뢰 기반의 경영혁신 기업으로 공인되었습니다.
-                        </p>
-                        <div class="cert-meta">
-                            <span><strong>확인번호:</strong> 제 R180801-01794 호</span>
-                            <span><strong>선정기관:</strong> 중소벤처기업부</span>
-                            <span><strong>유효기간:</strong> 2024. 09. 14 ~ 2027. 09. 13</span>
-                        </div>
-                        <button class="btn-primary open-cert-btn" data-pdf="메인비즈 확인서(기한27.09.13.).pdf" data-title="MAIN-BIZ 경영혁신형 중소기업 확인서">확인서 확인하기</button>
-                    </div>
-
+                    <button class="carousel-btn next" id="certCarouselNext">&rsaquo;</button>
+                    <div class="carousel-dots" id="certCarouselDots"></div>
                 </div>
             </div>
-        </section>
-
-        <!-- 인증서 단독 모달 팝업 구조 -->
-        <div id="certModal" class="cert-modal">
-            <div class="cert-modal-content">
-                <span class="cert-modal-close" id="closeModalBtn">&times;</span>
-                <div class="cert-modal-body">
-                    <!-- 좌우 화살표 내비게이션 버튼 -->
-                    <button id="pdfPrevBtn" class="pdf-nav-btn prev-btn">&lsaquo;</button>
-                    
-                    <div id="pdfSpinner" class="pdf-spinner">
-                        <div class="spinner-ring"></div>
-                        <p>인증서 이미지를 렌더링하고 있습니다...</p>
-                    </div>
-                    
-                    <div class="pdf-canvas-container">
-                        <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
-                    </div>
-                    
-                    <button id="pdfNextBtn" class="pdf-nav-btn next-btn">&rsaquo;</button>
-                    
-                    <!-- 페이지 번호 지시자 -->
-                    <div id="pdfPageNum" class="pdf-page-num">1 / 1</div>
-                </div>
-                <div class="cert-modal-footer">
-                    <span id="modalCertTitle" class="cert-modal-title">인증서 보기</span>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <a id="pdfOpenNewTabBtn" href="#" target="_blank" class="btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">새 창에서 열기</a>
-                        <a id="pdfDownloadBtn" href="#" download class="btn-primary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">다운로드</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer 시작 -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-info">
-                <div class="footer-logo">💧 B·A·Tech</div>
-                <p class="footer-desc">깨끗한 물의 가치를 소중히 여기는 기업, (주)비에이텍입니다.</p>
-            </div>
-            <div class="footer-links">
-                <div class="link-group">
-                    <h4>회사 정보</h4>
-                    <ul>
-                        <li><a href="intro.html">기업소개</a></li>
-                        <li><a href="sales.html">업력</a></li>
-                        <li><a href="map.html">오시는 길</a></li>
-                    </ul>
-                </div>
-                <div class="link-group">
-                    <h4>사업 분야</h4>
-                    <ul>
-                        <li><a href="product.html">주요제품</a></li>
-                        <li><a href="equipment.html">장비</a></li>
-                        <li><a href="campaign.html">캠페인</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
-        </div>
-    </footer>
-    <!-- Footer 끝 -->
-
-    <!-- PDF.js CDN 및 Worker 설정 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-    <script>
-        // pdf.js 전역 워커 설정
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
-    </script>
-
-    <script>
+<script>
         // Header scroll effect
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
@@ -668,7 +1043,97 @@
         const pdfPrevBtn = document.getElementById('pdfPrevBtn');
         const pdfNextBtn = document.getElementById('pdfNextBtn');
         const pdfPageNum = document.getElementById('pdfPageNum');
-        
+
+        // 가상 인증서 데이터베이스
+        const virtualCerts = {
+            "1": {
+                title: "사업자등록증",
+                org: "국세청",
+                issuer: "춘 천 세 무 서 장",
+                date: "2023년 11월 24일",
+                stamp: "춘천세무서장<br>인",
+                rows: [
+                    ["등록번호", "221-81-42625"],
+                    ["법인명(상호)", "비에이텍 주식회사 (Blue Advanced Technology Co., Ltd.)"],
+                    ["대표자", "조세연"],
+                    ["개업연월일", "2013년 02월 15일"],
+                    ["법인등록번호", "140111-0051140"],
+                    ["사업장 소재지", "강원특별자치도 춘천시 퇴계공단2길 64(퇴계동)"],
+                    ["본점 소재지", "강원특별자치도 춘천시 퇴계공단2길 64(퇴계동)"],
+                    ["사업의 종류", "업태: 제조업, 도소매, 부동산업 및 임대업<br>종목: 펌프, 금속 문·창·셔터 및 관련제품 제조업, 배관자재, 비주거용 건물 임대업"]
+                ]
+            },
+            "2": {
+                title: "공장등록증명서",
+                org: "한국산업단지공단",
+                issuer: "한국산업단지공단 이사장",
+                date: "2023년 06월 26일",
+                stamp: "한국산업단지<br>공단인",
+                rows: [
+                    ["회사명", "비에이텍주식회사"],
+                    ["공장 소재지", "강원특별자치도 춘천시 퇴계공단2길 64 (퇴계동 1264번지, 퇴계제2농공단지)"],
+                    ["공장 등록일", "2023년 06월 08일 (등록변경: 2023년 06월 26일)"],
+                    ["업종(분류번호)", "액체 펌프 제조업 외 4종 (29131, 25111, 29133, 29175, 29210)"],
+                    ["공장 면적", "부지: 1,970.3㎡ / 제조시설: 494㎡ / 부대시설: 280㎡"]
+                ]
+            },
+            "3": {
+                title: "산업단지 입주 계약 확인서",
+                org: "한국산업단지공단",
+                issuer: "한국산업단지공단 이사장",
+                date: "2023년 06월 26일",
+                stamp: "한국산업단지<br>공단인",
+                rows: [
+                    ["단지명", "퇴계제2농공단지"],
+                    ["회사명", "비에이텍주식회사"],
+                    ["대표자", "조세연"],
+                    ["생산품목", "모터펌프"],
+                    ["계약일자", "2023년 06월 26일 (변경 등록 완료)"],
+                    ["소재지", "강원특별자치도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)"]
+                ]
+            },
+            "4": {
+                title: "직접생산확인증명서",
+                org: "중소벤처기업부",
+                issuer: "한국중소벤처기업유통원",
+                date: "2023년 07월 19일",
+                stamp: "중소벤처기업<br>유통원인",
+                rows: [
+                    ["증명서 번호", "제 2023-0616-00085호"],
+                    ["경쟁제품명", "배관유체조절시스템장비및부품 (펌프류)"],
+                    ["유효기간", "2023년 07월 19일 ~ 2025년 07월 18일"],
+                    ["세부품명", "다단벌류트펌프, 단단벌류트펌프, 양흡입벌류트펌프, 편흡입벌류트펌프, 정량펌프, 수중펌프, 오수펌프, 슬러지펌프, 심정용펌프, 전진공동펌프, 부스터펌프"],
+                    ["생산 공장", "강원특별자치도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)"]
+                ]
+            },
+            "7": {
+                title: "한국펌프공업협동조합 조합원증",
+                org: "한국펌프공업협동조합",
+                issuer: "한국펌프공업협동조합 이사장",
+                date: "2015년 01월 07일",
+                stamp: "한국펌프공업<br>조합인",
+                rows: [
+                    ["증서 번호", "제 151 호"],
+                    ["업체명", "비에이텍주식회사"],
+                    ["대표자", "조세연"],
+                    ["소재지", "강원특별자치도 춘천시 퇴계공단2길 64"],
+                    ["인증 내용", "위 업체는 본 조합 정관 규정에 의거하여 정식 조합원임을 인증함."]
+                ]
+            },
+            "8": {
+                title: "표 창 장",
+                org: "강원특별자치도",
+                issuer: "강 원 도 지 사  최 문 순",
+                date: "2017년 12월 29일",
+                stamp: "강원도지사<br>인",
+                rows: [
+                    ["상장 번호", "제 4334 호"],
+                    ["수상자", "비에이텍 주식회사 (대표 조세연)"],
+                    ["공로 내용", "귀하는 평소 도정과 지역 사회 발전에 헌신적으로 협력하여 왔으며, 특히 상수도 관리 활동 및 수질 환경 개선에 기여한 공로가 크므로 이에 표창합니다."]
+                ]
+            }
+        };
+
         let pdfDoc = null;
         let pageNum = 1;
         let pageRendering = false;
@@ -677,13 +1142,11 @@
         // 특정 페이지 렌더링 공통 함수
         async function renderPage(num) {
             pageRendering = true;
-            pdfCanvas.style.opacity = '0.3'; // 부드러운 전환 효과를 위해 반투명화
+            pdfCanvas.style.opacity = '0.3'; 
 
             try {
                 const page = await pdfDoc.getPage(num);
                 const ctx = pdfCanvas.getContext('2d');
-                
-                // 모달 가로폭 등에 맞추어 2.0 고배율 스케일 렌더링
                 const viewport = page.getViewport({ scale: 2.0 });
 
                 pdfCanvas.width = viewport.width;
@@ -694,7 +1157,6 @@
                     viewport: viewport
                 };
 
-                // 진행 중인 렌더링 작업이 있다면 안전하게 취소
                 if (currentRenderTask) {
                     currentRenderTask.cancel();
                 }
@@ -702,12 +1164,10 @@
                 currentRenderTask = page.render(renderContext);
                 await currentRenderTask.promise;
 
-                // 렌더링 완료 후 UI 및 스타일 스위칭
                 pdfSpinner.style.display = 'none';
                 pdfCanvas.style.display = 'block';
                 pdfCanvas.style.opacity = '1';
                 
-                // 페이지 지시자 인덱스 업데이트
                 pdfPageNum.textContent = `${num} / ${pdfDoc.numPages}`;
                 pageRendering = false;
             } catch (error) {
@@ -722,38 +1182,44 @@
             }
         }
 
-        // 이전 페이지 슬라이딩
         function onPrevPage() {
             if (pageNum <= 1 || pageRendering) return;
             pageNum--;
             renderPage(pageNum);
         }
 
-        // 다음 페이지 슬라이딩
         function onNextPage() {
             if (pageNum >= pdfDoc.numPages || pageRendering) return;
             pageNum++;
             renderPage(pageNum);
         }
 
-        // 좌우 슬라이드 화살표 클릭 이벤트 바인딩
         pdfPrevBtn.addEventListener('click', onPrevPage);
         pdfNextBtn.addEventListener('click', onNextPage);
 
-        // 모달 열기 및 PDF 문서 해석 로직
+        // 모달 열기 및 PDF/Virtual 분기 처리 로직
         document.querySelectorAll('.open-cert-btn').forEach(btn => {
             btn.addEventListener('click', async () => {
                 const pdfUrl = btn.getAttribute('data-pdf');
                 const pdfTitle = btn.getAttribute('data-title');
+                const certType = btn.getAttribute('data-type');
+                const certIndex = btn.getAttribute('data-cert-index');
 
-                // 모달 텍스트 및 기본 링크 주입
+                // 모달 기본 텍스트
                 modalCertTitle.textContent = pdfTitle;
-                pdfDownloadBtn.setAttribute('href', pdfUrl);
-                pdfOpenNewTabBtn.setAttribute('href', pdfUrl);
 
                 // 모달 보이기
                 certModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // 부모 페이지 스크롤 차단
+                document.body.style.overflow = 'hidden'; 
+
+                // Canvas Container 가져오기
+                const canvasContainer = document.querySelector('.pdf-canvas-container');
+
+                // 이전의 가상 인증서 HTML 제거
+                const oldVirtual = canvasContainer.querySelector('.virtual-cert-container');
+                if (oldVirtual) {
+                    oldVirtual.remove();
+                }
 
                 // 매번 모달이 열릴 때마다 제어 UI 초기화
                 pdfCanvas.style.display = 'none';
@@ -761,34 +1227,72 @@
                 pdfPrevBtn.style.display = 'none';
                 pdfNextBtn.style.display = 'none';
                 pdfPageNum.style.display = 'none';
+                pdfDownloadBtn.style.display = 'inline-block';
+                pdfOpenNewTabBtn.style.display = 'inline-block';
 
                 pageNum = 1;
                 pdfDoc = null;
 
-                try {
-                    // PDF.js를 사용한 로딩 타스크 생성
-                    const loadingTask = pdfjsLib.getDocument(pdfUrl);
-                    pdfDoc = await loadingTask.promise;
+                if (certType === 'virtual' && virtualCerts[certIndex]) {
+                    // 가상 인증서 생성 (HTML/CSS 렌더링)
+                    const data = virtualCerts[certIndex];
+                    pdfSpinner.style.display = 'none';
+                    pdfDownloadBtn.style.display = 'none'; // 가상 인증서는 다운로드/새창 비활성화
+                    pdfOpenNewTabBtn.style.display = 'none';
 
-                    // 페이지가 2장 이상인 경우에만 이전/다음 화살표 및 페이지 카운트 UI 활성화
-                    if (pdfDoc.numPages > 1) {
-                        pdfPrevBtn.style.display = 'flex';
-                        pdfNextBtn.style.display = 'flex';
-                        pdfPageNum.style.display = 'block';
-                    } else {
-                        pdfPrevBtn.style.display = 'none';
-                        pdfNextBtn.style.display = 'none';
-                        pdfPageNum.style.display = 'none';
-                    }
+                    const vCert = document.createElement('div');
+                    vCert.className = 'virtual-cert-container';
+                    
+                    let rowsHtml = '';
+                    data.rows.forEach(row => {
+                        rowsHtml += `
+                            <div class="virtual-cert-row">
+                                <div class="virtual-cert-label">${row[0]}</div>
+                                <div class="virtual-cert-value">${row[1]}</div>
+                            </div>
+                        `;
+                    });
 
-                    // 1페이지 렌더링 개시
-                    await renderPage(pageNum);
-                } catch (error) {
-                    console.error('PDF Load Error:', error);
-                    pdfSpinner.innerHTML = `
-                        <p style="color: #ff4d4d; font-size: 1.1rem; margin-bottom: 0.5rem;">인증서 로드 실패</p>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">브라우저 환경에 따라 이미지를 열지 못했습니다.<br>하단의 다운로드 버튼을 이용해주세요.</p>
+                    vCert.innerHTML = `
+                        <div class="virtual-cert-header">
+                            <div class="virtual-cert-org">${data.org}</div>
+                            <div class="virtual-cert-main-title">${data.title}</div>
+                        </div>
+                        <div class="virtual-cert-body">
+                            ${rowsHtml}
+                            ${certIndex === "8" ? `<div class="virtual-cert-text">위와 같이 표창장을 수여하였음을 증명합니다.</div>` : ""}
+                        </div>
+                        <div class="virtual-cert-footer">
+                            <div class="virtual-cert-date">${data.date}</div>
+                            <div class="virtual-cert-issuer">${data.issuer}</div>
+                            <div class="virtual-cert-stamp">${data.stamp}</div>
+                        </div>
                     `;
+                    
+                    canvasContainer.appendChild(vCert);
+                } else {
+                    // PDF 로더 기동
+                    pdfDownloadBtn.setAttribute('href', pdfUrl);
+                    pdfOpenNewTabBtn.setAttribute('href', pdfUrl);
+
+                    try {
+                        const loadingTask = pdfjsLib.getDocument(pdfUrl);
+                        pdfDoc = await loadingTask.promise;
+
+                        if (pdfDoc.numPages > 1) {
+                            pdfPrevBtn.style.display = 'flex';
+                            pdfNextBtn.style.display = 'flex';
+                            pdfPageNum.style.display = 'block';
+                        }
+
+                        await renderPage(pageNum);
+                    } catch (error) {
+                        console.error('PDF Load Error:', error);
+                        pdfSpinner.innerHTML = `
+                            <p style="color: #ff4d4d; font-size: 1.1rem; margin-bottom: 0.5rem;">인증서 로드 실패</p>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">인증서 파일을 찾을 수 없거나 브라우저 환경에서 열지 못했습니다.</p>
+                        `;
+                    }
                 }
             });
         });
@@ -806,22 +1310,136 @@
             pdfDoc = null;
             pageNum = 1;
             pageRendering = false;
+
+            const canvasContainer = document.querySelector('.pdf-canvas-container');
+            const virtual = canvasContainer.querySelector('.virtual-cert-container');
+            if (virtual) {
+                virtual.remove();
+            }
         }
 
-        // 닫기 트리거 등록
         closeModalBtn.addEventListener('click', closeCertModal);
-        
         certModal.addEventListener('click', (e) => {
             if (e.target === certModal) {
                 closeCertModal();
             }
         });
-
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && certModal.classList.contains('active')) {
                 closeCertModal();
             }
         });
-    </script>
+
+        // ==========================================
+        // 등록 및 인증 현황 캐러셀 슬라이더 구동 스크립트
+        // ==========================================
+        const carouselTrack = document.getElementById('certCarouselTrack');
+        const carouselSlides = Array.from(carouselTrack.children);
+        const carouselPrevBtn = document.getElementById('certCarouselPrev');
+        const carouselNextBtn = document.getElementById('certCarouselNext');
+        const carouselDotsContainer = document.getElementById('certCarouselDots');
+        
+        let carouselIndex = 0;
+        let visibleSlides = 3;
+
+        function updateVisibleSlides() {
+            const width = window.innerWidth;
+            if (width <= 600) {
+                visibleSlides = 1;
+            } else if (width <= 992) {
+                visibleSlides = 2;
+            } else {
+                visibleSlides = 3;
+            }
+        }
+
+        function getSlideWidth() {
+            if (carouselSlides.length === 0) return 0;
+            return carouselSlides[0].getBoundingClientRect().width;
+        }
+
+        function getGap() {
+            return 32;
+        }
+
+        function renderCarouselDots() {
+            carouselDotsContainer.innerHTML = '';
+            const maxIndex = carouselSlides.length - visibleSlides + 1;
+            const numDots = Math.max(1, maxIndex);
+            
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${i === carouselIndex ? 'active' : ''}`;
+                dot.addEventListener('click', () => {
+                    carouselIndex = i;
+                    slideCarousel();
+                });
+                carouselDotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateCarouselArrows() {
+            const maxIndex = carouselSlides.length - visibleSlides;
+            if (carouselIndex <= 0) {
+                carouselPrevBtn.classList.add('disabled');
+            } else {
+                carouselPrevBtn.classList.remove('disabled');
+            }
+
+            if (carouselIndex >= maxIndex) {
+                carouselNextBtn.classList.add('disabled');
+            } else {
+                carouselNextBtn.classList.remove('disabled');
+            }
+        }
+
+        function slideCarousel() {
+            const slideWidth = getSlideWidth();
+            const gap = getGap();
+            const offset = carouselIndex * (slideWidth + gap);
+            carouselTrack.style.transform = `translateX(-${offset}px)`;
+            
+            const dots = Array.from(carouselDotsContainer.children);
+            dots.forEach((dot, idx) => {
+                if (idx === carouselIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            updateCarouselArrows();
+        }
+
+        carouselPrevBtn.addEventListener('click', () => {
+            if (carouselIndex > 0) {
+                carouselIndex--;
+                slideCarousel();
+            }
+        });
+
+        carouselNextBtn.addEventListener('click', () => {
+            const maxIndex = carouselSlides.length - visibleSlides;
+            if (carouselIndex < maxIndex) {
+                carouselIndex++;
+                slideCarousel();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            updateVisibleSlides();
+            const maxIndex = carouselSlides.length - visibleSlides;
+            if (carouselIndex > maxIndex) {
+                carouselIndex = Math.max(0, maxIndex);
+            }
+            renderCarouselDots();
+            slideCarousel();
+        });
+
+        // 초기 기동 실행
+        updateVisibleSlides();
+        renderCarouselDots();
+        updateCarouselArrows();
+</script>
 </body>
 </html>

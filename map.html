@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="(주)비에이텍 찾아오시는 길 - 본사 위치 및 연락처 안내">
+    <meta name="description" content="(주)비에이텍 찾아오시는 길 - 본사 및 공장 위치 및 고객 지원 연락처 안내">
     <title>찾아오시는 길 | (주)비에이텍</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,16 +31,17 @@
         .map-container {
             background: var(--bg-card);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 2rem;
             backdrop-filter: blur(10px);
             margin-bottom: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
         .map-iframe-wrapper {
             width: 100%;
-            height: 450px;
-            border-radius: 15px;
+            height: 480px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(0, 119, 255, 0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -50,44 +51,114 @@
             width: 100%;
             height: 100%;
             border: none;
-            filter: invert(90%) hue-rotate(180deg); /* Dark mode map effect */
+            filter: invert(90%) hue-rotate(180deg); /* Sleek Dark Theme Map */
+        }
+
+        .map-links-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .map-api-btn {
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .map-api-btn.kakao {
+            background-color: #fee500;
+            color: #191919;
+            border: none;
+        }
+        .map-api-btn.kakao:hover {
+            background-color: #e2cb00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(254, 229, 0, 0.3);
+        }
+
+        .map-api-btn.naver {
+            background-color: #03c75a;
+            color: #fff;
+            border: none;
+        }
+        .map-api-btn.naver:hover {
+            background-color: #02a64a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(3, 199, 90, 0.3);
         }
 
         .contact-info-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .info-card {
             background: rgba(10, 25, 50, 0.5);
             border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
             text-align: center;
             transition: var(--transition);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .info-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-color: var(--secondary-color);
+            box-shadow: 0 15px 30px rgba(0, 229, 255, 0.15);
         }
 
         .info-icon {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 119, 255, 0.1);
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
         }
 
         .info-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #fff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
         }
 
         .info-desc {
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+
+        .info-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        .info-link:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
         }
     </style>
 </head>
@@ -106,7 +177,7 @@
                     <li><a href="sales.html" class="nav-link">업력</a></li>
                     <li><a href="campaign.html" class="nav-link">캠페인</a></li>
                     <li><a href="map.html" class="nav-link" style="color: #fff;">찾아오시는 길</a></li>
-                    <li><a href="intranet.html" class="nav-link">사내망</a></li>
+                    <li><a href="intranet.html" class="nav-link">사내망 🔒</a></li>
                     <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
                 </ul>
             </nav>
@@ -120,7 +191,7 @@
         <section class="sub-hero">
             <h1 class="sub-hero-title">찾아오시는 <span class="highlight">길</span></h1>
             <p class="sub-hero-desc" style="max-width:600px; margin:0 auto; color:var(--text-muted);">
-                비에이텍 본사 및 공장으로 오시는 길을 안내해 드립니다. 언제든 환영합니다.
+                비에이텍 본사 및 공장으로 오시는 길을 상세히 알려드립니다.
             </p>
         </section>
 
@@ -128,8 +199,17 @@
             <div class="container">
                 <div class="map-container">
                     <div class="map-iframe-wrapper">
-                        <!-- Placeholder Map using Google Maps embed -->
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x357ca2012d5c39cf%3A0x7e11eca1405bf29b!2z7ISc7Jq47Yq567OE7Iuc!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- Google Maps pointing exactly to Toegye Industrial Complex 2-gil 64 -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x3562e5b7740263f3%3A0x4bf288e7b95764d7!2z6rCV7JuQ7Yq567OE7J6Q7LmY64-EIOy2mOyynOyLnCDthrTqs4Tqs7Xri6gy6pilIDY0!5e0!3m2!1sko!2skr!4v1717830000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <!-- 국산 맵 길찾기 딥링크 핫키 제공 -->
+                    <div class="map-links-row">
+                        <a href="https://map.kakao.com/link/to/비에이텍(주),37.854743,127.734612" target="_blank" class="map-api-btn kakao">
+                            💛 카카오맵 길찾기
+                        </a>
+                        <a href="https://map.naver.com/v5/search/강원특별자치도%20춘천시%20퇴계공단2길%2064" target="_blank" class="map-api-btn naver">
+                            💚 네이버 지도 길찾기
+                        </a>
                     </div>
                 </div>
 
@@ -137,22 +217,28 @@
                     <div class="info-card">
                         <div class="info-icon">📍</div>
                         <h3 class="info-title">주소</h3>
-                        <p class="info-desc">서울특별시 강남구 테헤란로 123<br>비에이텍 타워 7층</p>
+                        <p class="info-desc">강원특별자치도 춘천시 퇴계공단2길 64<br>(퇴계동 1264번지, 퇴계제2농공단지내)</p>
                     </div>
                     <div class="info-card">
                         <div class="info-icon">📞</div>
-                        <h3 class="info-title">연락처</h3>
-                        <p class="info-desc">TEL: 02-1234-5678<br>FAX: 02-1234-5679</p>
+                        <h3 class="info-title">전화번호 (TEL)</h3>
+                        <p class="info-desc" style="margin-bottom: 0.4rem;">상담 및 기술지원 문의:</p>
+                        <p class="info-desc" style="font-size: 1.2rem; font-weight: 700; color:#fff;">
+                            <a href="tel:033-264-9243" class="info-link">033-264-9243</a>
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📠</div>
+                        <h3 class="info-title">팩스번호 (FAX)</h3>
+                        <p class="info-desc" style="margin-bottom: 0.4rem;">서류 전송 및 조달 거래:</p>
+                        <p class="info-desc" style="font-size: 1.2rem; font-weight: 700; color:#fff;">
+                            033-251-5747
+                        </p>
                     </div>
                     <div class="info-card">
                         <div class="info-icon">🚗</div>
-                        <h3 class="info-title">주차 안내</h3>
-                        <p class="info-desc">건물 지하 2층~4층 주차장 이용<br>(방문객 2시간 무료)</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">🚇</div>
-                        <h3 class="info-title">대중교통</h3>
-                        <p class="info-desc">지하철 2호선 역삼역 3번 출구<br>도보 5분 거리</p>
+                        <h3 class="info-title">교통 및 주차</h3>
+                        <p class="info-desc">농공단지 진입 후 A동 전용 무료 주차장 이용 가능 (내방객 무료 주차)</p>
                     </div>
                 </div>
             </div>
@@ -170,5 +256,26 @@
             <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.querySelector('.nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

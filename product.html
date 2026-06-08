@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="(주)비에이텍 주요제품 - 산업용, 농업용, 가정용 고효율 워터펌프 라인업">
+    <meta name="description" content="(주)비에이텍 주요제품 - B2B 조달 및 직접생산확인 모터펌프 11종 카탈로그">
     <title>주요제품 | (주)비에이텍</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,14 +25,93 @@
         }
 
         .product-section {
-            padding: 5rem 0;
+            padding: 4rem 0 6rem;
+        }
+
+        /* 검색 및 필터 UI 디자인 */
+        .filter-controls-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            margin-bottom: 3rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .search-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            flex-grow: 1;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: rgba(5, 11, 20, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 1rem 1.5rem 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+        }
+
+        .search-box .search-icon {
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .category-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-chip:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-chip.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-color: transparent;
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
         }
 
         .product-card {
@@ -42,6 +121,9 @@
             overflow: hidden;
             position: relative;
             transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .product-card:hover {
@@ -51,66 +133,107 @@
         }
 
         .product-img-box {
-            height: 250px;
-            background: #0a1932;
+            height: 200px;
+            background: linear-gradient(180deg, rgba(10, 25, 50, 0.9) 0%, rgba(5, 11, 20, 0.9) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .product-img-box img {
-            max-width: 80%;
-            max-height: 80%;
+        .product-img-box svg {
+            width: 90px;
+            height: 90px;
+            color: var(--secondary-color);
             transition: transform 0.5s ease;
+            filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.3));
         }
 
-        .product-card:hover .product-img-box img {
-            transform: scale(1.1);
+        .product-card:hover .product-img-box svg {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .product-info {
             padding: 2rem;
-            position: relative;
-            z-index: 2;
-            background: rgba(10, 25, 50, 0.8);
-            backdrop-filter: blur(10px);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-category {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--secondary-color);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
             display: block;
+            font-weight: 600;
         }
 
         .product-name {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #fff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .product-code-badge {
+            display: inline-block;
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1.2rem;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .product-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
         }
 
         .product-specs {
             list-style: none;
             padding: 0;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.2rem;
         }
 
         .product-specs li {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
             display: flex;
             align-items: center;
         }
 
         .product-specs li::before {
-            content: '•';
-            color: var(--primary-light);
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: bold;
             margin-right: 8px;
+            font-size: 0.85rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 6rem 1rem;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            grid-column: 1 / -1;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
         }
     </style>
 </head>
@@ -129,7 +252,7 @@
                     <li><a href="sales.html" class="nav-link">업력</a></li>
                     <li><a href="campaign.html" class="nav-link">캠페인</a></li>
                     <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
-                    <li><a href="intranet.html" class="nav-link">사내망</a></li>
+                    <li><a href="intranet.html" class="nav-link">사내망 🔒</a></li>
                     <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
                 </ul>
             </nav>
@@ -143,61 +266,31 @@
         <section class="sub-hero">
             <h1 class="sub-hero-title"><span class="highlight">주요</span>제품</h1>
             <p class="sub-hero-desc" style="max-width:600px; margin:0 auto; color:var(--text-muted);">
-                압도적인 퍼포먼스와 내구성을 자랑하는 비에이텍의 고성능 워터펌프 라인업입니다.
+                조달청 등록 중기간경쟁물품이자 직접생산확인을 획득한 고성능 모터펌프 11종 라인업입니다.
             </p>
         </section>
 
         <section class="product-section">
             <div class="container">
-                <div class="product-grid">
-                    <!-- Product 1 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://via.placeholder.com/300x200/0a1932/0077ff?text=산업용+다단+펌프" alt="산업용 다단 펌프">
-                        </div>
-                        <div class="product-info">
-                            <span class="product-category">Industrial</span>
-                            <h3 class="product-name">BA-PRO 5000 다단 펌프</h3>
-                            <ul class="product-specs">
-                                <li>고양정 대유량 압송</li>
-                                <li>스테인리스 스틸 임펠러 적용</li>
-                                <li>에너지 고효율 인버터 제어</li>
-                            </ul>
-                            <a href="inquiry.html" class="btn-secondary" style="width:100%; text-align:center;">제품 문의</a>
+                <!-- 검색 및 필터 패널 -->
+                <div class="filter-controls-wrapper">
+                    <div class="search-row">
+                        <div class="search-box">
+                            <span class="search-icon">🔍</span>
+                            <input type="text" id="productSearch" placeholder="제품명 또는 물품분류번호(10자리) 입력..." oninput="filterProducts()">
                         </div>
                     </div>
-                    <!-- Product 2 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://via.placeholder.com/300x200/0a1932/0077ff?text=농업용+엔진+펌프" alt="농업용 엔진 펌프">
-                        </div>
-                        <div class="product-info">
-                            <span class="product-category">Agricultural</span>
-                            <h3 class="product-name">BA-AGRI 300 엔진 펌프</h3>
-                            <ul class="product-specs">
-                                <li>전기 없는 야외 환경 최적화</li>
-                                <li>강력한 흡입력 및 내구성</li>
-                                <li>경량화 설계로 이동성 확보</li>
-                            </ul>
-                            <a href="inquiry.html" class="btn-secondary" style="width:100%; text-align:center;">제품 문의</a>
-                        </div>
+                    <div class="category-row">
+                        <button class="filter-chip active" data-filter="all" onclick="setCategory(this)">전체 보기</button>
+                        <button class="filter-chip" data-filter="volute" onclick="setCategory(this)">벌류트 펌프류</button>
+                        <button class="filter-chip" data-filter="submersible" onclick="setCategory(this)">수중/특수 펌프류</button>
+                        <button class="filter-chip" data-filter="pressure" onclick="setCategory(this)">정밀/가압 펌프류</button>
                     </div>
-                    <!-- Product 3 -->
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="https://via.placeholder.com/300x200/0a1932/0077ff?text=가정용+가압+펌프" alt="가정용 가압 펌프">
-                        </div>
-                        <div class="product-info">
-                            <span class="product-category">Residential</span>
-                            <h3 class="product-name">BA-HOME 150 저소음 펌프</h3>
-                            <ul class="product-specs">
-                                <li>실내 설치 가능한 초저소음</li>
-                                <li>스마트 수압 감지 센서 탑재</li>
-                                <li>녹 발생 없는 친환경 소재</li>
-                            </ul>
-                            <a href="inquiry.html" class="btn-secondary" style="width:100%; text-align:center;">제품 문의</a>
-                        </div>
-                    </div>
+                </div>
+
+                <!-- 제품 그리드 영역 -->
+                <div class="product-grid" id="productGrid">
+                    <!-- JS 동적 렌더링 -->
                 </div>
             </div>
         </section>
@@ -214,5 +307,245 @@
             <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- 펌프 종류별 커스텀 SVG 아이콘 정의 -->
+    <svg style="display: none;">
+        <!-- 벌류트형 펌프 아이콘 -->
+        <g id="svg-pump-volute">
+            <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="6"/>
+            <path d="M 50 10 L 50 20 M 80 50 L 70 50 M 50 90 L 50 80 M 20 50 L 30 50" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 50 50 L 30 30 M 50 50 L 70 30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <rect x="75" y="42" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="5"/>
+            <line x1="85" y1="25" x2="85" y2="42" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <!-- 수중형 펌프 아이콘 -->
+        <g id="svg-pump-submersible">
+            <rect x="30" y="20" width="40" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="6"/>
+            <line x1="30" y1="40" x2="70" y2="40" stroke="currentColor" stroke-width="4"/>
+            <line x1="30" y1="60" x2="70" y2="60" stroke="currentColor" stroke-width="4"/>
+            <path d="M 50 20 L 50 8 M 40 8 L 60 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 20 85 Q 35 75 50 85 T 80 85" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <!-- 정압/가압형 펌프 아이콘 -->
+        <g id="svg-pump-pressure">
+            <rect x="25" y="30" width="30" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="5"/>
+            <rect x="55" y="35" width="22" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="5"/>
+            <circle cx="66" cy="50" r="6" fill="currentColor"/>
+            <line x1="40" y1="30" x2="40" y2="15" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M 35 15 L 45 15" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <line x1="77" y1="50" x2="88" y2="50" stroke="currentColor" stroke-width="5"/>
+        </g>
+    </svg>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.querySelector('.nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // ==========================================
+        // 직접생산확인 물품 데이터베이스 (11종)
+        // ==========================================
+        const productsData = [
+            {
+                code: "4015150301",
+                name: "다단벌류트펌프",
+                category: "volute",
+                categoryKo: "벌류트 펌프류",
+                engName: "Multi-stage Volute Pump",
+                desc: "여러 개의 임펠러를 직렬로 배치하여 고양정이 요구되는 대규모 가압 송수 및 공업용 급수 계통에 최적화된 고효율 벌류트 펌프입니다.",
+                specs: ["고압수 압송 특화", "다단 구조로 고양정 확보", "스테인리스 재질 적용"],
+                icon: "volute"
+            },
+            {
+                code: "4015150302",
+                name: "단단벌류트펌프",
+                category: "volute",
+                categoryKo: "벌류트 펌프류",
+                engName: "Single-stage Volute Pump",
+                desc: "단일 임펠러 구조로 제작되어 농업용 취수, 일반 배수, 빌딩 냉온수 순환 등 넓은 분야에 사용되는 표준 규격의 벌류트 펌프입니다.",
+                specs: ["간결한 구조로 유지관리 용이", "안정적인 유량 공급", "부식 방지 특수도장"],
+                icon: "volute"
+            },
+            {
+                code: "4015150303",
+                name: "양흡입벌류트펌프",
+                category: "volute",
+                categoryKo: "벌류트 펌프류",
+                engName: "Double-suction Volute Pump",
+                desc: "임펠러 양면에서 유체를 흡입하여 축 방향 추력을 제거하고 대용량 양수가 가능하여 대규모 정수장이나 공장 급수계통에 적합합니다.",
+                specs: ["대용량 유체 압송", "수격 현상 방지 설계", "진동 최소화로 수명 연장"],
+                icon: "volute"
+            },
+            {
+                code: "4015150304",
+                name: "편흡입벌류트펌프",
+                category: "volute",
+                categoryKo: "벌류트 펌프류",
+                engName: "End-suction Volute Pump",
+                desc: "축 방향으로 흡입하고 반경 방향으로 토출하는 구조로 범용성이 매우 높으며, 다양한 기계 장비의 냉각수 순환 및 급수용으로 적합합니다.",
+                specs: ["콤팩트한 표준 유체 설계", "에너지 효율 등급 만족", "부스터 및 가압 시스템 연동"],
+                icon: "volute"
+            },
+            {
+                code: "4015150501",
+                name: "정량펌프",
+                category: "pressure",
+                categoryKo: "정밀/가압 펌프류",
+                engName: "Metering Pump",
+                desc: "주입 압력에 관계없이 정밀하게 일정량의 약품이나 액체를 토출하며, 정수/하수 처리 공정의 화학약품 주입 시스템에 주로 사용됩니다.",
+                specs: ["정밀 토출 오차 ±1% 이내", "내화학성 특수 씰 탑재", "디지털 제어 드라이브 연동"],
+                icon: "pressure"
+            },
+            {
+                code: "4015151301",
+                name: "수중펌프",
+                category: "submersible",
+                categoryKo: "수중/특수 펌프류",
+                engName: "Submersible Pump",
+                desc: "유체 내부에 모터를 완전히 침수시켜 양수하는 펌프로 소음이 없으며 깊은 우물, 지하 배수 및 토목 현장에서 널리 활약합니다.",
+                specs: ["완벽 이중 방수 모터", "수중 연속 가동 최적화", "과열 방지 서멀 프로텍터"],
+                icon: "submersible"
+            },
+            {
+                code: "4015151701",
+                name: "오수펌프",
+                category: "submersible",
+                categoryKo: "수중/특수 펌프류",
+                engName: "Sewage Pump",
+                desc: "건물 지하, 주방, 화장실 등에서 발생하는 고형물이 포함된 생활 오수를 안전하게 이송하기 위해 입자가 큰 슬러리도 통과할 수 있게 설계되었습니다.",
+                specs: ["조대 고형물 통과 설계", "내마모성 임펠러 재질", "비폐쇄형 보텍스 구조"],
+                icon: "submersible"
+            },
+            {
+                code: "4015152501",
+                name: "슬러지펌프",
+                category: "submersible",
+                categoryKo: "수중/특수 펌프류",
+                engName: "Sludge Pump",
+                desc: "고농도의 끈적끈적한 찌꺼기나 슬러지를 모터 손상 없이 이송할 수 있도록 강력한 절단날(커터)이나 고점도용 비막힘형 임펠러가 장착되어 있습니다.",
+                specs: ["고농도 하수 슬러지 이송", "커팅 임펠러 옵션 선택 가능", "내구성이 뛰어난 메카니컬 씰"],
+                icon: "submersible"
+            },
+            {
+                code: "4015154701",
+                name: "심정용펌프",
+                category: "submersible",
+                categoryKo: "수중/특수 펌프류",
+                engName: "Deep Well Pump",
+                desc: "깊은 지하수가 있는 소구경 심정 우물에 매립할 수 있도록 얇은 원통형 외경으로 설계되어, 농촌 용수 및 지하 상수도 개발에 필수적입니다.",
+                specs: ["슬림형 원통 바디", "고압 고양정 압송 실현", "모래 마모 방지 다단계 스테이지"],
+                icon: "submersible"
+            },
+            {
+                code: "4015155301",
+                name: "전진공동펌프",
+                category: "pressure",
+                categoryKo: "정밀/가압 펌프류",
+                engName: "Progressive Cavity Pump",
+                desc: "로터와 스테이터 사이의 회전형 공동을 통해 유체를 강제로 전진 압송하며, 슬러리, 고점도 페이스트, 식품 원료 이송에 탁월합니다.",
+                specs: ["무맥동 정량 압송", "초고점도 액체 이송 실현", "역방향 운전 제어 가능"],
+                icon: "pressure"
+            },
+            {
+                code: "4015156601",
+                name: "부스터펌프",
+                category: "pressure",
+                categoryKo: "정밀/가압 펌프류",
+                engName: "Booster Pump System",
+                desc: "아파트, 빌딩, 공장 등에서 실시간 물 사용량 변화를 감지하고 복수의 인버터 제어 펌프를 병렬 운전하여 수도 배관에 일정한 압력을 보장하는 가압 시스템입니다.",
+                specs: ["에너지 절감 인버터 내장", "터치스크린 스마트 컨트롤러", "세대별 고른 수압 제공"],
+                icon: "pressure"
+            }
+        ];
+
+        let selectedCategory = "all";
+
+        function renderProducts(list) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-results">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+                        검색 조건이나 카테고리에 일치하는 펌프 제품이 없습니다.
+                    </div>
+                `;
+                return;
+            }
+
+            list.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                // SVG 아이콘 참조 설정
+                const svgId = `svg-pump-${prod.icon}`;
+                
+                let specsHtml = '';
+                prod.specs.forEach(spec => {
+                    specsHtml += `<li>${spec}</li>`;
+                });
+
+                card.innerHTML = `
+                    <div class="product-img-box">
+                        <svg viewBox="0 0 100 100">
+                            <use href="#${svgId}"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${prod.categoryKo}</span>
+                        <h3 class="product-name">${prod.name}</h3>
+                        <span class="product-code-badge">물품분류번호: ${prod.code}</span>
+                        <p class="product-desc">${prod.desc}</p>
+                        <ul class="product-specs">
+                            ${specsHtml}
+                        </ul>
+                        <a href="inquiry.html?product=${encodeURIComponent(prod.name)}&code=${prod.code}" class="btn-primary" style="text-align:center; width: 100%;">
+                            B2B 조달 / 단가 문의
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('productSearch').value.trim().toLowerCase();
+            
+            const filtered = productsData.filter(prod => {
+                const matchesSearch = prod.name.toLowerCase().includes(query) || prod.code.includes(query);
+                const matchesCategory = selectedCategory === "all" || prod.category === selectedCategory;
+                return matchesSearch && matchesCategory;
+            });
+
+            renderProducts(filtered);
+        }
+
+        function setCategory(btn) {
+            document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+            btn.classList.add('active');
+            
+            selectedCategory = btn.getAttribute('data-filter');
+            filterProducts();
+        }
+
+        // 초기화 가동
+        renderProducts(productsData);
+    </script>
 </body>
 </html>

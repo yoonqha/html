@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="(주)비에이텍 찾아오시는 길 - 본사 위치 및 연락처 안내">
+    <title>찾아오시는 길 | (주)비에이텍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sub-hero {
+            position: relative;
+            padding: 180px 2rem 100px;
+            background: linear-gradient(135deg, rgba(0, 85, 204, 0.3), rgba(5, 11, 20, 1)), url('assets/hero.png') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            text-align: center;
+        }
+
+        .sub-hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .map-section {
+            padding: 5rem 0;
+        }
+
+        .map-container {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            margin-bottom: 3rem;
+        }
+
+        .map-iframe-wrapper {
+            width: 100%;
+            height: 450px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .map-iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: invert(90%) hue-rotate(180deg); /* Dark mode map effect */
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(10, 25, 50, 0.5);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .info-title {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-desc {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                <span class="logo-text">B·A·Tech</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="intro.html" class="nav-link">기업소개</a></li>
+                    <li><a href="product.html" class="nav-link">주요제품</a></li>
+                    <li><a href="equipment.html" class="nav-link">장비</a></li>
+                    <li><a href="sales.html" class="nav-link">업력</a></li>
+                    <li><a href="campaign.html" class="nav-link">캠페인</a></li>
+                    <li><a href="map.html" class="nav-link" style="color:#fff;">찾아오시는 길</a></li>
+                    <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="sub-hero">
+            <h1 class="sub-hero-title">찾아오시는 <span class="highlight">길</span></h1>
+            <p class="sub-hero-desc" style="max-width:600px; margin:0 auto; color:var(--text-muted);">
+                비에이텍 본사 및 공장으로 오시는 길을 안내해 드립니다. 언제든 환영합니다.
+            </p>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <div class="map-container">
+                    <div class="map-iframe-wrapper">
+                        <!-- Placeholder Map using Google Maps embed -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x357ca2012d5c39cf%3A0x7e11eca1405bf29b!2z7ISc7Jq47Yq567OE7Iuc!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <div class="contact-info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3 class="info-title">주소</h3>
+                        <p class="info-desc">서울특별시 강남구 테헤란로 123<br>비에이텍 타워 7층</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3 class="info-title">연락처</h3>
+                        <p class="info-desc">TEL: 02-1234-5678<br>FAX: 02-1234-5679</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🚗</div>
+                        <h3 class="info-title">주차 안내</h3>
+                        <p class="info-desc">건물 지하 2층~4층 주차장 이용<br>(방문객 2시간 무료)</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🚇</div>
+                        <h3 class="info-title">대중교통</h3>
+                        <p class="info-desc">지하철 2호선 역삼역 3번 출구<br>도보 5분 거리</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">💧 B·A·Tech</div>
+                <p class="footer-desc">깨끗한 물의 가치를 소중히 여기는 기업, (주)비에이텍입니다.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

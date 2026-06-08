@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="(주)비에이텍 - 워터펌프 제작, 설치, 수리 전문기업. 깨끗한 물과 첨단 기술의 만남.">
+    <title>(주)비에이텍 | 워터펌프 전문기업</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                <span class="logo-text">B·A·Tech</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="intro.html" class="nav-link">기업소개</a></li>
+                    <li><a href="product.html" class="nav-link">주요제품</a></li>
+                    <li><a href="equipment.html" class="nav-link">장비</a></li>
+                    <li><a href="sales.html" class="nav-link">업력</a></li>
+                    <li><a href="campaign.html" class="nav-link">캠페인</a></li>
+                    <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
+                    <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">Since 2024 Water Tech</div>
+                <h1 class="hero-title">
+                    <span class="highlight">깨끗한 물</span>을 향한<br>
+                    우리의 끝없는 혁신
+                </h1>
+                <p class="hero-subtitle">
+                    (주)비에이텍은 워터펌프 제작, 설치 및 수리 분야의 전문성을 바탕으로<br>
+                    고객에게 가장 맑고 깨끗한 미래를 제공합니다.
+                </p>
+                <div class="hero-cta">
+                    <a href="product.html" class="btn-primary btn-large">제품 둘러보기</a>
+                    <a href="intro.html" class="btn-secondary btn-large">기업 소개</a>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll Down</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">최고의 기술력으로<br>완벽한 솔루션을 제공합니다</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3 class="feature-title">정밀한 펌프 제작</h3>
+                        <p class="feature-desc">최신 설비와 다년간의 노하우를 바탕으로 고효율, 고내구성 워터펌프를 자체 제작합니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3 class="feature-title">전문적인 설치 시공</h3>
+                        <p class="feature-desc">환경과 용도에 맞춘 최적화된 설계로 빠르고 안전하게 펌프 시스템을 구축합니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3 class="feature-title">신속한 수리 및 유지보수</h3>
+                        <p class="feature-desc">문제가 발생하기 전 예방 점검은 물론, 고장 시 즉각적인 대응으로 피해를 최소화합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">💧 B·A·Tech</div>
+                <p class="footer-desc">깨끗한 물의 가치를 소중히 여기는 기업, (주)비에이텍입니다.</p>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>회사 정보</h4>
+                    <ul>
+                        <li><a href="intro.html">기업소개</a></li>
+                        <li><a href="sales.html">업력</a></li>
+                        <li><a href="map.html">오시는 길</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>사업 분야</h4>
+                    <ul>
+                        <li><a href="product.html">주요제품</a></li>
+                        <li><a href="equipment.html">장비</a></li>
+                        <li><a href="campaign.html">캠페인</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 (주)비에이텍 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Simple mobile menu toggle logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.querySelector('.nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

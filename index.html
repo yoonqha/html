@@ -9,24 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- PDF.js CDN for cert rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
 <body>
     <header class="header" id="header">
         <div class="header-container">
-            <a href="index.html" class="logo">
+            <a href="#home" class="logo">
                 <span class="logo-icon">💧</span>
                 <span class="logo-text">B·A·Tech</span>
             </a>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="intro.html" class="nav-link">기업소개</a></li>
-                    <li><a href="product.html" class="nav-link">주요제품</a></li>
-                    <li><a href="equipment.html" class="nav-link">장비</a></li>
-                    <li><a href="sales.html" class="nav-link">업력</a></li>
-                    <li><a href="campaign.html" class="nav-link">캠페인</a></li>
-                    <li><a href="map.html" class="nav-link">찾아오시는 길</a></li>
-                    <li><a href="intranet.html" class="nav-link">사내망 🔒</a></li>
-                    <li><a href="inquiry.html" class="btn-primary nav-btn">문의하기</a></li>
+                    <li><a href="#intro" class="nav-link">기업소개</a></li>
+                    <li><a href="#product" class="nav-link">주요제품</a></li>
+                    <li><a href="#tech" class="nav-link">기술·인증</a></li>
+                    <li><a href="#sales" class="nav-link">사업실적</a></li>
+                    <li><a href="#campaign" class="nav-link">캠페인</a></li>
+                    <li><a href="#support" class="nav-link">고객지원</a></li>
+                    <li><a href="#intranet" class="nav-link" id="gnbIntranetLink">INTRANET 🔒</a></li>
                 </ul>
             </nav>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -38,56 +39,1076 @@
     </header>
 
     <main>
-        <section class="hero" id="hero">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <div class="hero-badge">Since 2024 Water Tech</div>
-                <h1 class="hero-title">
-                    <span class="highlight">깨끗한 물</span>을 향한<br>
-                    우리의 끝없는 혁신
-                </h1>
-                <p class="hero-subtitle">
-                    (주)비에이텍은 워터펌프 제작, 설치 및 수리 분야의 전문성을 바탕으로<br>
-                    고객에게 가장 맑고 깨끗한 미래를 제공합니다.
-                </p>
-                <div class="hero-cta">
-                    <a href="product.html" class="btn-primary btn-large">제품 둘러보기</a>
-                    <a href="intro.html" class="btn-secondary btn-large">기업 소개</a>
+        <!-- ==========================================
+             HOME PAGE (DEFAULT VIEW)
+             ========================================== -->
+        <section class="spa-page active" id="page-home">
+            <div class="hero" id="hero">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="hero-badge">Since 2024 Water Tech</div>
+                    <h1 class="hero-title">
+                        <span class="highlight">깨끗한 물</span>을 향한<br>
+                        우리의 끝없는 혁신
+                    </h1>
+                    <p class="hero-subtitle">
+                        (주)비에이텍은 워터펌프 제작, 설치 및 수리 분야의 전문성을 바탕으로<br>
+                        고객에게 가장 맑고 깨끗한 미래를 제공합니다.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#product" class="btn-primary btn-large">제품 둘러보기</a>
+                        <a href="#intro" class="btn-secondary btn-large">기업 소개</a>
+                    </div>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <span class="scroll-text">Scroll Down</span>
+                    <div class="scroll-arrow"></div>
                 </div>
             </div>
             
-            <div class="scroll-indicator">
-                <span class="scroll-text">Scroll Down</span>
-                <div class="scroll-arrow"></div>
+            <section class="features">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">최고의 기술력으로<br>완벽한 솔루션을 제공합니다</h2>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">⚙️</div>
+                            <h3 class="feature-title">정밀한 펌프 제작</h3>
+                            <p class="feature-desc">최신 설비와 다년간의 노하우를 바탕으로 고효율, 고내구성 워터펌프를 자체 제작합니다.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔧</div>
+                            <h3 class="feature-title">전문적인 설치 시공</h3>
+                            <p class="feature-desc">환경과 용도에 맞춘 최적화된 설계로 빠르고 안전하게 펌프 시스템을 구축합니다.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🛡️</div>
+                            <h3 class="feature-title">신속한 수리 및 유지보수</h3>
+                            <p class="feature-desc">문제가 발생하기 전 예방 점검은 물론, 고장 시 즉각적인 대응으로 피해를 최소화합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- ==========================================
+             1️⃣ 기업소개 (INTRO)
+             ========================================== -->
+        <section class="spa-page" id="page-intro">
+            <section class="sub-hero">
+                <h1 class="sub-hero-title"><span class="highlight">기업</span>소개</h1>
+                <p class="sub-hero-desc">물이 흐르는 모든 곳에 (주)비에이텍의 기술과 정성이 함께합니다.</p>
+            </section>
+
+            <div class="container">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="overview">회사개요</button>
+                    <button class="tab-btn" data-tab="greeting">인사말</button>
+                    <button class="tab-btn" data-tab="history">연혁</button>
+                    <button class="tab-btn" data-tab="org">조직도</button>
+                    <button class="tab-btn" data-tab="brochure">홍보·브로슈어</button>
+                    <button class="tab-btn" data-tab="map">찾아오는길</button>
+                </div>
+
+                <div class="tab-panels-wrapper">
+                    <!-- Tab Panel: 회사개요 -->
+                    <div class="tab-panel active" id="panel-intro-overview">
+                        <div class="overview-section" style="padding-top: 0;">
+                            <div class="section-header" style="margin-bottom: 2rem;">
+                                <span class="hero-badge">Company Profile</span>
+                                <h2 class="section-title" style="margin-top: 0.5rem;">(주)비에이텍 <span class="highlight">회사 개요</span></h2>
+                            </div>
+                            <div class="overview-grid">
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">🏢</div>
+                                        <div class="overview-card-title">회사명</div>
+                                    </div>
+                                    <div class="overview-card-value">비에이텍 주식회사</div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">👤</div>
+                                        <div class="overview-card-title">대표이사</div>
+                                    </div>
+                                    <div class="overview-card-value">조세연</div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">📅</div>
+                                        <div class="overview-card-title">설립일</div>
+                                    </div>
+                                    <div class="overview-card-value">2010년 11월 01일</div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">⚙️</div>
+                                        <div class="overview-card-title">업종</div>
+                                    </div>
+                                    <div class="overview-card-value">제조, 도매</div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">📝</div>
+                                        <div class="overview-card-title">사업자등록번호</div>
+                                    </div>
+                                    <div class="overview-card-value">221-81-42625</div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">💧</div>
+                                        <div class="overview-card-title">주요 생산 제품</div>
+                                    </div>
+                                    <div class="overview-card-value">모터펌프 (부스터/벌류트/수중 등)</div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">📞</div>
+                                        <div class="overview-card-title">대표 전화</div>
+                                    </div>
+                                    <div class="overview-card-value">
+                                        <a href="tel:033-264-9243" style="color: inherit; text-decoration: underline;">033-264-9243</a>
+                                    </div>
+                                </div>
+                                <div class="overview-card">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">📠</div>
+                                        <div class="overview-card-title">팩스 번호 (FAX)</div>
+                                    </div>
+                                    <div class="overview-card-value">033-251-5747</div>
+                                </div>
+                                <div class="overview-card" style="grid-column: span 2;">
+                                    <div class="overview-card-header">
+                                        <div class="overview-card-icon">📍</div>
+                                        <div class="overview-card-title">소재지 (본사 및 공장)</div>
+                                    </div>
+                                    <div class="overview-card-value" style="font-size: 1.05rem;">강원특별자치도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Panel: 인사말 -->
+                    <div class="tab-panel" id="panel-intro-greeting">
+                        <div class="ceo-greeting">
+                            <h2 class="ceo-title">맑은 미래와 함께하는 기술을 선도합니다</h2>
+                            <div class="ceo-message">
+                                <p>안녕하십니까? (주)비에이텍 홈페이지를 방문해주신 고객 여러분께 진심으로 감사드립니다.</p>
+                                <p>저희 (주)비에이텍은 다년간 축적된 정밀 엔지니어링 기술을 기반으로 고효율 워터펌프 제작, 기계설비 시공 및 전문 수리 서비스를 전문으로 하는 강소기업입니다. '맑은 물, 깨끗한 환경, 안전한 설비'라는 원칙 아래, 보이지 않는 곳에서 국민들의 삶의 질을 향상하고 산업 발전에 이바지하는 것을 자랑스러운 사명으로 삼고 있습니다.</p>
+                                <p>최근 급변하는 에너지 패러다임에 맞추어 인버터 제어형 부스터펌프 시스템 등 에너지 절감형 친환경 유체 시스템 개발에 주력하여 품질과 성능을 공인받았습니다. 대한민국 조달 시장 및 직접생산인증 획득 기업으로서 완벽한 품질 보증과 철저한 사후 관리 시스템으로 언제나 믿고 함께할 수 있는 신뢰의 파트너가 될 것을 약속드립니다.</p>
+                                <p>고객 여러분의 변함없는 신뢰와 사랑에 더 나은 혁신 기술과 서비스로 보답하겠습니다. 감사합니다.</p>
+                            </div>
+                            <div class="ceo-signature">
+                                (주)비에이텍 대표이사 <span>조 세 연</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Panel: 연혁 -->
+                    <div class="tab-panel" id="panel-intro-history">
+                        <div class="timeline-section" style="padding-top:0;">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2017. 12. 29</div>
+                                    <div class="timeline-content">
+                                        <h3>강원도지사 표창 수상</h3>
+                                        <p>도정과 지역발전에 헌신적으로 협력하고, 특히 상수도 관리 활동 및 지역사회 수질환경 보존에 기여한 혁혁한 공로를 인정받아 최문순 강원도지사 표창을 수여받았습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2013. 02. 19</div>
+                                    <div class="timeline-content">
+                                        <h3>비에이텍 주식회사 상호 변경</h3>
+                                        <p>물의 소중함을 혁신 기술과 융합하겠다는 원대한 비전을 품고 기존 '기존 ㈜강원유체'에서 '비에이텍㈜ (Blue Advanced Technology)'으로 법인 상호를 변경하여 글로벌 기업으로 도약했습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2012. 12. 10</div>
+                                    <div class="timeline-content">
+                                        <h3>벤처기업인증 획득</h3>
+                                        <p>중소기업청으로부터 정밀 모터펌프 제조 및 가공 기술에 대한 원천 기술의 우수성과 기업의 혁신 성장 가능성을 공인받아 벤처기업 인증을 성공적으로 취득하였습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-year">2010. 11. 01</div>
+                                    <div class="timeline-content">
+                                        <h3>㈜강원유체 설립</h3>
+                                        <p>수처리 엔지니어링 및 펌프 제작 전문 법인 '(주)강원유체'를 정식 창립하여, 대한민국 수처리 설비의 국산화와 고효율화를 위한 첫 걸음을 내디뎠습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Panel: 조직도 -->
+                    <div class="tab-panel" id="panel-intro-org">
+                        <div class="overview-section" style="padding-top: 0; text-align: center;">
+                            <div class="section-header" style="margin-bottom: 3rem;">
+                                <span class="hero-badge">Organization</span>
+                                <h2 class="section-title" style="margin-top: 0.5rem;">회사 <span class="highlight">조직도</span></h2>
+                            </div>
+                            
+                            <!-- Simplified visual diagram for public intro -->
+                            <div style="max-width: 800px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 24px; padding: 3rem; backdrop-filter: blur(10px);">
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+                                    <div style="border: 2px solid var(--secondary-color); padding: 1.2rem 2.5rem; border-radius: 12px; background: rgba(0, 119, 255, 0.15); font-weight: 700; color: #fff; font-size: 1.2rem; box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);">
+                                        대표이사 (조세연)
+                                    </div>
+                                    <div style="width: 2px; height: 30px; background: var(--primary-color);"></div>
+                                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%;">
+                                        <div style="border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 12px; background: rgba(5,11,20,0.6);">
+                                            <h4 style="color: var(--secondary-color); font-weight:600; margin-bottom: 0.5rem; font-size: 1.05rem;">관리부</h4>
+                                            <p style="color: var(--text-muted); font-size:0.9rem;">계약, 조달 행정, 회계 및 일반 공정관리 총괄</p>
+                                        </div>
+                                        <div style="border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 12px; background: rgba(5,11,20,0.6);">
+                                            <h4 style="color: var(--secondary-color); font-weight:600; margin-bottom: 0.5rem; font-size: 1.05rem;">생산부</h4>
+                                            <p style="color: var(--text-muted); font-size:0.9rem;">모터펌프 직접생산라인 가공 및 시스템 조립</p>
+                                        </div>
+                                        <div style="border: 1px solid var(--glass-border); padding: 1.5rem; border-radius: 12px; background: rgba(5,11,20,0.6);">
+                                            <h4 style="color: var(--secondary-color); font-weight:600; margin-bottom: 0.5rem; font-size: 1.05rem;">품질보증부</h4>
+                                            <p style="color: var(--text-muted); font-size:0.9rem;">KC위생안전기준 규격 관리 및 출하성능 품질검사</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p style="margin-top: 3rem; font-size: 0.95rem; color: var(--text-muted);">
+                                    ※ 임직원 상세 업무분장 대장은 <strong><a href="#intranet" style="color: var(--secondary-color); text-decoration: underline;">사내망(INTRANET)</a></strong>을 통해 인증 후 열람하실 수 있습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Panel: 홍보·브로슈어 -->
+                    <div class="tab-panel" id="panel-intro-brochure">
+                        <div class="intro-section" style="padding-top: 0;">
+                            <div class="content-wrapper">
+                                <div class="intro-block">
+                                    <div class="intro-text-content">
+                                        <h2>세상을 움직이는<br><span class="highlight">원동력</span></h2>
+                                        <p>(주)비에이텍의 뛰어난 기술력과 펌프 제작 공정을 직접 확인해 보세요. 우리는 정밀한 설계부터 엄격한 품질 테스트까지 타협 없는 기준을 적용합니다.</p>
+                                        <p>안전하고 안정적인 설비 관리는 우리의 자부심입니다. 고장 없는 펌프 시스템, 철저한 사후 관리로 고객 만족을 실현합니다. 지금 바로 비에이텍의 브랜드 광고 영상을 통해 우리의 비전을 확인하세요.</p>
+                                    </div>
+                                    <div class="media-container">
+                                        <video class="promo-video" controls autoplay muted loop poster="assets/hero.png">
+                                            <source src="광고영상.mp4" type="video/mp4">
+                                            고객님의 브라우저가 동영상을 지원하지 않습니다.
+                                        </video>
+                                    </div>
+                                </div>
+
+                                <div class="intro-block reverse">
+                                    <div class="media-container">
+                                        <img src="브로슈어.png" alt="(주)비에이텍 브랜드 브로슈어" class="brochure-img" onerror="this.src='https://via.placeholder.com/600x800/0a1932/00e5ff?text=브로슈어+이미지'">
+                                    </div>
+                                    <div class="intro-text-content">
+                                        <h2>(주)비에이텍<br>카탈로그 안내</h2>
+                                        <p>당사의 11종 직접생산 펌프 목록 및 시스템 상세사양을 포함한 공식 브로슈어입니다.</p>
+                                        <p>고효율 제품에 대한 상세 도면 및 현장 적용 가이드라인이 필요하신 기관 및 시공업체는 브로슈어 자료를 다운로드하여 참고해 주십시오.</p>
+                                        <a href="브로슈어.png" download class="btn-primary" style="margin-top: 1rem;">브로슈어 다운로드</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab Panel: 찾아오는길 -->
+                    <div class="tab-panel" id="panel-intro-map">
+                        <section class="map-section" style="padding-top: 0;">
+                            <div class="map-container">
+                                <div class="map-iframe-wrapper" style="width: 100%; height: 100%;">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x3562e5b7740263f3%3A0x4bf288e7b95764d7!2z6rCV7JuQ7Yq567OE7J6Q7LmY64-EIOy2mOyynOyLnCDthrTqs4Tqs7Xri6gy6pilIDY0!5e0!3m2!1sko!2skr!4v1717830000000!5m2!1sko!2skr" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </div>
+                            
+                            <div class="map-links-row" style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center;">
+                                <a href="https://map.kakao.com/link/to/비에이텍(주),37.854743,127.734612" target="_blank" class="tab-btn" style="border-color: #ffeb00; color: #ffeb00;">
+                                    💛 카카오맵 길찾기
+                                </a>
+                                <a href="https://map.naver.com/v5/search/강원특별자치도%20춘천시%20퇴계공단2길%2064" target="_blank" class="tab-btn" style="border-color: #03cf5d; color: #03cf5d;">
+                                    💚 네이버 지도 길찾기
+                                </a>
+                            </div>
+
+                            <div class="contact-info-grid">
+                                <div class="info-card">
+                                    <div class="info-icon">📍</div>
+                                    <h3 class="info-title">주소</h3>
+                                    <p class="info-desc">강원특별자치도 춘천시 퇴계공단2길 64<br>(퇴계동 1264번지, 퇴계제2농공단지내)</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon">📞</div>
+                                    <h3 class="info-title">대표전화 (TEL)</h3>
+                                    <p class="info-desc" style="margin-bottom: 0.4rem;">상담 및 기술지원 문의:</p>
+                                    <p class="info-desc" style="font-size: 1.2rem; font-weight: 700; color:#fff;">
+                                        <a href="tel:033-264-9243" class="info-link">033-264-9243</a>
+                                    </p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon">📠</div>
+                                    <h3 class="info-title">팩스번호 (FAX)</h3>
+                                    <p class="info-desc" style="margin-bottom: 0.4rem;">도면 및 서류 전송:</p>
+                                    <p class="info-desc" style="font-size: 1.2rem; font-weight: 700; color:#fff;">033-251-5747</p>
+                                </div>
+                                <div class="info-card">
+                                    <div class="info-icon">🚗</div>
+                                    <h3 class="info-title">교통 및 주차</h3>
+                                    <p class="info-desc">농공단지 진입 후 비에이텍 전용 주차장 무료 이용 가능 (내방객 주차 지원)</p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="features">
+
+        <!-- ==========================================
+             2️⃣ 주요제품 (PRODUCT)
+             ========================================== -->
+        <section class="spa-page" id="page-product">
+            <section class="sub-hero">
+                <h1 class="sub-hero-title">주요<span class="highlight">제품</span></h1>
+                <p class="sub-hero-desc">조달청 등록 중기간경쟁물품이자 직접생산확인을 획득한 고성능 모터펌프 11종 라인업입니다.</p>
+            </section>
+
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">최고의 기술력으로<br>완벽한 솔루션을 제공합니다</h2>
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="lineup">펌프 라인업</button>
+                    <button class="tab-btn" data-tab="specs">제품 상세 사양</button>
                 </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">⚙️</div>
-                        <h3 class="feature-title">정밀한 펌프 제작</h3>
-                        <p class="feature-desc">최신 설비와 다년간의 노하우를 바탕으로 고효율, 고내구성 워터펌프를 자체 제작합니다.</p>
+
+                <div class="tab-panels-wrapper">
+                    <!-- Tab Panel: 펌프 라인업 -->
+                    <div class="tab-panel active" id="panel-product-lineup">
+                        <section class="product-section" style="padding-top:0;">
+                            <div class="filter-controls-wrapper">
+                                <div class="search-row">
+                                    <div class="search-box">
+                                        <span class="search-icon">🔍</span>
+                                        <input type="text" id="productSearch" placeholder="제품명 또는 물품분류번호(10자리) 입력..." oninput="filterProducts()">
+                                    </div>
+                                </div>
+                                <div class="category-row">
+                                    <button class="filter-chip active" data-filter="all" onclick="setCategory(this)">전체 보기</button>
+                                    <button class="filter-chip" data-filter="volute" onclick="setCategory(this)">벌류트 펌프류</button>
+                                    <button class="filter-chip" data-filter="submersible" onclick="setCategory(this)">수중/특수 펌프류</button>
+                                    <button class="filter-chip" data-filter="pressure" onclick="setCategory(this)">정밀/가압 펌프류</button>
+                                </div>
+                            </div>
+
+                            <div class="product-grid" id="productGrid">
+                                <!-- JS dynamic insert -->
+                            </div>
+                        </section>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔧</div>
-                        <h3 class="feature-title">전문적인 설치 시공</h3>
-                        <p class="feature-desc">환경과 용도에 맞춘 최적화된 설계로 빠르고 안전하게 펌프 시스템을 구축합니다.</p>
+
+                    <!-- Tab Panel: 제품 상세 사양 -->
+                    <div class="tab-panel" id="panel-product-specs">
+                        <section class="product-section" style="padding-top:0;">
+                            <div class="specs-table-wrapper">
+                                <table class="specs-table">
+                                    <thead>
+                                        <tr>
+                                            <th>물품분류번호</th>
+                                            <th>제품명</th>
+                                            <th>영문 명칭</th>
+                                            <th>주요 카테고리</th>
+                                            <th>정격 수압 범위</th>
+                                            <th>특장점</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="specsTableBody">
+                                        <!-- JS dynamic insert -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
-                        <h3 class="feature-title">신속한 수리 및 유지보수</h3>
-                        <p class="feature-desc">문제가 발생하기 전 예방 점검은 물론, 고장 시 즉각적인 대응으로 피해를 최소화합니다.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             3️⃣ 기술·인증 (TECH)
+             ========================================== -->
+        <section class="spa-page" id="page-tech">
+            <section class="sub-hero">
+                <h1 class="sub-hero-title">기술 · <span class="highlight">인증</span></h1>
+                <p class="sub-hero-desc">엄격한 품질 보증 기준과 첨단 장비 가동으로 최고 품질의 제품을 생산합니다.</p>
+            </section>
+
+            <div class="container">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="certs">품질인증서</button>
+                    <button class="tab-btn" data-tab="equipment">공장 및 보유 장비 현황</button>
+                </div>
+
+                <div class="tab-panels-wrapper">
+                    <!-- Tab Panel: 품질인증서 -->
+                    <div class="tab-panel active" id="panel-tech-certs">
+                        <section style="padding: 1rem 0 4rem;">
+                            <div class="carousel-container">
+                                <button class="carousel-btn prev" id="certCarouselPrev">&lsaquo;</button>
+                                <div class="carousel-track-wrapper">
+                                    <div class="carousel-track" id="certCarouselTrack">
+                                        <!-- Cert slides loaded dynamically or hardcoded -->
+                                        <!-- Slide 1: 사업자등록증 -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">사업자등록증</h3>
+                                                <h4 class="cert-sub">법인사업자 등록증명</h4>
+                                                <p class="cert-desc">부스터 펌프 시스템 및 벌류트 펌프류 제조에 대한 대한민국 정식 법인 사업자등록을 마치고 투명한 경영활동을 하고 있습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>등록번호:</strong> 221-81-42625</span>
+                                                    <span><strong>대표자:</strong> 조세연</span>
+                                                    <span><strong>개업연월일:</strong> 2013년 02월 15일</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="1" data-title="사업자등록증 (법인사업자)">내용 확인하기</button>
+                                            </div>
+                                        </div>
+                                        <!-- Slide 2: 공장등록증명서 -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">공장등록증명서</h3>
+                                                <h4 class="cert-sub">자체 제조시설 공인 증명</h4>
+                                                <p class="cert-desc">강원도 춘천에 액체 펌프 제조업을 영위하기 위한 부지 1,970.3㎡ 규모의 자체 제조공장을 허가 및 등록하여 생산라인을 가동하고 있습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>소재지:</strong> 퇴계제2농공단지내</span>
+                                                    <span><strong>업종:</strong> 액체 펌프 제조업 외 4종</span>
+                                                    <span><strong>공장등록일:</strong> 2023.06.08</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="2" data-title="공장등록증명서">내용 확인하기</button>
+                                            </div>
+                                        </div>
+                                        <!-- Slide 3: 산업단지 입주계약 -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">산업단지 입주계약</h3>
+                                                <h4 class="cert-sub">퇴계제2농공단지 입주 확인</h4>
+                                                <p class="cert-desc">한국산업단지공단과의 정식 계약을 통하여 모터펌프 전문 제조공장으로 선정되어 공업단지 내 적법하고 안전한 가동 인프라를 확보했습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>단지명:</strong> 퇴계제2농공단지</span>
+                                                    <span><strong>생산품:</strong> 모터펌프</span>
+                                                    <span><strong>등록일자:</strong> 2023.06.26</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="3" data-title="산업단지 입주 계약 확인서">내용 확인하기</button>
+                                            </div>
+                                        </div>
+                                        <!-- Slide 4: 직접생산확인증명서 -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">직접생산확인증명</h3>
+                                                <h4 class="cert-sub">중소벤처기업유통원 확인서</h4>
+                                                <p class="cert-desc">다단/단단/양흡입/편흡입 벌류트 및 수중, 부스터펌프 등 11개 세부품명에 대하여 직접 핵심 부품을 생산 및 제조함을 국가기관을 통해 인증받았습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>증명서번호:</strong> 제 2023-0616-00085호</span>
+                                                    <span><strong>인증제품:</strong> 배관유체조절시스템(펌프류)</span>
+                                                    <span><strong>유효기간:</strong> 2023.07.19 ~ 2025.07.18</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="4" data-title="직접생산확인증명서">내용 확인하기</button>
+                                            </div>
+                                        </div>
+                                        <!-- Slide 5: ISO 9001 -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">ISO 9001:2015</h3>
+                                                <h4 class="cert-sub">품질경영시스템 국제인증</h4>
+                                                <p class="cert-desc">부스터펌프시스템, 벌류트, 정량, 수중, 오수, 슬러지, 심정용 및 전진공동 펌프의 제조 전반에 대한 국제 표준 품질 시스템 규격을 획득하였습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>인증번호:</strong> QI291124</span>
+                                                    <span><strong>인증기관:</strong> ICR</span>
+                                                    <span><strong>유효기간:</strong> 2024.08.23 ~ 2027.08.22</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-pdf="ISO9001인증서.pdf" data-title="ISO 9001:2015 품질경영시스템 인증서">인증서 확인하기</button>
+                                            </div>
+                                        </div>
+                                        <!-- Slide 6: MAIN-BIZ -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">MAIN-BIZ</h3>
+                                                <h4 class="cert-sub">경영혁신형 중소기업 확인</h4>
+                                                <p class="cert-desc">중소벤처기업부로부터 마케팅, 조직관리, 프로세스 경영 전반의 비즈니스 모델 혁신 성과를 평가받아 미래성장 가치와 신뢰를 보장받았습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>확인번호:</strong> 제 R180801-01794 호</span>
+                                                    <span><strong>발급기관:</strong> 중소벤처기업부 장관</span>
+                                                    <span><strong>유효기간:</strong> 2024.09.14 ~ 2027.09.13</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-pdf="메인비즈 확인서(기한27.09.13.).pdf" data-title="MAIN-BIZ 경영혁신형 중소기업 확인서">확인서 확인하기</button>
+                                            </div>
+                                        </div>
+                                        <!-- Slide 7: 한국펌프조합원증 -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">한국펌프조합원증</h3>
+                                                <h4 class="cert-sub">한국펌프공업협동조합원</h4>
+                                                <p class="cert-desc">펌프 제조 부문의 전문 협동조합 정회원으로서 조합 규정과 품질 의무를 준수하며, 국내 조달 및 유통 시장 발전에 공헌하고 있습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>증서번호:</strong> 제 151 호</span>
+                                                    <span><strong>발급일자:</strong> 2015년 01월 07일</span>
+                                                    <span><strong>발급기관:</strong> 한국펌프공업협동조합 이사장</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="7" data-title="한국펌프공업협동조합 조합원증">내용 확인하기</button>
+                                            </div>
+                                        </div>
+                                        <!-- Slide 8: 도지사 표창장 -->
+                                        <div class="carousel-slide">
+                                            <div class="cert-card">
+                                                <div class="cert-badge-icon">✓</div>
+                                                <h3 class="cert-title">도지사 표창장</h3>
+                                                <h4 class="cert-sub">강원도지사 표창 수상</h4>
+                                                <p class="cert-desc">도정과 지역발전에 헌신하고, 특히 도민의 안전한 물 보급을 위한 상수도 관리 및 유지보수 활동에 이바지한 공로를 인정받아 표창을 수여받았습니다.</p>
+                                                <div class="cert-meta">
+                                                    <span><strong>상장번호:</strong> 제 4334 호</span>
+                                                    <span><strong>수여일자:</strong> 2017년 12월 29일</span>
+                                                    <span><strong>수여자:</strong> 강원도지사 최문순</span>
+                                                </div>
+                                                <button class="btn-primary open-cert-btn" data-type="virtual" data-cert-index="8" data-title="강원도지사 표창장">내용 확인하기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-btn next" id="certCarouselNext">&rsaquo;</button>
+                                <div class="carousel-dots" id="certCarouselDots"></div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Tab Panel: 공장 및 보유 장비 현황 -->
+                    <div class="tab-panel" id="panel-tech-equipment">
+                        <section class="equipment-section" style="padding-top:0;">
+                            <div class="eq-list">
+                                <div class="eq-item">
+                                    <div class="eq-img-wrapper">
+                                        <img src="https://via.placeholder.com/600x400/0a1932/00e5ff?text=초정밀+CNC+가공기" alt="초정밀 CNC 가공기">
+                                    </div>
+                                    <div class="eq-info">
+                                        <h3>초정밀 CNC 가공기</h3>
+                                        <p>오차율 0.001mm 미만의 초정밀 가공을 통해 임펠러와 케이싱을 완벽하게 생산합니다. 펌프의 효율을 결정짓는 핵심 부품을 자체 제작할 수 있는 기반입니다.</p>
+                                    </div>
+                                </div>
+                                <div class="eq-item">
+                                    <div class="eq-img-wrapper">
+                                        <img src="https://via.placeholder.com/600x400/0a1932/00e5ff?text=유체+시뮬레이션+진단장비" alt="유체 시뮬레이션 진단장비">
+                                    </div>
+                                    <div class="eq-info">
+                                        <h3>3D 유체 시뮬레이션 진단장비</h3>
+                                        <p>설계된 펌프 내부의 물 흐름을 3D 시뮬레이션으로 분석하여 캐비테이션을 방지하고 유체 저항을 최소화하는 최적의 형상을 도출해냅니다.</p>
+                                    </div>
+                                </div>
+                                <div class="eq-item">
+                                    <div class="eq-img-wrapper">
+                                        <img src="https://via.placeholder.com/600x400/0a1932/00e5ff?text=레이저+축+정렬기" alt="레이저 축 정렬기">
+                                    </div>
+                                    <div class="eq-info">
+                                        <h3>레이저 축 정렬 시스템</h3>
+                                        <p>펌프 설치 및 수리 시 모터와 펌프의 축을 레이저로 정밀하게 정렬하여 진동과 소음을 줄이고, 베어링과 씰의 수명을 획기적으로 연장합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             4️⃣ 사업실적 (SALES)
+             ========================================== -->
+        <section class="spa-page" id="page-sales">
+            <section class="sub-hero">
+                <h1 class="sub-hero-title">사업<span class="highlight">실적</span></h1>
+                <p class="sub-hero-desc">조달 실적 및 대형 시공 현장에 납품된 비에이텍의 실적을 증명합니다.</p>
+            </section>
+
+            <div class="container">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="gov">관공서 실적</button>
+                    <button class="tab-btn" data-tab="private">민간 납품·수리 실적</button>
+                </div>
+
+                <div class="tab-panels-wrapper">
+                    <!-- Tab Panel: 관공서 실적 -->
+                    <div class="tab-panel active" id="panel-sales-gov">
+                        <section class="records-section" style="padding-top:0;">
+                            <div class="records-wrapper">
+                                <div class="search-control-box">
+                                    <div class="search-input-wrapper">
+                                        <span class="search-icon">🔍</span>
+                                        <input type="text" id="recordSearchInput" class="search-input" placeholder="발주처 또는 프로젝트명 검색..." oninput="onSearchInput()">
+                                    </div>
+                                    <div class="total-count-badge" id="totalRecordsBadge">총 16건의 실적</div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="records-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 8%;" class="center-align">번호</th>
+                                                <th style="width: 25%;">발주처</th>
+                                                <th>건명 (프로젝트 및 납품 내용)</th>
+                                                <th style="width: 15%;" class="center-align">납품일자</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="recordsTableBody">
+                                            <!-- JS dynamic insert -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="pagination-container" id="recordsPagination">
+                                    <!-- JS dynamic insert -->
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Tab Panel: 민간 납품·수리 실적 -->
+                    <div class="tab-panel" id="panel-sales-private">
+                        <section class="records-section" style="padding-top:0;">
+                            <div class="records-wrapper">
+                                <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+                                    <span class="hero-badge" style="margin-bottom:0.5rem;">Commercial & Private Projects</span>
+                                    <h3 style="font-size: 1.6rem; color: #fff;">아파트 단지 및 상업 빌딩 주요 실적</h3>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="records-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 10%;" class="center-align">연도</th>
+                                                <th style="width: 25%;">수요처</th>
+                                                <th>실적 내역</th>
+                                                <th style="width: 18%;" class="center-align">내용</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="center-align">2026</td>
+                                                <td style="color:#fff; font-weight:500;">춘천 퇴계 푸르지오 아파트</td>
+                                                <td>부스터 가압 펌프 시스템 인버터 컨트롤러 교체 및 세대 압력 세팅</td>
+                                                <td class="center-align">수리 및 제어</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center-align">2025</td>
+                                                <td style="color:#fff; font-weight:500;">삼척 현대아파트</td>
+                                                <td>지하 주차장 집수정 배수 오수펌프 2대 및 레벨 스위치 신설 교체</td>
+                                                <td class="center-align">펌프 제작 설치</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center-align">2025</td>
+                                                <td style="color:#fff; font-weight:500;">춘천 온의동 메디컬타워</td>
+                                                <td>기계실 노후 순환 펌프(단단벌류트) 3대 교체 및 플랜지 용접 시공</td>
+                                                <td class="center-align">설비 시공</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center-align">2024</td>
+                                                <td style="color:#fff; font-weight:500;">강릉 씨마크 빌딩</td>
+                                                <td>고지대 가압 급수용 부스터펌프 1세트 (3병렬 인버터 펌프) 신설</td>
+                                                <td class="center-align">시스템 설계 제작</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center-align">2024</td>
+                                                <td style="color:#fff; font-weight:500;">태백 주공3차 아파트</td>
+                                                <td>소방 배관용 충압 펌프 다단 원심식 모델 분해 소등 및 베어링 수리</td>
+                                                <td class="center-align">정밀 오버홀</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             5️⃣ 캠페인 (CAMPAIGN)
+             ========================================== -->
+        <section class="spa-page" id="page-campaign">
+            <section class="sub-hero">
+                <h1 class="sub-hero-title">사회공헌 <span class="highlight">캠페인</span></h1>
+                <p class="sub-hero-desc">비에이텍은 환경을 생각하는 기술로 더 맑고 깨끗한 미래를 만들어갑니다.</p>
+            </section>
+
+            <div class="container">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="social">사회적 활동</button>
+                    <button class="tab-btn" data-tab="eco">친환경 캠페인</button>
+                </div>
+
+                <div class="tab-panels-wrapper">
+                    <!-- Tab Panel: 사회적 활동 -->
+                    <div class="tab-panel active" id="panel-campaign-social">
+                        <section class="campaign-section" style="padding-top:0;">
+                            <div class="campaign-grid">
+                                <div class="campaign-card">
+                                    <div class="campaign-img">
+                                        <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Clean+River+Project" alt="클린 리버 프로젝트">
+                                    </div>
+                                    <div class="campaign-content">
+                                        <span class="campaign-date">2026. 04. 20</span>
+                                        <h3 class="campaign-title">'클린 리버 프로젝트' 지역 하천 정화 활동 진행</h3>
+                                        <p class="campaign-desc">(주)비에이텍 임직원들은 수자원 보호의 중요성을 알리기 위해 본사 인근 하천에서 쓰레기 수거 및 수질 정화 캠페인을 성공적으로 마쳤습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="campaign-card">
+                                    <div class="campaign-img">
+                                        <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Eco+Water+Pump" alt="친환경 펌프 기증">
+                                    </div>
+                                    <div class="campaign-content">
+                                        <span class="campaign-date">2025. 11. 15</span>
+                                        <h3 class="campaign-title">수도권 소외계층 대상 고효율 워터펌프 무상 교체</h3>
+                                        <p class="campaign-desc">노후된 수로 설비로 불편을 겪는 지역 사회를 돕고자, 자사의 최신 고효율 인버터 펌프 50대를 무상으로 설치 및 점검해드렸습니다.</p>
+                                    </div>
+                                </div>
+                                <div class="campaign-card">
+                                    <div class="campaign-img">
+                                        <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Water+Day+Seminar" alt="세계 물의 날 세미나">
+                                    </div>
+                                    <div class="campaign-content">
+                                        <span class="campaign-date">2025. 03. 22</span>
+                                        <h3 class="campaign-title">세계 물의 날 기념 '수자원 절약 세미나' 개최</h3>
+                                        <p class="campaign-desc">에너지 절감형 펌프 기술의 동향과 지속 가능한 물 관리 솔루션에 대해 논의하는 자리를 마련하여 업계 관계자들의 큰 호응을 얻었습니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Tab Panel: 친환경 캠페인 -->
+                    <div class="tab-panel" id="panel-campaign-eco">
+                        <section class="campaign-section" style="padding-top:0;">
+                            <div class="featured-campaign">
+                                <h2>(주)비에이텍과 함께하는 물 활용 캠페인</h2>
+                                <p>소중한 자원인 물을 아끼고 스마트하게 활용하는 방법, 카드뉴스로 확인해보세요.</p>
+                                <div style="border-radius: 15px; overflow: hidden; border: 1px solid rgba(0, 229, 255, 0.2); display: inline-block;">
+                                    <img src="카드뉴스.png" alt="물 활용 캠페인 카드뉴스" style="max-width: 100%; height: auto; display: block;" onerror="this.src='https://via.placeholder.com/800x600/0a1932/00e5ff?text=물+활용+캠페인+카드뉴스'">
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             6️⃣ 고객지원 (SUPPORT)
+             ========================================== -->
+        <section class="spa-page" id="page-support">
+            <section class="sub-hero">
+                <h1 class="sub-hero-title">고객<span class="highlight">지원</span></h1>
+                <p class="sub-hero-desc">비에이텍을 이용해 주시는 고객 만족을 위해 빠르고 투명하게 돕겠습니다.</p>
+            </section>
+
+            <div class="container">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="notice">공지사항</button>
+                    <button class="tab-btn" data-tab="faq">FAQ</button>
+                    <button class="tab-btn" data-tab="inquiry">1:1 온라인 문의</button>
+                </div>
+
+                <div class="tab-panels-wrapper">
+                    <!-- Tab Panel: 공지사항 -->
+                    <div class="tab-panel active" id="panel-support-notice">
+                        <section class="support-section" style="padding-top: 0;">
+                            <div class="board-wrapper">
+                                <table class="board-table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10%;" class="center">번호</th>
+                                            <th>제목</th>
+                                            <th style="width: 15%;" class="center">작성일</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="center"><span class="board-badge">중요</span></td>
+                                            <td style="color:#fff; font-weight: 500;">(주)비에이텍 공식 웹사이트 GNB 개편 및 통합 포털 리뉴얼 안내</td>
+                                            <td class="center">2026.06.19</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">3</td>
+                                            <td>2026년 하반기 고효율 부스터 펌프 신제품 출시 예정 안내</td>
+                                            <td class="center">2026.05.10</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">2</td>
+                                            <td>[품질공지] ISO 9001:2015 품질경영 인증 시스템 주기 갱신 결과 안내</td>
+                                            <td class="center">2026.04.15</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">1</td>
+                                            <td>퇴계제2농공단지 본사 신축 공장 이전 및 대표 번호 통폐합 안내</td>
+                                            <td class="center">2026.03.01</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Tab Panel: FAQ -->
+                    <div class="tab-panel" id="panel-support-faq">
+                        <section class="support-section" style="padding-top: 0;">
+                            <div class="faq-wrapper">
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <span>Q. 직접생산확인증명서가 발급된 11종 펌프는 정확히 어떤 품목인가요?</span>
+                                        <span class="faq-icon">▼</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-inner">
+                                            저희 (주)비에이텍은 다단벌류트펌프, 단단벌류트펌프, 양흡입벌류트펌프, 편흡입벌류트펌프, 정량펌프, 수중펌프, 오수펌프, 슬러지펌프, 심정용펌프, 전진공동펌프, 부스터펌프 등 총 11종의 액체 펌프에 대해 중소벤처기업부 인증 직접생산증명을 보유하고 있습니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <span>Q. 펌프 설계 도면(CAD) 및 단가 견적서는 어떻게 받아볼 수 있나요?</span>
+                                        <span class="faq-icon">▼</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-inner">
+                                            고객지원의 [1:1 온라인 문의] 탭을 통하여 요청 내용을 적어 접수해 주시거나 본사 대표전화(033-264-9243)로 연락해 주시면 원하시는 규격 펌프의 설계 도면(.dwg) 및 견적 서류를 신속하게 발행해 드립니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <span>Q. 현장 긴급 수리 및 예방 점검(A/S) 대응 지역 및 소요 시간은 어떻게 되나요?</span>
+                                        <span class="faq-icon">▼</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-inner">
+                                            강원특별자치도 춘천에 본사 제조공장 및 직영 A/S 정비반이 상주하고 있습니다. 관공서 가압장 및 민간 아파트의 긴급 문제 발생 시 강원 전역은 24시간 이내, 경기 북부 및 서울권은 48시간 이내 긴급 정비 출동 조치를 제공합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-item">
+                                    <div class="faq-question">
+                                        <span>Q. 사내망(INTRANET)은 일반 사용자도 들어가서 볼 수 있나요?</span>
+                                        <span class="faq-icon">▼</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <div class="faq-answer-inner">
+                                            사내망(INTRANET 🔒)은 (주)비에이텍 임직원들의 기밀 문서, 사내 행정 업무 및 조직도 관리를 위한 비공개 영역입니다. 인적 정보 보호를 위해 비에이텍 사원 ID와 인증번호를 입력하여 접근을 거치셔야만 조회가 가능합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Tab Panel: 1:1 온라인 문의 -->
+                    <div class="tab-panel" id="panel-support-inquiry">
+                        <section class="support-section" style="padding-top:0;">
+                            <div class="inquiry-wrapper">
+                                <form class="inquiry-form" onsubmit="submitInquiry(event)">
+                                    <div class="form-group">
+                                        <label class="form-label" for="inqName">성함 / 담당자명</label>
+                                        <input type="text" id="inqName" class="form-control" placeholder="성함을 입력하세요..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="inqCompany">업체명 / 기관명</label>
+                                        <input type="text" id="inqCompany" class="form-control" placeholder="기관 및 상호를 입력하세요..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="inqEmail">이메일 주소</label>
+                                        <input type="email" id="inqEmail" class="form-control" placeholder="example@email.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="inqPhone">연락처</label>
+                                        <input type="tel" id="inqPhone" class="form-control" placeholder="010-0000-0000" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="inqSubject">문의 제목</label>
+                                        <input type="text" id="inqSubject" class="form-control" placeholder="문의 제목을 적어주세요..." required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="inqMessage">문의 세부 내용 (제품명, 수량, 현장 스펙 등)</label>
+                                        <textarea id="inqMessage" class="form-control" placeholder="도면 요청, 조달 납품 시공 견적 등 상세 문의 사항을 기술해 주세요..." required></textarea>
+                                    </div>
+                                    <div class="form-check-group">
+                                        <input type="checkbox" id="inqPrivacy" class="form-check-input" required>
+                                        <label for="inqPrivacy" class="form-check-label">개인정보 수집 및 이용약관에 동의합니다. (상담 진행 목적)</label>
+                                    </div>
+                                    <button type="submit" class="btn-primary" style="width:100%; margin-top:2rem; padding: 1rem; border:none; cursor:pointer;">1:1 온라인 문의 접수</button>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             7️⃣ 사내망 (INTRANET)
+             ========================================== -->
+        <section class="spa-page" id="page-intranet">
+            <section class="sub-hero">
+                <h1 class="sub-hero-title"><span class="highlight">사내망</span> (Intranet)</h1>
+                <p class="sub-hero-desc">(주)비에이텍 임직원 업무 협업 및 조직도 시스템입니다.</p>
+            </section>
+
+            <div class="container">
+                <!-- Tab Bar for Intranet -->
+                <div class="tabs-container" id="intranetTabs" style="display: none;">
+                    <button class="tab-btn active" data-tab="org">조직도 트리</button>
+                    <button class="tab-btn" data-tab="roster">임직원 목록 대장</button>
+                </div>
+
+                <div class="tab-panels-wrapper">
+                    <!-- Non-Logged In view: Lock Gate -->
+                    <div id="intranetLockPanel" class="login-guard-section">
+                        <div class="login-card" style="margin: 0 auto;">
+                            <div class="login-icon">🔒</div>
+                            <h2 class="login-title">임직원 전용 인증</h2>
+                            <p class="login-desc">비에이텍 사내 행정망 접근 권한이 필요합니다.<br>(테스트 계정 - ID: batech / PW: 1234)</p>
+                            <button onclick="openLoginModal()" class="btn-primary login-btn" style="border:none; cursor:pointer;">보안 로그인 창 열기</button>
+                        </div>
+                    </div>
+
+                    <!-- Logged In Panel 1: 조직도 트리 -->
+                    <div class="tab-panel" id="panel-intranet-org">
+                        <div class="intranet-section" style="padding-top:0;">
+                            <!-- Welcome Bar -->
+                            <div class="welcome-bar">
+                                <div class="welcome-text">
+                                    안녕하세요, <span>(주)비에이텍 임직원</span> 님. 사내망 세션이 활성화되었습니다.
+                                </div>
+                                <button class="logout-btn" onclick="doLogout()">사내망 로그아웃</button>
+                            </div>
+
+                            <div class="section-header" style="margin-bottom: 2rem;">
+                                <span class="hero-badge">인사 행정 정보</span>
+                                <h2 class="section-title" style="font-size: 2.2rem; margin-top: 0.5rem;">(주)비에이텍 <span class="highlight">조직도 트리</span></h2>
+                            </div>
+
+                            <!-- Org tree graph layout -->
+                            <div class="organogram-wrapper">
+                                <div class="tree-root">
+                                    <!-- 1단계: 대표이사 -->
+                                    <div class="org-card ceo-node" onclick="viewEmpDetail('조세연')">
+                                        <div class="org-card-title">Management</div>
+                                        <div class="org-card-name">조세연</div>
+                                        <div class="org-card-role">대표이사</div>
+                                    </div>
+                                    
+                                    <div class="tree-line-v"></div>
+                                    
+                                    <div class="tree-line-h-container">
+                                        <div class="tree-line-h"></div>
+                                    </div>
+                                    
+                                    <!-- 2단계: 3대 부서 -->
+                                    <div class="tree-branches">
+                                        <!-- 생산부 branch -->
+                                        <div class="branch-column">
+                                            <div class="org-card dept-node">
+                                                <div class="org-card-title">Production</div>
+                                                <div class="org-card-name" style="font-size: 1.2rem;">생산부</div>
+                                                <div class="org-card-role">제조 및 가공 공정 총괄</div>
+                                            </div>
+                                            <div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+                                                <div class="org-card" onclick="viewEmpDetail('정충구')">
+                                                    <div class="org-card-name">정충구</div>
+                                                    <div class="org-card-role">부장 / 공정 지휘</div>
+                                                </div>
+                                                <div class="org-card" onclick="viewEmpDetail('조태연')">
+                                                    <div class="org-card-name">조태연</div>
+                                                    <div class="org-card-role">부장 / 특수펌프 스케줄</div>
+                                                </div>
+                                                <div class="org-card" onclick="viewEmpDetail('김진수')">
+                                                    <div class="org-card-name">김진수</div>
+                                                    <div class="org-card-role">과장 / 가공 및 조립</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 관리부 branch -->
+                                        <div class="branch-column">
+                                            <div class="org-card dept-node">
+                                                <div class="org-card-title">Support</div>
+                                                <div class="org-card-name" style="font-size: 1.2rem;">관리부</div>
+                                                <div class="org-card-role">행정 및 조달계약 승인</div>
+                                            </div>
+                                            <div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+                                                <div class="org-card" onclick="viewEmpDetail('이원석')">
+                                                    <div class="org-card-name">이원석</div>
+                                                    <div class="org-card-role">이사 / 조달 입찰계약</div>
+                                                </div>
+                                                <div class="org-card" onclick="viewEmpDetail('김홍인')">
+                                                    <div class="org-card-name">김홍인</div>
+                                                    <div class="org-card-role">실장 / 행정 공정모니터링</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 품질보증부 branch -->
+                                        <div class="branch-column">
+                                            <div class="org-card dept-node">
+                                                <div class="org-card-title">QA</div>
+                                                <div class="org-card-name" style="font-size: 1.2rem;">품질보증부</div>
+                                                <div class="org-card-role">규격관리 및 품질시험소</div>
+                                            </div>
+                                            <div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+                                                <div class="org-card" onclick="viewEmpDetail('정영호')">
+                                                    <div class="org-card-name">정영호</div>
+                                                    <div class="org-card-role">사원 / 성능시험 성적서</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logged In Panel 2: 임직원 목록 대장 -->
+                    <div class="tab-panel" id="panel-intranet-roster">
+                        <div class="intranet-section" style="padding-top:0;">
+                            <!-- Welcome Bar -->
+                            <div class="welcome-bar">
+                                <div class="welcome-text">
+                                    안녕하세요, <span>(주)비에이텍 임직원</span> 님. 사내망 세션이 활성화되었습니다.
+                                </div>
+                                <button class="logout-btn" onclick="doLogout()">사내망 로그아웃</button>
+                            </div>
+
+                            <div class="search-wrapper">
+                                <span class="search-icon">🔍</span>
+                                <input type="text" id="empSearchInput" placeholder="부서, 직급, 성명 또는 담당업무 검색..." oninput="filterEmployees()">
+                            </div>
+
+                            <div class="employee-roster-section">
+                                <div class="employee-grid" id="employeeGrid">
+                                    <!-- JS dynamic insert -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-info">
@@ -98,17 +1119,17 @@
                 <div class="link-group">
                     <h4>회사 정보</h4>
                     <ul>
-                        <li><a href="intro.html">기업소개</a></li>
-                        <li><a href="sales.html">업력</a></li>
-                        <li><a href="map.html">오시는 길</a></li>
+                        <li><a href="#intro/overview">기업소개</a></li>
+                        <li><a href="#intro/history">연혁</a></li>
+                        <li><a href="#intro/map">오시는 길</a></li>
                     </ul>
                 </div>
                 <div class="link-group">
                     <h4>사업 분야</h4>
                     <ul>
-                        <li><a href="product.html">주요제품</a></li>
-                        <li><a href="equipment.html">장비</a></li>
-                        <li><a href="campaign.html">캠페인</a></li>
+                        <li><a href="#product/lineup">주요제품</a></li>
+                        <li><a href="#tech/certs">품질인증서</a></li>
+                        <li><a href="#campaign/social">캠페인</a></li>
                     </ul>
                 </div>
             </div>
@@ -118,24 +1139,1006 @@
         </div>
     </footer>
 
+
+    <!-- ==========================================
+         MODALS & OVERLAYS
+         ========================================= -->
+    <!-- 🔒 1. 사내망 로그인 모달 -->
+    <div id="loginModal" class="cert-modal">
+        <div class="cert-modal-content" style="max-width: 420px; padding: 2.5rem 2rem;">
+            <span class="cert-modal-close" onclick="closeLoginModal()">&times;</span>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div class="login-icon">🔒</div>
+                <h3 class="login-title">임직원 전용 로그인</h3>
+                <p class="login-desc" style="margin-bottom:0;">비에이텍 사내 행정망 접근 인증</p>
+            </div>
+            <form onsubmit="tryLogin(event)">
+                <div class="form-group">
+                    <label class="form-label" for="empId">사원 ID</label>
+                    <input type="text" id="empId" class="form-control" placeholder="아이디 입력 (batech)" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label class="form-label" for="empPw">비밀번호</label>
+                    <input type="password" id="empPw" class="form-control" placeholder="비밀번호 입력 (1234)" required>
+                    <div class="error-msg" id="loginErrorMsg">아이디 또는 비밀번호가 틀렸습니다.</div>
+                </div>
+                <button type="submit" class="btn-primary login-btn" style="border:none; cursor:pointer;">로그인</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 📜 2. 품질인증서 디테일 뷰어 모달 -->
+    <div id="certModal" class="cert-modal">
+        <div class="cert-modal-content">
+            <span class="cert-modal-close" id="closeModalBtn">&times;</span>
+            <div class="cert-modal-body">
+                <!-- PDF Spinner -->
+                <div class="pdf-spinner" id="pdfSpinner">
+                    <div class="spinner-ring"></div>
+                    <p>인증서 파일을 불러오는 중입니다...</p>
+                </div>
+                <!-- PDF canvas container -->
+                <div class="pdf-canvas-container">
+                    <canvas id="pdfCanvas" class="pdf-canvas"></canvas>
+                </div>
+                <!-- PDF Carousel Page navigations -->
+                <button class="pdf-nav-btn prev-btn" id="pdfPrevBtn">&lsaquo;</button>
+                <button class="pdf-nav-btn next-btn" id="pdfNextBtn">&rsaquo;</button>
+                <div class="pdf-page-num" id="pdfPageNum">1 / 1</div>
+            </div>
+            <div class="cert-modal-footer">
+                <span class="cert-modal-title" id="modalCertTitle">인증서 제목</span>
+                <div style="display:flex; gap:0.5rem;">
+                    <a href="" download class="btn-primary" id="pdfDownloadBtn" style="font-size:0.85rem; padding: 0.5rem 1rem;">다운로드</a>
+                    <a href="" target="_blank" class="btn-secondary" id="pdfOpenNewTabBtn" style="font-size:0.85rem; padding: 0.5rem 1rem;">새창 열기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 👤 3. 사내 직원 상세 업무분장 모달 -->
+    <div id="empDetailModal" class="cert-modal">
+        <div class="cert-modal-content" style="max-width: 550px; padding: 2.5rem 2rem;">
+            <span class="cert-modal-close" onclick="closeEmpDetailModal()">&times;</span>
+            
+            <div style="display:flex; align-items:center; gap:1.2rem; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:1.5rem; margin-bottom:1.5rem;">
+                <div id="modalEmpAvatar" style="font-size:3rem; background:rgba(0,229,255,0.1); width:70px; height:70px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px solid rgba(0,229,255,0.2);">👤</div>
+                <div>
+                    <span id="modalEmpDept" style="color:var(--secondary-color); font-weight:600; font-size:0.85rem;">소속 부서</span>
+                    <h3 style="font-size:1.5rem; color:#fff; font-weight:700; margin-top:0.2rem;" id="modalEmpName">홍길동 <span id="modalEmpPos" style="font-size:1rem; font-weight:400; color:var(--text-muted); margin-left:0.5rem;">직급</span></h3>
+                </div>
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+                <h4 style="font-size:1rem; color:#fff; margin-bottom:0.8rem; display:flex; align-items:center; gap:0.5rem;"><span style="color:var(--secondary-color);">📋</span> 상세 업무분장</h4>
+                <div style="background:rgba(5,11,20,0.5); padding:1.2rem 1.5rem; border-radius:12px; border:1px solid rgba(255,255,255,0.05);">
+                    <ul id="modalEmpTasks" style="list-style:disc; padding-left:1.2rem; color:var(--text-muted); font-size:0.92rem; line-height:1.6; display:flex; flex-direction:column; gap:0.5rem;">
+                        <!-- Tasks list -->
+                    </ul>
+                </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+                <div style="background:rgba(10,25,50,0.4); border:1px solid var(--glass-border); padding:1rem; border-radius:12px;">
+                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">내선 번호</div>
+                    <div style="font-weight:600; color:#fff;"><a id="modalEmpPhone" href="tel:033-264-9243" style="color:inherit;">033-264-9243 (내선 000)</a></div>
+                </div>
+                <div style="background:rgba(10,25,50,0.4); border:1px solid var(--glass-border); padding:1rem; border-radius:12px;">
+                    <div style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.3rem;">근무 구역</div>
+                    <div style="font-weight:600; color:#fff;" id="modalEmpArea">구역정보</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         SVG CUSTOM PUMP ICONS DEFINITIONS
+         ========================================== -->
+    <svg style="display: none;">
+        <!-- 벌류트형 펌프 아이콘 -->
+        <g id="svg-pump-volute">
+            <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="6"/>
+            <path d="M 50 10 L 50 20 M 80 50 L 70 50 M 50 90 L 50 80 M 20 50 L 30 50" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 50 50 L 30 30 M 50 50 L 70 30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <rect x="75" y="42" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="5"/>
+            <line x1="85" y1="25" x2="85" y2="42" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <!-- 수중형 펌프 아이콘 -->
+        <g id="svg-pump-submersible">
+            <rect x="30" y="20" width="40" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="6"/>
+            <line x1="30" y1="40" x2="70" y2="40" stroke="currentColor" stroke-width="4"/>
+            <line x1="30" y1="60" x2="70" y2="60" stroke="currentColor" stroke-width="4"/>
+            <path d="M 50 20 L 50 8 M 40 8 L 60 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <path d="M 20 85 Q 35 75 50 85 T 80 85" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <!-- 정압/가압형 펌프 아이콘 -->
+        <g id="svg-pump-pressure">
+            <rect x="25" y="30" width="30" height="40" rx="4" fill="none" stroke="currentColor" stroke-width="5"/>
+            <rect x="55" y="35" width="22" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="5"/>
+            <circle cx="66" cy="50" r="6" fill="currentColor"/>
+            <line x1="40" y1="30" x2="40" y2="15" to stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <path d="M 35 15 L 45 15" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+            <line x1="77" y1="50" x2="88" y2="50" stroke="currentColor" stroke-width="5"/>
+        </g>
+    </svg>
+
+
+    <!-- ==========================================
+         JAVASCRIPT SPA & LOGIC ROUTER
+         ========================================== -->
     <script>
+        // ==========================================
+        // 1. SPA Routing Logic
+        // ==========================================
+        const pageConfigs = {
+            'home': { id: 'page-home', defaultTab: null },
+            'intro': { id: 'page-intro', defaultTab: 'overview' },
+            'product': { id: 'page-product', defaultTab: 'lineup' },
+            'tech': { id: 'page-tech', defaultTab: 'certs' },
+            'sales': { id: 'page-sales', defaultTab: 'gov' },
+            'campaign': { id: 'page-campaign', defaultTab: 'social' },
+            'support': { id: 'page-support', defaultTab: 'notice' },
+            'intranet': { id: 'page-intranet', defaultTab: 'org' }
+        };
+
+        function handleRouting() {
+            const hash = window.location.hash || '#home';
+            const parts = hash.substring(1).split('/');
+            const pageKey = parts[0];
+            const tabKey = parts[1];
+
+            const pageConf = pageConfigs[pageKey] || pageConfigs['home'];
+            
+            // 1. GNB Link active control
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === `#${pageKey}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // 2. Hide all page segments, show active page segment
+            document.querySelectorAll('.spa-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            const activePageEl = document.getElementById(pageConf.id);
+            if (activePageEl) {
+                activePageEl.classList.add('active');
+            }
+
+            // Scroll header check
+            updateHeaderStyles();
+
+            // 3. Intranet session guarding
+            if (pageKey === 'intranet') {
+                const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+                const lockPanel = document.getElementById('intranetLockPanel');
+                const intranetTabs = document.getElementById('intranetTabs');
+                
+                if (!isLoggedIn) {
+                    lockPanel.style.display = 'flex';
+                    intranetTabs.style.display = 'none';
+                    // Hide intranet panel sub-panels
+                    document.getElementById('panel-intranet-org').classList.remove('active');
+                    document.getElementById('panel-intranet-roster').classList.remove('active');
+                    
+                    // Show login modal immediately
+                    openLoginModal();
+                    return;
+                } else {
+                    lockPanel.style.display = 'none';
+                    intranetTabs.style.display = 'flex';
+                }
+            }
+
+            // 4. Tab active control inside sub pages
+            if (pageConf.defaultTab) {
+                const activeTabKey = tabKey || pageConf.defaultTab;
+                
+                // Set GNB sub-tabs buttons active highlight
+                const tabBtns = activePageEl.querySelectorAll('.tab-btn');
+                tabBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-tab') === activeTabKey) {
+                        btn.classList.add('active');
+                    }
+                });
+
+                // Display active tab panel content
+                const tabPanels = activePageEl.querySelectorAll('.tab-panel');
+                tabPanels.forEach(panel => {
+                    panel.classList.remove('active');
+                    if (panel.id === `panel-${pageKey}-${activeTabKey}`) {
+                        panel.classList.add('active');
+                    }
+                });
+
+                // Triggers inside tabs loading
+                if (pageKey === 'product' && activeTabKey === 'lineup') {
+                    filterProducts();
+                } else if (pageKey === 'product' && activeTabKey === 'specs') {
+                    renderSpecsTable();
+                } else if (pageKey === 'sales' && activeTabKey === 'gov') {
+                    renderSalesTable();
+                } else if (pageKey === 'intranet' && activeTabKey === 'roster') {
+                    renderEmployeeGrid();
+                }
+            }
+        }
+
         // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+        function updateHeaderStyles() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50 || (window.location.hash !== '#home' && window.location.hash !== '')) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
+        }
+
+        window.addEventListener('scroll', updateHeaderStyles);
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('load', () => {
+            handleRouting();
+            // Bind GNB tab-btn clicks to change hash route
+            document.querySelectorAll('.spa-page').forEach(page => {
+                const pageId = page.id.replace('page-', '');
+                const tabBtns = page.querySelectorAll('.tab-btn');
+                tabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const tabKey = btn.getAttribute('data-tab');
+                        window.location.hash = `#${pageId}/${tabKey}`;
+                    });
+                });
+            });
         });
 
-        // Simple mobile menu toggle logic
+        // Mobile GNB menu trigger drawer
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const nav = document.querySelector('.nav');
-        
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenuBtn.classList.toggle('active');
             nav.classList.toggle('active');
+        });
+
+
+        // ==========================================
+        // 2. 11 Pumps Product Database & Render
+        // ==========================================
+        const productsData = [
+            { code: "4015150301", name: "다단벌류트펌프", category: "volute", categoryKo: "벌류트 펌프류", engName: "Multi-stage Volute Pump", desc: "여러 개의 임펠러를 직렬로 배치하여 고양정이 요구되는 대규모 가압 송수 및 공업용 급수 계통에 최적화된 고효율 벌류트 펌프입니다.", specs: ["고압수 압송 특화", "다단 구조로 고양정 확보", "스테인리스 재질 적용"], icon: "volute", press: "20 ~ 250 m" },
+            { code: "4015150302", name: "단단벌류트펌프", category: "volute", categoryKo: "벌류트 펌프류", engName: "Single-stage Volute Pump", desc: "단일 임펠러 구조로 제작되어 농업용 취수, 일반 배수, 빌딩 냉온수 순환 등 넓은 분야에 사용되는 표준 규격의 벌류트 펌프입니다.", specs: ["간결한 구조로 유지관리 용이", "안정적인 유량 공급", "부식 방지 특수도장"], icon: "volute", press: "5 ~ 90 m" },
+            { code: "4015150303", name: "양흡입벌류트펌프", category: "volute", categoryKo: "벌류트 펌프류", engName: "Double-suction Volute Pump", desc: "임펠러 양면에서 유체를 흡입하여 축 방향 추력을 제거하고 대용량 양수가 가능하여 대규모 정수장이나 공장 급수계통에 적합합니다.", specs: ["대용량 유체 압송", "수격 현상 방지 설계", "진동 최소화로 수명 연장"], icon: "volute", press: "10 ~ 120 m" },
+            { code: "4015150304", name: "편흡입벌류트펌프", category: "volute", categoryKo: "벌류트 펌프류", engName: "End-suction Volute Pump", desc: "축 방향으로 흡입하고 반경 방향으로 토출하는 구조로 범용성이 매우 높으며, 다양한 기계 장비의 냉각수 순환 및 급수용으로 적합합니다.", specs: ["콤팩트한 표준 유체 설계", "에너지 효율 등급 만족", "부스터 및 가압 시스템 연동"], icon: "volute", press: "8 ~ 100 m" },
+            { code: "4015150501", name: "정량펌프", category: "pressure", categoryKo: "정밀/가압 펌프류", engName: "Metering Pump", desc: "주입 압력에 관계없이 정밀하게 일정량의 약품이나 액체를 토출하며, 정수/하수 처리 공정의 화학약품 주입 시스템에 주로 사용됩니다.", specs: ["정밀 토출 오차 ±1% 이내", "내화학성 특수 씰 탑재", "디지털 제어 드라이브 연동"], icon: "pressure", press: "Max 15 bar" },
+            { code: "4015151301", name: "수중펌프", category: "submersible", categoryKo: "수중/특수 펌프류", engName: "Submersible Pump", desc: "유체 내부에 모터를 완전히 침수시켜 양수하는 펌프로 소음이 없으며 깊은 우물, 지하 배수 및 토목 현장에서 널리 활약합니다.", specs: ["완벽 이중 방수 모터", "수중 연속 가동 최적화", "과열 방지 서멀 프로텍터"], icon: "submersible", press: "5 ~ 60 m" },
+            { code: "4015151701", name: "오수펌프", category: "submersible", categoryKo: "수중/특수 펌프류", engName: "Sewage Pump", desc: "건물 지하, 주방, 화장실 등에서 발생하는 고형물이 포함된 생활 오수를 안전하게 이송하기 위해 입자가 큰 슬러리도 통과할 수 있게 설계되었습니다.", specs: ["조대 고형물 통과 설계", "내마모성 임펠러 재질", "비폐쇄형 보텍스 구조"], icon: "submersible", press: "4 ~ 30 m" },
+            { code: "4015152501", name: "슬러지펌프", category: "submersible", categoryKo: "수중/특수 펌프류", engName: "Sludge Pump", desc: "고농도의 찌꺼기나 슬러지를 모터 손상 없이 이송할 수 있도록 강력한 절단날(커터)이나 고점도용 비막힘형 임펠러가 장착되어 있습니다.", specs: ["고농도 하수 슬러지 이송", "커팅 임펠러 옵션 선택 가능", "내구성이 뛰어난 메카니컬 씰"], icon: "submersible", press: "5 ~ 45 m" },
+            { code: "4015154701", name: "심정용펌프", category: "submersible", categoryKo: "수중/특수 펌프류", engName: "Deep Well Pump", desc: "깊은 지하수가 있는 소구경 심정 우물에 매립할 수 있도록 얇은 원통형 외경으로 설계되어, 농촌 용수 및 지하 상수도 개발에 필수적입니다.", specs: ["슬림형 원통 바디", "고압 고양정 압송 실현", "모래 마모 방지 다단계 스테이지"], icon: "submersible", press: "30 ~ 300 m" },
+            { code: "4015155301", name: "전진공동펌프", category: "pressure", categoryKo: "정밀/가압 펌프류", engName: "Progressive Cavity Pump", desc: "로터와 스테이터 사이의 회전형 공동을 통해 유체를 강제로 전진 압송하며, 슬러리, 고점도 페이스트, 식품 원료 이송에 탁월합니다.", specs: ["무맥동 정량 압송", "초고점도 액체 이송 실현", "역방향 운전 제어 가능"], icon: "pressure", press: "Max 24 bar" },
+            { code: "4015156601", name: "부스터펌프", category: "pressure", categoryKo: "정밀/가압 펌프류", engName: "Booster Pump System", desc: "아파트, 빌딩, 공장 등에서 실시간 물 사용량 변화를 감지하고 복수의 인버터 제어 펌프를 병렬 운전하여 수도 배관에 일정한 압력을 보장하는 가압 시스템입니다.", specs: ["에너지 절감 인버터 내장", "터치스크린 스마트 컨트롤러", "세대별 고른 수압 제공"], icon: "pressure", press: "10 ~ 160 m" }
+        ];
+
+        let selectedCategory = "all";
+
+        function filterProducts() {
+            const grid = document.getElementById('productGrid');
+            if (!grid) return;
+
+            const query = document.getElementById('productSearch').value.trim().toLowerCase();
+            const filtered = productsData.filter(prod => {
+                const matchesSearch = prod.name.toLowerCase().includes(query) || prod.code.includes(query);
+                const matchesCategory = selectedCategory === "all" || prod.category === selectedCategory;
+                return matchesSearch && matchesCategory;
+            });
+
+            grid.innerHTML = '';
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="no-results">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+                        검색 조건이나 카테고리에 일치하는 펌프 제품이 없습니다.
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                
+                let specsHtml = '';
+                prod.specs.forEach(spec => {
+                    specsHtml += `<li>${spec}</li>`;
+                });
+
+                card.innerHTML = `
+                    <div class="product-img-box">
+                        <svg viewBox="0 0 100 100">
+                            <use href="#svg-pump-${prod.icon}"/>
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${prod.categoryKo}</span>
+                        <h3 class="product-name">${prod.name}</h3>
+                        <span class="product-code-badge">물품분류번호: ${prod.code}</span>
+                        <p class="product-desc">${prod.desc}</p>
+                        <ul class="product-specs">
+                            ${specsHtml}
+                        </ul>
+                        <button onclick="requestQuote('${prod.name}', '${prod.code}')" class="btn-primary" style="text-align:center; width: 100%; border:none; cursor:pointer;">
+                            B2B 조달 / 단가 문의
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function setCategory(btn) {
+            document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+            btn.classList.add('active');
+            selectedCategory = btn.getAttribute('data-filter');
+            filterProducts();
+        }
+
+        // Deep link inquiry prefill logic
+        function requestQuote(name, code) {
+            window.location.hash = '#support/inquiry';
+            document.getElementById('inqSubject').value = `[단가 견적 문의] ${name} (${code}) 구입 및 납품 단가 질의`;
+            document.getElementById('inqMessage').value = `안녕하십니까,\n\n조달청 등록 물품분류번호 ${code}에 기재된 [${name}] 제품의 설계 규격 및 납품 단가(현장 설치 공사비 포함 여부)에 대하여 질의드립니다.\n\n- 희망 규격 및 용량:\n- 희망 납품처:\n- 예정 물량:`;
+        }
+
+        function renderSpecsTable() {
+            const tbody = document.getElementById('specsTableBody');
+            if (!tbody || tbody.children.length > 0) return; // Prevent double rendering
+            
+            productsData.forEach(prod => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-family:'Outfit'; font-weight:600;">${prod.code}</td>
+                    <td style="color:#fff; font-weight:600;">${prod.name}</td>
+                    <td style="font-family:'Outfit'; color:rgba(255,255,255,0.7);">${prod.engName}</td>
+                    <td>${prod.categoryKo}</td>
+                    <td style="color:var(--secondary-color); font-weight:500;">${prod.press}</td>
+                    <td style="font-size:0.88rem;">${prod.specs.join(' / ')}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+
+        // ==========================================
+        // 3. 관공서 실적 Paginated Search Table Logic
+        // ==========================================
+        const rawRecordsData = [
+            { id: 405, client: "춘천시상하수도사업본부", title: "2019년 상수도시설 확충공사(서면당림리 272번지일원외) 부스터펌프", date: "2019.08" },
+            { id: 413, client: "양양군상하수도사업소", title: "강현가압장 가압시설 증설공사 부스터펌프", date: "2019.08" },
+            { id: 418, client: "철원군농업기술센터", title: "2019년 만경보 수중펌프", date: "2019.07" },
+            { id: 404, client: "홍천군", title: "농업용수(양덕원리 취수펌프) 배수관로 설치공사 진공펌프", date: "2019.06" },
+            { id: 406, client: "춘천시상하수도사업본부", title: "용산정수장 샘플링펌프", date: "2019.06" },
+            { id: 408, client: "춘천시상하수도사업본부", title: "근화동 유수지 지배수펌프 증설공사 수중펌프", date: "2019.06" },
+            { id: 409, client: "강원도인재개발원", title: "본관기계실 노후펌프 교체공사", date: "2019.06" },
+            { id: 410, client: "춘천시상하수도사업본부", title: "수중펌프", date: "2019.06" },
+            { id: 417, client: "삼척시하수도사업소", title: "읍상빗물펌프장 펌프 수리수선", date: "2019.06" },
+            { id: 407, client: "철원군상하수도사업소", title: "김화하수처리구역(와수3처리분구) 하수관거정비사업 수중볼텍스펌프", date: "2019.05" },
+            { id: 411, client: "홍천군", title: "솔무치지구 기반 정비사업 1차분 심정펌프", date: "2019" },
+            { id: 412, client: "삼척시상수도사업소", title: "미로상수도 확장공사 부스터펌프", date: "2019" },
+            { id: 414, client: "양구군상하수도사업소", title: "송현 공공하수처리시설 설치공사 펌프류", date: "2019" },
+            { id: 415, client: "양구군상하수도사업소", title: "구암 공공하수처리시설 관급자재 - 펌프류", date: "2019" },
+            { id: 416, client: "양구군상하수도사업소", title: "죽곡 공공하수처리시설 관급자재 - 펌프류", date: "2019" },
+            { id: 419, client: "철원군농업기술센터", title: "2019년 철원 대마지구(대마리 990번지) 수리시설 정비사업 수중펌프", date: "2019" }
+        ];
+
+        let filteredRecords = [...rawRecordsData];
+        let currentSalesPage = 1;
+        const salesItemsPerPage = 5;
+
+        function renderSalesTable() {
+            const tableBody = document.getElementById('recordsTableBody');
+            if (!tableBody) return;
+
+            const badge = document.getElementById('totalRecordsBadge');
+            badge.textContent = `검색 결과 ${filteredRecords.length}건 / 총 ${rawRecordsData.length}건`;
+
+            tableBody.innerHTML = '';
+            if (filteredRecords.length === 0) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="no-data-msg">
+                            검색 조건에 맞는 납품 실적이 존재하지 않습니다.
+                        </td>
+                    </tr>
+                `;
+                document.getElementById('recordsPagination').innerHTML = '';
+                return;
+            }
+
+            const startIndex = (currentSalesPage - 1) * salesItemsPerPage;
+            const endIndex = Math.min(startIndex + salesItemsPerPage, filteredRecords.length);
+            const pageItems = filteredRecords.slice(startIndex, endIndex);
+
+            pageItems.forEach(record => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="center-align" style="font-weight:600; color:rgba(255,255,255,0.45);">${record.id}</td>
+                    <td style="font-weight: 500; color:#fff;">${record.client}</td>
+                    <td>${record.title}</td>
+                    <td class="center-align">${record.date}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+
+            renderSalesPagination();
+        }
+
+        function renderSalesPagination() {
+            const paginationContainer = document.getElementById('recordsPagination');
+            paginationContainer.innerHTML = '';
+
+            const totalPages = Math.ceil(filteredRecords.length / salesItemsPerPage);
+            if (totalPages <= 1) return;
+
+            // Prev
+            const prevBtn = document.createElement('button');
+            prevBtn.className = `pg-btn ${currentSalesPage === 1 ? 'disabled' : ''}`;
+            prevBtn.innerHTML = '&lsaquo;';
+            prevBtn.addEventListener('click', () => {
+                if (currentSalesPage > 1) {
+                    currentSalesPage--;
+                    renderSalesTable();
+                }
+            });
+            paginationContainer.appendChild(prevBtn);
+
+            // Numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const numBtn = document.createElement('button');
+                numBtn.className = `pg-btn ${currentSalesPage === i ? 'active' : ''}`;
+                numBtn.textContent = i;
+                numBtn.addEventListener('click', () => {
+                    currentSalesPage = i;
+                    renderSalesTable();
+                });
+                paginationContainer.appendChild(numBtn);
+            }
+
+            // Next
+            const nextBtn = document.createElement('button');
+            nextBtn.className = `pg-btn ${currentSalesPage === totalPages ? 'disabled' : ''}`;
+            nextBtn.innerHTML = '&rsaquo;';
+            nextBtn.addEventListener('click', () => {
+                if (currentSalesPage < totalPages) {
+                    currentSalesPage++;
+                    renderSalesTable();
+                }
+            });
+            paginationContainer.appendChild(nextBtn);
+        }
+
+        function onSearchInput() {
+            const query = document.getElementById('recordSearchInput').value.trim().toLowerCase();
+            filteredRecords = rawRecordsData.filter(record => 
+                record.client.toLowerCase().includes(query) || 
+                record.title.toLowerCase().includes(query)
+            );
+            currentSalesPage = 1;
+            renderSalesTable();
+        }
+
+
+        // ==========================================
+        // 4. 기술·인증 품질인증서 Carousel & PDF/Virtual Viewer
+        // ==========================================
+        const virtualCerts = {
+            "1": {
+                title: "사업자등록증",
+                org: "국세청",
+                issuer: "춘 천 세 무 서 장",
+                date: "2023년 11월 24일",
+                stamp: "춘천세무서장<br>인",
+                rows: [
+                    ["등록번호", "221-81-42625"],
+                    ["법인명(상호)", "비에이텍 주식회사 (Blue Advanced Technology Co., Ltd.)"],
+                    ["대표자", "조세연"],
+                    ["개업연월일", "2013년 02월 15일"],
+                    ["법인등록번호", "140111-0051140"],
+                    ["사업장 소재지", "강원특별자치도 춘천시 퇴계공단2길 64(퇴계동)"],
+                    ["본점 소재지", "강원특별자치도 춘천시 퇴계공단2길 64(퇴계동)"],
+                    ["사업의 종류", "업태: 제조업, 도소매, 부동산업 및 임대업<br>종목: 펌프, 금속 문·창·셔터 및 관련제품 제조업, 배관자재, 비주거용 건물 임대업"]
+                ]
+            },
+            "2": {
+                title: "공장등록증명서",
+                org: "한국산업단지공단",
+                issuer: "한국산업단지공단 이사장",
+                date: "2023년 06월 26일",
+                stamp: "한국산업단지<br>공단인",
+                rows: [
+                    ["회사명", "비에이텍주식회사"],
+                    ["공장 소재지", "강원특별자치도 춘천시 퇴계공단2길 64 (퇴계동 1264번지, 퇴계제2농공단지)"],
+                    ["공장 등록일", "2023년 06월 08일 (등록변경: 2023년 06월 26일)"],
+                    ["업종(분류번호)", "액체 펌프 제조업 외 4종 (29131, 25111, 29133, 29175, 29210)"],
+                    ["공장 면적", "부지: 1,970.3㎡ / 제조시설: 494㎡ / 부대시설: 280㎡"]
+                ]
+            },
+            "3": {
+                title: "산업단지 입주 계약 확인서",
+                org: "한국산업단지공단",
+                issuer: "한국산업단지공단 이사장",
+                date: "2023년 06월 26일",
+                stamp: "한국산업단지<br>공단인",
+                rows: [
+                    ["단지명", "퇴계제2농공단지"],
+                    ["회사명", "비에이텍주식회사"],
+                    ["대표자", "조세연"],
+                    ["생산품목", "모터펌프"],
+                    ["계약일자", "2023년 06월 26일 (변경 등록 완료)"],
+                    ["소재지", "강원특별자치도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)"]
+                ]
+            },
+            "4": {
+                title: "직접생산확인증명서",
+                org: "중소벤처기업부",
+                issuer: "한국중소벤처기업유통원",
+                date: "2023년 07월 19일",
+                stamp: "중소벤처기업<br>유통원인",
+                rows: [
+                    ["증명서 번호", "제 2023-0616-00085호"],
+                    ["경쟁제품명", "배관유체조절시스템장비및부품 (펌프류)"],
+                    ["유효기간", "2023년 07월 19일 ~ 2025년 07월 18일"],
+                    ["세부품명", "다단벌류트펌프, 단단벌류트펌프, 양흡입벌류트펌프, 편흡입벌류트펌프, 정량펌프, 수중펌프, 오수펌프, 슬러지펌프, 심정용펌프, 전진공동펌프, 부스터펌프"],
+                    ["생산 공장", "강원특별자치도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)"]
+                ]
+            },
+            "7": {
+                title: "한국펌프공업협동조합 조합원증",
+                org: "한국펌프공업협동조합",
+                issuer: "한국펌프공업협동조합 이사장",
+                date: "2015년 01월 07일",
+                stamp: "한국펌프공업<br>조합인",
+                rows: [
+                    ["증서 번호", "제 151 호"],
+                    ["업체명", "비에이텍주식회사"],
+                    ["대표자", "조세연"],
+                    ["소재지", "강원특별자치도 춘천시 퇴계공단2길 64"],
+                    ["인증 내용", "위 업체는 본 조합 정관 규정에 의거하여 정식 조합원임을 인증함."]
+                ]
+            },
+            "8": {
+                title: "표 창 장",
+                org: "강원특별자치도",
+                issuer: "강 원 도 지 사  최 문 순",
+                date: "2017년 12월 29일",
+                stamp: "강원도지사<br>인",
+                rows: [
+                    ["상장 번호", "제 4334 호"],
+                    ["수상자", "비에이텍 주식회사 (대표 조세연)"],
+                    ["공로 내용", "귀하는 평소 도정과 지역 사회 발전에 헌신적으로 협력하여 왔으며, 특히 상수도 관리 활동 및 수질 환경 개선에 기여한 공로가 크므로 이에 표창합니다."]
+                ]
+            }
+        };
+
+        let certCarouselIndex = 0;
+        let certVisibleSlides = 3;
+
+        function updateVisibleSlides() {
+            const width = window.innerWidth;
+            if (width <= 600) certVisibleSlides = 1;
+            else if (width <= 992) certVisibleSlides = 2;
+            else certVisibleSlides = 3;
+        }
+
+        function slideCertCarousel() {
+            const track = document.getElementById('certCarouselTrack');
+            if (!track) return;
+            const slide = track.querySelector('.carousel-slide');
+            if (!slide) return;
+            const slideWidth = slide.getBoundingClientRect().width;
+            const offset = certCarouselIndex * (slideWidth + 32); // slideWidth + gap
+            track.style.transform = `translateX(-${offset}px)`;
+            
+            // Highlight dots
+            document.querySelectorAll('.carousel-dot').forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === certCarouselIndex);
+            });
+
+            // Toggle arrow disable
+            const maxIndex = track.children.length - certVisibleSlides;
+            document.getElementById('certCarouselPrev').classList.toggle('disabled', certCarouselIndex === 0);
+            document.getElementById('certCarouselNext').classList.toggle('disabled', certCarouselIndex >= maxIndex);
+        }
+
+        function renderCarouselDots() {
+            const container = document.getElementById('certCarouselDots');
+            const track = document.getElementById('certCarouselTrack');
+            if (!container || !track) return;
+            container.innerHTML = '';
+            
+            const maxIndex = track.children.length - certVisibleSlides + 1;
+            const numDots = Math.max(1, maxIndex);
+            
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${i === certCarouselIndex ? 'active' : ''}`;
+                dot.addEventListener('click', () => {
+                    certCarouselIndex = i;
+                    slideCertCarousel();
+                });
+                container.appendChild(dot);
+            }
+        }
+
+        document.getElementById('certCarouselPrev').addEventListener('click', () => {
+            if (certCarouselIndex > 0) {
+                certCarouselIndex--;
+                slideCertCarousel();
+            }
+        });
+
+        document.getElementById('certCarouselNext').addEventListener('click', () => {
+            const track = document.getElementById('certCarouselTrack');
+            const maxIndex = track.children.length - certVisibleSlides;
+            if (certCarouselIndex < maxIndex) {
+                certCarouselIndex++;
+                slideCertCarousel();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            updateVisibleSlides();
+            const track = document.getElementById('certCarouselTrack');
+            if (track) {
+                const maxIndex = track.children.length - certVisibleSlides;
+                if (certCarouselIndex > maxIndex) {
+                    certCarouselIndex = Math.max(0, maxIndex);
+                }
+                renderCarouselDots();
+                slideCertCarousel();
+            }
+        });
+
+        // Initialize Carousel once
+        setTimeout(() => {
+            updateVisibleSlides();
+            renderCarouselDots();
+            slideCertCarousel();
+        }, 100);
+
+        // PDF-to-Canvas / Virtual Cert Modal handling
+        const certModal = document.getElementById('certModal');
+        const pdfCanvas = document.getElementById('pdfCanvas');
+        const pdfSpinner = document.getElementById('pdfSpinner');
+        const modalCertTitle = document.getElementById('modalCertTitle');
+        const pdfDownloadBtn = document.getElementById('pdfDownloadBtn');
+        const pdfOpenNewTabBtn = document.getElementById('pdfOpenNewTabBtn');
+        const pdfPrevBtn = document.getElementById('pdfPrevBtn');
+        const pdfNextBtn = document.getElementById('pdfNextBtn');
+        const pdfPageNum = document.getElementById('pdfPageNum');
+
+        let pdfDoc = null;
+        let pdfPageNumValue = 1;
+        let pdfPageRendering = false;
+        let pdfCurrentRenderTask = null;
+
+        async function renderPDFPage(num) {
+            pdfPageRendering = true;
+            pdfCanvas.style.opacity = '0.3'; 
+
+            try {
+                const page = await pdfDoc.getPage(num);
+                const ctx = pdfCanvas.getContext('2d');
+                const viewport = page.getViewport({ scale: 1.8 });
+
+                pdfCanvas.width = viewport.width;
+                pdfCanvas.height = viewport.height;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                if (pdfCurrentRenderTask) {
+                    pdfCurrentRenderTask.cancel();
+                }
+
+                pdfCurrentRenderTask = page.render(renderContext);
+                await pdfCurrentRenderTask.promise;
+
+                pdfSpinner.style.display = 'none';
+                pdfCanvas.style.display = 'block';
+                pdfCanvas.style.opacity = '1';
+                
+                pdfPageNum.textContent = `${num} / ${pdfDoc.numPages}`;
+                pdfPageRendering = false;
+            } catch (error) {
+                if (error.name !== 'RenderingCancelledException') {
+                    console.error('PDF Render Error:', error);
+                    pdfSpinner.innerHTML = `<p style="color:#ff4d4d;">페이지 로드 실패</p>`;
+                    pdfPageRendering = false;
+                }
+            }
+        }
+
+        pdfPrevBtn.addEventListener('click', () => {
+            if (pdfPageNumValue <= 1 || pdfPageRendering) return;
+            pdfPageNumValue--;
+            renderPDFPage(pdfPageNumValue);
+        });
+
+        pdfNextBtn.addEventListener('click', () => {
+            if (pdfPageNumValue >= pdfDoc.numPages || pdfPageRendering) return;
+            pdfPageNumValue++;
+            renderPDFPage(pdfPageNumValue);
+        });
+
+        document.querySelectorAll('.open-cert-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const pdfUrl = btn.getAttribute('data-pdf');
+                const pdfTitle = btn.getAttribute('data-title');
+                const certType = btn.getAttribute('data-type');
+                const certIndex = btn.getAttribute('data-cert-index');
+
+                modalCertTitle.textContent = pdfTitle;
+                certModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+
+                const canvasContainer = certModal.querySelector('.pdf-canvas-container');
+                const oldVirtual = canvasContainer.querySelector('.virtual-cert-container');
+                if (oldVirtual) oldVirtual.remove();
+
+                pdfCanvas.style.display = 'none';
+                pdfSpinner.style.display = 'block';
+                pdfPrevBtn.style.display = 'none';
+                pdfNextBtn.style.display = 'none';
+                pdfPageNum.style.display = 'none';
+                pdfDownloadBtn.style.display = 'inline-block';
+                pdfOpenNewTabBtn.style.display = 'inline-block';
+
+                pdfPageNumValue = 1;
+                pdfDoc = null;
+
+                if (certType === 'virtual' && virtualCerts[certIndex]) {
+                    const data = virtualCerts[certIndex];
+                    pdfSpinner.style.display = 'none';
+                    pdfDownloadBtn.style.display = 'none';
+                    pdfOpenNewTabBtn.style.display = 'none';
+
+                    const vCert = document.createElement('div');
+                    vCert.className = 'virtual-cert-container';
+                    
+                    let rowsHtml = '';
+                    data.rows.forEach(row => {
+                        rowsHtml += `
+                            <div class="virtual-cert-row">
+                                <div class="virtual-cert-label">${row[0]}</div>
+                                <div class="virtual-cert-value">${row[1]}</div>
+                            </div>
+                        `;
+                    });
+
+                    vCert.innerHTML = `
+                        <div class="virtual-cert-header">
+                            <div class="virtual-cert-org">${data.org}</div>
+                            <div class="virtual-cert-main-title">${data.title}</div>
+                        </div>
+                        <div class="virtual-cert-body">
+                            ${rowsHtml}
+                            ${certIndex === "8" ? `<div class="virtual-cert-text">위와 같이 표창장을 수여하였음을 증명합니다.</div>` : ""}
+                        </div>
+                        <div class="virtual-cert-footer">
+                            <div class="virtual-cert-date">${data.date}</div>
+                            <div class="virtual-cert-issuer">${data.issuer}</div>
+                            <div class="virtual-cert-stamp">${data.stamp}</div>
+                        </div>
+                    `;
+                    canvasContainer.appendChild(vCert);
+                } else {
+                    pdfDownloadBtn.setAttribute('href', pdfUrl);
+                    pdfOpenNewTabBtn.setAttribute('href', pdfUrl);
+
+                    try {
+                        // PDFJS loading
+                        const loadingTask = pdfjsLib.getDocument(pdfUrl);
+                        pdfDoc = await loadingTask.promise;
+
+                        if (pdfDoc.numPages > 1) {
+                            pdfPrevBtn.style.display = 'flex';
+                            pdfNextBtn.style.display = 'flex';
+                            pdfPageNum.style.display = 'block';
+                        }
+                        await renderPDFPage(pdfPageNumValue);
+                    } catch (error) {
+                        console.error('PDF Loading failed:', error);
+                        pdfSpinner.innerHTML = `<p style="color:#ff4d4d; font-size:0.95rem;">인증서 PDF 로드 실패. (CORS제한 또는 정적파일 유실)</p>`;
+                    }
+                }
+            });
+        });
+
+        function closeCertModal() {
+            certModal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            if (pdfCurrentRenderTask) {
+                pdfCurrentRenderTask.cancel();
+                pdfCurrentRenderTask = null;
+            }
+            pdfDoc = null;
+            pdfPageNumValue = 1;
+            pdfPageRendering = false;
+        }
+
+        document.getElementById('closeModalBtn').addEventListener('click', closeCertModal);
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) closeCertModal();
+        });
+
+
+        // ==========================================
+        // 5. 고객지원 FAQ Accordion & Inquiry Logic
+        // ==========================================
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const isActive = item.classList.contains('active');
+
+                // Collapse all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+
+        function submitInquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('inqName').value;
+            const company = document.getElementById('inqCompany').value;
+            alert(`감사합니다, ${name} 님.\n[${company}] 님의 1:1 온라인 문의 접수가 완료되었습니다.\n대표메일 또는 휴대폰 번호로 신속하게 안내해 드리겠습니다.`);
+            e.target.reset();
+        }
+
+
+        // ==========================================
+        // 6. INTRANET 🔒 Session guarding & Employees list
+        // ==========================================
+        const employeesDb = [
+            { dept: "경영 총괄본부", name: "조세연", role: "대표이사", ext: "101", area: "본사 집무실 및 전 지점 총괄", avatar: "👑", tasks: ["경영 전반에 대한 최종 총괄 지휘 및 의사결정", "(주)비에이텍의 기술 비전 및 중장기 전략 로드맵 수립", "국내외 공인 기관 주요 기술 협정 및 파트너십 최종 체결"] },
+            { dept: "생산부", name: "정충구", role: "부장 / 공정 지휘", ext: "201", area: "제1공장 생산라인 A동", avatar: "⚙️", tasks: ["부스터 펌프 시스템 및 벌류트 펌프 전반 제작 공정 지휘", "원자재 구매 예산 기획 및 거래처 발주 승인", "안전 보건 교육 이수 감독 및 생산설비 유지관리 총괄"] },
+            { dept: "생산부", name: "조태연", role: "부장 / 특수펌프 스케줄", ext: "202", area: "제2공장 생산라인 B동", avatar: "🔧", tasks: ["특수 펌프(정량/수중/오수/슬러지/심정용) 생산 기획", "조립 공정 일정 스케줄 조율 및 생산 실적 데이터 분석", "생산 라인 안전 준수 여부 일일 점검 및 안전 가이드 수립"] },
+            { dept: "생산부", name: "김진수", role: "과장 / 가공 및 조립", ext: "205", area: "제1공장 조립 현장", avatar: "🛠️", tasks: ["펌프 하우징 정밀 가공 및 주요 부품 조립 실무", "생산 완료 반제품 성능 및 불량 1차 육안 판정 검사", "원자재 및 소모품 사내 창고 실시간 재고 대장 전산화"] },
+            { dept: "관리부", name: "이원석", role: "이사 / 조달 입찰계약", ext: "301", area: "본사 본관 2층 관리본부", avatar: "💼", tasks: ["관공서 조달청 우수제품 입찰 및 계약 체결 행정 총괄", "장기 납품 계약 리스크 평가 및 손익 조율", "회계 감사 수검 및 세무 세입 지출 최종 승인"] },
+            { dept: "관리부", name: "김홍인", role: "실장 / 행정 공정모니터링", ext: "302", area: "본사 2층 관리본부 행정실", avatar: "📝", tasks: ["생산 납기 일정 모니터링 및 납품 완료 확인증 관리", "외주 용역 및 협력업체 정산, 기술 제휴 대장 보관", "사내 복리후생 프로그램 기획 및 일반 행정 업무 실무"] },
+            { dept: "품질보증부", name: "정영호", role: "사원 / 성능시험 성적서", ext: "401", area: "제3공장 성능시험소", avatar: "🔬", tasks: ["부스터 펌프 모터 전류값, 수압 및 누전 검사 장비 계측 수행", "KC 위생안전기준 및 ISO 9001 기술 표준 검증 지원", "출하 전 최종 품질 검사 성적서 발행 및 사후 A/S 관리 대장 기록"] }
+        ];
+
+        const loginModal = document.getElementById('loginModal');
+        const empDetailModal = document.getElementById('empDetailModal');
+
+        function openLoginModal() {
+            loginModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLoginModal() {
+            loginModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Intercept INTRANET GNB Click to require login
+        document.getElementById('gnbIntranetLink').addEventListener('click', (e) => {
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+            if (!isLoggedIn) {
+                e.preventDefault();
+                openLoginModal();
+            }
+        });
+
+        function tryLogin(e) {
+            e.preventDefault();
+            const id = document.getElementById('empId').value;
+            const pw = document.getElementById('empPw').value;
+            const errorMsg = document.getElementById('loginErrorMsg');
+
+            if (id === 'batech' && pw === '1234') {
+                sessionStorage.setItem('isLoggedIn', 'true');
+                errorMsg.style.display = 'none';
+                closeLoginModal();
+                window.location.hash = '#intranet/org';
+                handleRouting();
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        function doLogout() {
+            sessionStorage.removeItem('isLoggedIn');
+            alert('안전하게 로그아웃 처리되었습니다.');
+            window.location.hash = '#home';
+            handleRouting();
+        }
+
+        function filterEmployees() {
+            renderEmployeeGrid();
+        }
+
+        function renderEmployeeGrid() {
+            const grid = document.getElementById('employeeGrid');
+            if (!grid) return;
+
+            const query = document.getElementById('empSearchInput').value.trim().toLowerCase();
+            const filtered = employeesDb.filter(emp => 
+                emp.name.includes(query) || 
+                emp.dept.toLowerCase().includes(query) || 
+                emp.role.toLowerCase().includes(query) ||
+                emp.tasks.some(t => t.toLowerCase().includes(query))
+            );
+
+            grid.innerHTML = '';
+            filtered.forEach(emp => {
+                const card = document.createElement('div');
+                card.className = 'employee-card';
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', () => viewEmpDetail(emp.name));
+
+                card.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.8rem;">
+                        <span class="emp-dept">${emp.dept}</span>
+                        <span style="font-size:1.5rem;">${emp.avatar}</span>
+                    </div>
+                    <h3 class="emp-name">${emp.name} <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">${emp.role.split(' / ')[0]}</span></h3>
+                    <div class="emp-role">${emp.role.split(' / ')[1] || ''}</div>
+                    <div class="emp-tasks">
+                        ${emp.tasks[0]}...
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function viewEmpDetail(name) {
+            const emp = employeesDb.find(e => e.name === name);
+            if (!emp) return;
+
+            document.getElementById('modalEmpAvatar').textContent = emp.avatar;
+            document.getElementById('modalEmpDept').textContent = emp.dept;
+            document.getElementById('modalEmpName').innerHTML = `${emp.name} <span style="font-size:0.9rem; font-weight:400; color:var(--text-muted); margin-left:0.5rem;">${emp.role}</span>`;
+            document.getElementById('modalEmpPhone').textContent = `033-264-9243 (내선 ${emp.ext})`;
+            document.getElementById('modalEmpPhone').setAttribute('href', `tel:033-264-9243`);
+            document.getElementById('modalEmpArea').textContent = emp.area;
+
+            const tasksList = document.getElementById('modalEmpTasks');
+            tasksList.innerHTML = '';
+            emp.tasks.forEach(t => {
+                const li = document.createElement('li');
+                li.textContent = t;
+                tasksList.appendChild(li);
+            });
+
+            empDetailModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeEmpDetailModal() {
+            empDetailModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCertModal();
+                closeLoginModal();
+                closeEmpDetailModal();
+            }
         });
     </script>
 </body>

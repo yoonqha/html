@@ -234,50 +234,46 @@
         <div class="map-section" id="mapSection">
             <!-- 
                 ========================================================================
-                [방법 A] 네이버 지도 'HTML 퍼가기' 적용 영역 (권장)
-                ========================================================================
-                * 일반 웹 URL(map.naver.com/p/...)은 보안 정책에 의해 iframe 차단(하얗게 됨)이 발생합니다.
-                * 네이버 지도 PC웹 -> [공유] -> [HTML 퍼가기] 에서 생성된 
-                  <script> 태그 및 <iframe> 코드를 아래에 그대로 붙여넣으세요.
-                  (부모 속성에 의해 width 100%, height 450px이 자동 적용됩니다.)
+                [네이버 클라우드 플랫폼 'Maps API' 연동]
+                ==========================================================
+                * 현재 YOUR_CLIENT_ID가 임시로 입력되어 있습니다.
+                * 네이버 클라우드 플랫폼에서 발급받은 실제 API Client ID를 아래 ncpClientId 값에 교체해 주세요.
             -->
-            <div class="map-placeholder" style="text-align: center; color: #94a3b8; padding: 2rem; z-index: 1;">
-                <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" style="margin-bottom: 12px; opacity: 0.5;">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                </svg>
-                <p style="font-size: 1rem; line-height: 1.5;">네이버 지도 <b>'HTML 퍼가기'</b> 소스코드를 이곳에 삽입해 주세요.<br>(크기: 100% × 450px 반응형 자동 적용)</p>
-            </div>
-
-            <!-- 
-                ========================================================================
-                [방법 B] 네이버 클라우드 플랫폼 'Maps API' 적용 시 스크립트 (선택)
-                ========================================================================
-                API Key(Client ID)가 발급된 경우, 아래 주석을 해제하여 즉시 화면에 렌더링할 수 있습니다.
-            -->
-            <!-- 
             <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     // 강원특별자치도 춘천시 퇴계공단2길 64의 위경도
                     var companyPos = new naver.maps.LatLng(37.8427976, 127.7289528);
                     
-                    var map = new naver.maps.Map('mapSection', {
+                    var mapOptions = {
                         center: companyPos,
                         zoom: 17, // 확대 수준
                         minZoom: 10,
                         zoomControl: true,
-                        zoomControlOptions: { position: naver.maps.Position.TOP_RIGHT }
-                    });
+                        zoomControlOptions: { 
+                            position: naver.maps.Position.TOP_RIGHT 
+                        }
+                    };
                     
+                    var map = new naver.maps.Map('mapSection', mapOptions);
+                    
+                    // 붉은색 핀 마커(Marker)
                     var marker = new naver.maps.Marker({
                         position: companyPos,
                         map: map,
                         title: "(주)비에이텍"
                     });
+                    
+                    // 정보창 (선택사항)
+                    var infoWindow = new naver.maps.InfoWindow({
+                        content: '<div style="padding:10px; font-weight:bold; color:#1e293b; font-family:Pretendard, sans-serif; text-align:center;">(주)비에이텍</div>',
+                        borderWidth: 0,
+                        backgroundColor: "rgba(255, 255, 255, 0.9)",
+                        anchorSkew: true
+                    });
+                    infoWindow.open(map, marker);
                 });
             </script> 
-            -->
         </div>
 
         <!-- Information & Buttons Section -->

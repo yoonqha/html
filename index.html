@@ -662,63 +662,15 @@
             </section>
 
             <div class="container">
-                <div class="tabs-container">
-                    <button class="tab-btn active" data-tab="social">사회적 활동</button>
-                    <button class="tab-btn" data-tab="eco">친환경 캠페인</button>
-                </div>
-
-                <div class="tab-panels-wrapper">
-                    <!-- Tab Panel: 사회적 활동 -->
-                    <div class="tab-panel active" id="panel-campaign-social">
-                        <section class="campaign-section" style="padding-top:0;">
-                            <div class="campaign-grid">
-                                <div class="campaign-card">
-                                    <div class="campaign-img">
-                                        <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Clean+River+Project" alt="클린 리버 프로젝트">
-                                    </div>
-                                    <div class="campaign-content">
-                                        <span class="campaign-date">2026. 04. 20</span>
-                                        <h3 class="campaign-title">'클린 리버 프로젝트' 지역 하천 정화 활동 진행</h3>
-                                        <p class="campaign-desc">(주)비에이텍 임직원들은 수자원 보호의 중요성을 알리기 위해 본사 인근 하천에서 쓰레기 수거 및 수질 정화 캠페인을 성공적으로 마쳤습니다.</p>
-                                    </div>
-                                </div>
-                                <div class="campaign-card">
-                                    <div class="campaign-img">
-                                        <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Eco+Water+Pump" alt="친환경 펌프 기증">
-                                    </div>
-                                    <div class="campaign-content">
-                                        <span class="campaign-date">2025. 11. 15</span>
-                                        <h3 class="campaign-title">수도권 소외계층 대상 고효율 워터펌프 무상 교체</h3>
-                                        <p class="campaign-desc">노후된 수로 설비로 불편을 겪는 지역 사회를 돕고자, 자사의 최신 고효율 인버터 펌프 50대를 무상으로 설치 및 점검해드렸습니다.</p>
-                                    </div>
-                                </div>
-                                <div class="campaign-card">
-                                    <div class="campaign-img">
-                                        <img src="https://via.placeholder.com/600x400/050b14/00e5ff?text=Water+Day+Seminar" alt="세계 물의 날 세미나">
-                                    </div>
-                                    <div class="campaign-content">
-                                        <span class="campaign-date">2025. 03. 22</span>
-                                        <h3 class="campaign-title">세계 물의 날 기념 '수자원 절약 세미나' 개최</h3>
-                                        <p class="campaign-desc">에너지 절감형 펌프 기술의 동향과 지속 가능한 물 관리 솔루션에 대해 논의하는 자리를 마련하여 업계 관계자들의 큰 호응을 얻었습니다.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                <section class="campaign-section" style="padding-top:0;">
+                    <div class="featured-campaign">
+                        <h2>(주)비에이텍과 함께하는 물 활용 캠페인</h2>
+                        <p>소중한 자원인 물을 아끼고 스마트하게 활용하는 방법, 카드뉴스로 확인해보세요.</p>
+                        <div style="border-radius: 15px; overflow: hidden; border: 1px solid rgba(0, 229, 255, 0.2); display: inline-block;">
+                            <img src="카드뉴스.png" alt="물 활용 캠페인 카드뉴스" style="max-width: 100%; height: auto; display: block;" onerror="this.src='https://via.placeholder.com/800x600/0a1932/00e5ff?text=물+활용+캠페인+카드뉴스'">
+                        </div>
                     </div>
-
-                    <!-- Tab Panel: 친환경 캠페인 -->
-                    <div class="tab-panel" id="panel-campaign-eco">
-                        <section class="campaign-section" style="padding-top:0;">
-                            <div class="featured-campaign">
-                                <h2>(주)비에이텍과 함께하는 물 활용 캠페인</h2>
-                                <p>소중한 자원인 물을 아끼고 스마트하게 활용하는 방법, 카드뉴스로 확인해보세요.</p>
-                                <div style="border-radius: 15px; overflow: hidden; border: 1px solid rgba(0, 229, 255, 0.2); display: inline-block;">
-                                    <img src="카드뉴스.png" alt="물 활용 캠페인 카드뉴스" style="max-width: 100%; height: auto; display: block;" onerror="this.src='https://via.placeholder.com/800x600/0a1932/00e5ff?text=물+활용+캠페인+카드뉴스'">
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
+                </section>
             </div>
         </section>
 
@@ -834,41 +786,171 @@
                     <!-- Tab Panel: 1:1 온라인 문의 -->
                     <div class="tab-panel" id="panel-support-inquiry">
                         <section class="support-section" style="padding-top:0;">
-                            <div class="inquiry-wrapper">
-                                <form class="inquiry-form" onsubmit="submitInquiry(event)">
-                                    <div class="form-group">
-                                        <label class="form-label" for="inqName">성함 / 담당자명</label>
-                                        <input type="text" id="inqName" class="form-control" placeholder="성함을 입력하세요..." required>
+                            <div class="inquiry-wrapper" style="max-width: 800px; margin: 0 auto; background: #ffffff; padding: 3rem; border-radius: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+                                <div class="inquiry-header" style="text-align: center; margin-bottom: 2.5rem;">
+                                    <h3 style="font-size: 1.8rem; color: #1e293b; margin-bottom: 0.75rem; font-weight: 700;">1:1 온라인 문의</h3>
+                                    <p style="color: #64748b; font-size: 1.05rem; line-height: 1.6;">제품 구매, 설치 및 A/S 관련 문의를 남겨주시면<br>담당자가 신속하게 답변드리겠습니다.</p>
+                                </div>
+                                <form class="inquiry-form modern-form" id="onlineInquiryForm" novalidate onsubmit="return handleInquirySubmit(event)">
+                                    <div class="form-row" style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                                            <label class="form-label" for="inqType">문의 유형 <span style="color: #ef4444;">*</span></label>
+                                            <select id="inqType" class="form-control" required>
+                                                <option value="" disabled selected>문의 유형을 선택해주세요</option>
+                                                <option value="제품구매">제품구매</option>
+                                                <option value="설치시공">설치시공</option>
+                                                <option value="수리·유지보수">수리·유지보수</option>
+                                                <option value="기타">기타</option>
+                                            </select>
+                                            <div class="error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none;">문의 유형을 선택해주세요.</div>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="inqCompany">업체명 / 기관명</label>
-                                        <input type="text" id="inqCompany" class="form-control" placeholder="기관 및 상호를 입력하세요..." required>
+                                    <div class="form-row" style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                                            <label class="form-label" for="inqCompany">회사명 / 기관명 <span style="color: #ef4444;">*</span></label>
+                                            <input type="text" id="inqCompany" class="form-control" placeholder="예: (주)비에이텍" required>
+                                            <div class="error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none;">회사명/기관명을 입력해주세요.</div>
+                                        </div>
+                                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                                            <label class="form-label" for="inqName">담당자명 <span style="color: #ef4444;">*</span></label>
+                                            <input type="text" id="inqName" class="form-control" placeholder="홍길동 대리" required>
+                                            <div class="error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none;">담당자명을 입력해주세요.</div>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="inqEmail">이메일 주소</label>
-                                        <input type="email" id="inqEmail" class="form-control" placeholder="example@email.com" required>
+                                    <div class="form-row" style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                                            <label class="form-label" for="inqPhone">연락처 <span style="color: #ef4444;">*</span></label>
+                                            <input type="tel" id="inqPhone" class="form-control" placeholder="010-0000-0000" required>
+                                            <div class="error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none;">연락처를 입력해주세요.</div>
+                                        </div>
+                                        <div class="form-group" style="flex: 1; min-width: 250px;">
+                                            <label class="form-label" for="inqEmail">이메일 주소 <span style="color: #ef4444;">*</span></label>
+                                            <input type="email" id="inqEmail" class="form-control" placeholder="example@email.com" required>
+                                            <div class="error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none;">유효한 이메일을 입력해주세요.</div>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="inqPhone">연락처</label>
-                                        <input type="tel" id="inqPhone" class="form-control" placeholder="010-0000-0000" required>
+                                    <div class="form-group" style="margin-bottom: 2rem;">
+                                        <label class="form-label" for="inqMessage">문의 내용 <span style="color: #ef4444;">*</span></label>
+                                        <textarea id="inqMessage" class="form-control" rows="6" placeholder="현장 스펙, 요청 모델, 수량, 방문 희망 일정 등 구체적인 내용을 작성해 주시면 더욱 빠르고 정확한 상담이 가능합니다." required></textarea>
+                                        <div class="error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; display: none;">문의 내용을 상세히 입력해주세요.</div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="inqSubject">문의 제목</label>
-                                        <input type="text" id="inqSubject" class="form-control" placeholder="문의 제목을 적어주세요..." required>
+                                    <div class="form-check-group" style="margin-bottom: 2.5rem; background: #f8fafc; padding: 1.2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                                        <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                            <input type="checkbox" id="inqPrivacy" class="form-check-input" required style="margin-top: 0.3rem; width: 1.2rem; height: 1.2rem; cursor: pointer; accent-color: #2563eb;">
+                                            <label for="inqPrivacy" class="form-check-label" style="font-size: 0.95rem; line-height: 1.5; color: #334155; cursor: pointer;">
+                                                <strong style="color: #1e293b;">[필수] 개인정보 수집 및 이용 동의</strong><br>
+                                                <span style="color: #64748b; font-size: 0.85rem; margin-top: 0.2rem; display: block;">문의 확인 및 상담을 위해 연락처, 이메일 등의 개인정보를 수집하며, 목적 달성 후 지체 없이 파기합니다.</span>
+                                            </label>
+                                        </div>
+                                        <div class="error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.5rem; margin-left: 2rem; display: none;">개인정보 수집 및 이용에 동의해주세요.</div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="inqMessage">문의 세부 내용 (제품명, 수량, 현장 스펙 등)</label>
-                                        <textarea id="inqMessage" class="form-control" placeholder="도면 요청, 조달 납품 시공 견적 등 상세 문의 사항을 기술해 주세요..." required></textarea>
-                                    </div>
-                                    <div class="form-check-group">
-                                        <input type="checkbox" id="inqPrivacy" class="form-check-input" required>
-                                        <label for="inqPrivacy" class="form-check-label">개인정보 수집 및 이용약관에 동의합니다. (상담 진행 목적)</label>
-                                    </div>
-                                    <button type="submit" class="btn-primary" style="width:100%; margin-top:2rem; padding: 1rem; border:none; cursor:pointer;">1:1 온라인 문의 접수</button>
+                                    <button type="submit" class="inquiry-submit-btn" style="width: 100%; padding: 1.25rem; font-size: 1.15rem; border-radius: 12px; font-weight: 700; transition: all 0.3s ease; display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+                                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                        문의 신청하기
+                                    </button>
                                 </form>
                             </div>
                         </section>
                     </div>
+
+<style>
+/* Modern Form UI/UX Styles */
+.modern-form .form-control {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    background-color: #f8fafc;
+    color: #1e293b;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+.modern-form .form-control:hover {
+    border-color: #94a3b8;
+}
+.modern-form .form-control:focus {
+    outline: none;
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+.modern-form .form-control::placeholder {
+    color: #94a3b8;
+}
+.modern-form .form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: #334155;
+    font-size: 0.95rem;
+}
+.modern-form select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+.modern-form .inquiry-submit-btn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+.modern-form .inquiry-submit-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+}
+.modern-form .inquiry-submit-btn:active {
+    transform: translateY(0);
+}
+/* Validation Styles */
+.modern-form.was-validated .form-control:invalid {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+.modern-form.was-validated .form-control:invalid:focus {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+}
+.modern-form.was-validated .form-control:invalid ~ .error-msg {
+    display: block;
+}
+.modern-form.was-validated .form-check-input:invalid ~ label {
+    color: #ef4444;
+}
+.modern-form.was-validated .form-check-input:invalid ~ label strong {
+    color: #ef4444 !important;
+}
+.modern-form.was-validated .form-check-input:invalid ~ label span {
+    color: #ef4444 !important;
+}
+.modern-form.was-validated .form-check-input:invalid ~ .error-msg {
+    display: block;
+}
+</style>
+<script>
+function handleInquirySubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    form.classList.add('was-validated');
+    
+    if (!form.checkValidity()) {
+        // Find first invalid element and focus it for UX
+        const firstInvalid = form.querySelector(':invalid');
+        if(firstInvalid) firstInvalid.focus();
+        return false;
+    }
+    
+    // Validation passed (Simulate submission)
+    alert('문의가 성공적으로 접수되었습니다. 신속하게 답변드리겠습니다.');
+    form.reset();
+    form.classList.remove('was-validated');
+    return false;
+}
+</script>
                 </div>
             </div>
         </section>

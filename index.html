@@ -1385,9 +1385,9 @@ function handleInquirySubmit(e) {
                             <button onclick="requestQuote('${prod.name}', '${prod.code}')" class="btn-primary" style="text-align:center; width: 100%; border:none; cursor:pointer; padding: 0.85rem; border-radius: 10px; font-weight: 600;">
                                 B2B 조달 / 단가 문의
                             </button>
-                            <a href="./assets/pdf/${prod.name}_지침서.pdf" download class="manual-download-btn" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; background: rgba(0, 229, 255, 0.08); border: 1px solid rgba(0, 229, 255, 0.2); color: var(--secondary-color); padding: 0.85rem; border-radius: 10px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; box-sizing: border-box;" onmouseover="this.style.background='var(--secondary-color)'; this.style.color='#03070d'; this.style.boxShadow='0 4px 15px rgba(0, 229, 255, 0.3)';" onmouseout="this.style.background='rgba(0, 229, 255, 0.08)'; this.style.color='var(--secondary-color)'; this.style.boxShadow='none';">
+                            <button onclick="downloadManual(event, '${prod.name}')" class="manual-download-btn" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; background: rgba(0, 229, 255, 0.08); border: 1px solid rgba(0, 229, 255, 0.2); color: var(--secondary-color); padding: 0.85rem; border-radius: 10px; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; box-sizing: border-box; cursor: pointer;" onmouseover="this.style.background='var(--secondary-color)'; this.style.color='#03070d'; this.style.boxShadow='0 4px 15px rgba(0, 229, 255, 0.3)';" onmouseout="this.style.background='rgba(0, 229, 255, 0.08)'; this.style.color='var(--secondary-color)'; this.style.boxShadow='none';">
                                 📄 ${prod.name} 유지관리지침서 다운로드
-                            </a>
+                            </button>
                         </div>
                     </div>
                 `;
@@ -1407,6 +1407,45 @@ function handleInquirySubmit(e) {
             window.location.hash = '#support/inquiry';
             document.getElementById('inqSubject').value = `[단가 견적 문의] ${name} (${code}) 구입 및 납품 단가 질의`;
             document.getElementById('inqMessage').value = `안녕하십니까,\n\n조달청 등록 물품분류번호 ${code}에 기재된 [${name}] 제품의 설계 규격 및 납품 단가(현장 설치 공사비 포함 여부)에 대하여 질의드립니다.\n\n- 희망 규격 및 용량:\n- 희망 납품처:\n- 예정 물량:`;
+        }
+
+        // ==========================================
+        // Manual PDF Download with Fallback
+        // ==========================================
+        const manualFileMap = {
+            '편흡입벌류트펌프': '편흡입볼류트펌프_유지관리지침서.pdf',
+            '다단벌류트펌프':   '편흡입볼류트펌프_유지관리지침서.pdf',
+            '단단벌류트펌프':   '편흡입볼류트펌프_유지관리지침서.pdf',
+            '양흡입벌류트펌프': '편흡입볼류트펌프_유지관리지침서.pdf',
+            '부스터펌프':       '부스터펌프_유지관리지침서.pdf',
+            '수중펌프':         '수중펌프_유지관리지침서.pdf',
+            '오수펌프':         '수중펌프_유지관리지침서.pdf',
+            '심정용펌프':       '수중펌프_유지관리지침서.pdf',
+            '슬러지펌프':       '슬러지펌프_유지관리지침서.pdf',
+            '전진공동펌프':     '일축나사식_모노펌프_유지관리지침서.pdf',
+            '정량펌프':         '정량펌프_유지관리지침서.pdf'
+        };
+
+        async function downloadManual(event, productName) {
+            event.preventDefault();
+            const fileName = manualFileMap[productName];
+            if (!fileName) {
+                alert('⚠️ 현재 해당 제품의 매뉴얼 파일을 준비 중입니다.\n고객지원(TEL. 033-264-9243)으로 문의 바랍니다.');
+                return;
+            }
+            const filePath = './assets/pdf/' + encodeURIComponent(fileName);
+            try {
+                const response = await fetch(filePath, { method: 'HEAD' });
+                if (!response.ok) throw new Error('File not found');
+                const link = document.createElement('a');
+                link.href = filePath;
+                link.download = fileName;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (err) {
+                alert('⚠️ 현재 매뉴얼 파일을 준비 중입니다.\n고객지원(TEL. 033-264-9243)으로 문의 바랍니다.');
+            }
         }
 
         function renderSpecsTable() {

@@ -316,45 +316,55 @@
                     <!-- Tab Panel: 찾아오는길 -->
                     <div class="tab-panel" id="panel-intro-map">
                         <section class="map-section" style="padding-top: 0;">
-                            <div class="map-container">
-                                <div class="map-iframe-wrapper" style="width: 100%; height: 100%;">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x3562e5b7740263f3%3A0x4bf288e7b95764d7!2z6rCV7JuQ7Yq567OE7J6Q7LmY64-EIOy2mOyynOyLnCDthrTqs4Tqs7Xri6gy6pilIDY0!5e0!3m2!1sko!2skr!4v1717830000000!5m2!1sko!2skr" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div class="map-grid-container">
+                                <!-- Left Column: Map and Naver Map redirect buttons -->
+                                <div class="map-visual-area">
+                                    <div class="map-container" style="margin-bottom: 0;">
+                                        <div class="map-iframe-wrapper" style="width: 100%; height: 100%;">
+                                            <!-- Google Maps iframe pointing exactly to Toegye Industrial Complex 2-gil 64 -->
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x3562e5b7740263f3%3A0x4bf288e7b95764d7!2z6rCV7JuQ7Yq567OE7J6Q7LmY64-EIOy2mOyynOyLnCDthrTqs4Tqs7Xri6gy6pilIDY0!5e0!3m2!1sko!2skr!4v1717830000000!5m2!1sko!2skr" style="width: 100%; height: 100%; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="map-action-buttons">
+                                        <a href="https://map.naver.com/p/search/%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%B6%98%EC%B2%9C%EC%8B%9C%20%ED%87%B4%EA%B3%84%EA%B3%B5%EB%8B%A82%EA%B8%B8%2064/place/35117863?c=15.00,0,0,0,dh&isCorrectAnswer=true&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202606192315&locale=ko&svcName=map_pcv5&searchText=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%B6%98%EC%B2%9C%EC%8B%9C%20%ED%87%B4%EA%B3%84%EA%B3%B5%EB%8B%A82%EA%B8%B8%2064" target="_blank" class="map-btn-naver view-larger">
+                                            💚 네이버 지도로 크게 보기
+                                        </a>
+                                        <a href="https://map.naver.com/p/entry/place/35117863" target="_blank" class="map-btn-naver find-route">
+                                            🚗 네이버 지도 길찾기
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="map-links-row" style="display: flex; gap: 1rem; margin-bottom: 2rem; justify-content: center;">
-                                <a href="https://map.kakao.com/link/to/비에이텍(주),37.854743,127.734612" target="_blank" class="tab-btn" style="border-color: #ffeb00; color: #ffeb00;">
-                                    💛 카카오맵 길찾기
-                                </a>
-                                <a href="https://map.naver.com/v5/search/강원특별자치도%20춘천시%20퇴계공단2길%2064" target="_blank" class="tab-btn" style="border-color: #03cf5d; color: #03cf5d;">
-                                    💚 네이버 지도 길찾기
-                                </a>
-                            </div>
-
-                            <div class="contact-info-grid">
-                                <div class="info-card">
-                                    <div class="info-icon">📍</div>
-                                    <h3 class="info-title">주소</h3>
-                                    <p class="info-desc">강원특별자치도 춘천시 퇴계공단2길 64<br>(퇴계동 1264번지, 퇴계제2농공단지내)</p>
-                                </div>
-                                <div class="info-card">
-                                    <div class="info-icon">📞</div>
-                                    <h3 class="info-title">대표전화 (TEL)</h3>
-                                    <p class="info-desc" style="margin-bottom: 0.4rem;">상담 및 기술지원 문의:</p>
-                                    <p class="info-desc" style="font-size: 1.2rem; font-weight: 700; color:#fff;">
-                                        <a href="tel:033-264-9243" class="info-link">033-264-9243</a>
-                                    </p>
-                                </div>
-                                <div class="info-card">
-                                    <div class="info-icon">📠</div>
-                                    <h3 class="info-title">팩스번호 (FAX)</h3>
-                                    <p class="info-desc" style="margin-bottom: 0.4rem;">도면 및 서류 전송:</p>
-                                    <p class="info-desc" style="font-size: 1.2rem; font-weight: 700; color:#fff;">033-251-5747</p>
-                                </div>
-                                <div class="info-card">
-                                    <div class="info-icon">🚗</div>
-                                    <h3 class="info-title">교통 및 주차</h3>
-                                    <p class="info-desc">농공단지 진입 후 비에이텍 전용 주차장 무료 이용 가능 (내방객 주차 지원)</p>
+                                
+                                <!-- Right Column: Large detailed contact information cards -->
+                                <div class="map-details-area">
+                                    <div class="contact-card">
+                                        <div class="card-icon">📍</div>
+                                        <div class="card-content">
+                                            <h3>회사 주소</h3>
+                                            <p>강원특별자치도 춘천시 퇴계공단2길 64<br>(퇴계제2농공단지내)</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-card">
+                                        <div class="card-icon">📞</div>
+                                        <div class="card-content">
+                                            <h3>대표 전화 (TEL)</h3>
+                                            <p><a href="tel:0332649243" class="tel-link">033-264-9243</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-card">
+                                        <div class="card-icon">📠</div>
+                                        <div class="card-content">
+                                            <h3>팩스 번호 (FAX)</h3>
+                                            <p>033-251-5747</p>
+                                        </div>
+                                    </div>
+                                    <div class="contact-card">
+                                        <div class="card-icon">🚗</div>
+                                        <div class="card-content">
+                                            <h3>교통 및 주차 안내</h3>
+                                            <p>농공단지 진입 후 A동 전용 무료 주차장 이용 가능 (내방객 무료 주차 항시 지원)</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </section>
